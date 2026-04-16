@@ -1,0 +1,16 @@
+# Model weights — download via HuggingFace on target machine
+Qwen2.5-1.5B-Instruct/
+Qwen2.5-7B-Instruct/
+
+# Training checkpoints — generated during training
+checkpoints/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+# Logs
+training.log

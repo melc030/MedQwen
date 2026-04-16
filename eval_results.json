@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-04-14T19:12:27.583451",
+  "sample_size": 50,
+  "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "fine_tuned": "/Users/yuxincui/PycharmProjects/Tuning/MedQwen/checkpoints/best",
+  "base": {
+    "rouge1": 0.028910256410256414,
+    "rouge2": 0.005,
+    "rougeL": 0.028910256410256414,
+    "bertscore": 0.6059112548828125
+  },
+  "fine_tuned_scores": {
+    "rouge1": 0.004999999999999999,
+    "rouge2": 0.002608695652173913,
+    "rougeL": 0.004999999999999999,
+    "bertscore": 0.6619949340820312
+  },
+  "improvement": {
+    "rouge1": -2.391,
+    "rouge2": -0.2391,
+    "rougeL": -2.391,
+    "bertscore": 5.6084
+  }
+}

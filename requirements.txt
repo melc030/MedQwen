@@ -1,0 +1,20 @@
+# Core training stack
+torch>=2.1.0
+transformers>=4.40.0
+peft>=0.10.0
+accelerate>=0.28.0
+datasets>=2.18.0
+
+# Tokenizer
+sentencepiece
+tiktoken
+
+# Utilities
+tqdm
+numpy
+
+# Mac serving (Apple Silicon)
+mlx-lm
+
+# Cloud serving (CUDA only — install on cloud GPU machine)
+# vllm>=0.4.0
