@@ -138,6 +138,7 @@ def train():
         cfg.model_path,
         trust_remote_code=True,
         torch_dtype=torch.float16,
+        device_map='auto',   # loads directly to GPU, avoids CPU RAM bottleneck
     )
     # gradient checkpointing is unstable on MPS — only enable for CUDA
     if cfg.device.startswith('cuda'):
@@ -156,7 +157,6 @@ def train():
     )
     model = peft.get_peft_model(model, lora_config)
     model.print_trainable_parameters()
-    model = model.to(cfg.device)
 
     # ── Data ─────────────────────────────────────────────────────
     train_dataset = MedDataset(cfg.train_jsonl, tokenizer)
