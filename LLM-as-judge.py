@@ -150,14 +150,15 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained(cfg.model_path, trust_remote_code=True)
     tokenizer.padding_side = 'left'
     base_model = AutoModelForCausalLM.from_pretrained(
-        cfg.model_path, torch_dtype=torch.float16, trust_remote_code=True
-    ).to(cfg.device)
+        cfg.model_path, torch_dtype=torch.float16, trust_remote_code=True,
+        device_map='auto',
+    )
     base_model.eval()
 
-    base_avgs, base_results = run_judge_eval(base_model, tokenizer, samples, "BASE Qwen2.5-1.5B-Instruct", client)
+    base_avgs, base_results = run_judge_eval(base_model, tokenizer, samples, "BASE Qwen2.5-7B-Instruct", client)
 
     print("\nloading LoRA adapter...")
-    ft_model = PeftModel.from_pretrained(base_model, cfg.best_dir).to(cfg.device)
+    ft_model = PeftModel.from_pretrained(base_model, cfg.best_dir)
     ft_model.eval()
 
     ft_avgs, ft_results = run_judge_eval(ft_model, tokenizer, samples, "FINE-TUNED MedQwen", client)
