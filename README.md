@@ -10,6 +10,10 @@ This project fine-tunes Qwen2.5 (1.5B and 7B variants) on a Chinese medical Q&A 
 
 ---
 
+## Training Loss Curve (Qwen2.5-1.5B)
+
+![Loss Curve](loss_curve.png)
+
 ## Results
 
 ### Qwen2.5-1.5B (trained on Apple M5)
