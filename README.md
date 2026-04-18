@@ -32,15 +32,6 @@ This project fine-tunes Qwen2.5 (1.5B and 7B variants) on a Chinese medical Q&A 
 
 > ROUGE scores are lower for the fine-tuned model because it learned to give concise, on-format answers rather than verbose outputs. BERTScore (semantic similarity) is the primary metric for open-ended Chinese generation — the 7B model shows **+7.11% semantic improvement**.
 
-### LLM-as-Judge (GPT-4o via Azure OpenAI) — 1.5B model
-
-| Dimension | Base | Fine-tuned |
-|-----------|------|------------|
-| Coherence | 4.05 / 5 | 3.00 / 5 |
-| Accuracy | 3.45 / 5 | 2.40 / 5 |
-| Format | 4.30 / 5 | 3.40 / 5 |
-
-> The base model scores higher on GPT-4o judging because it produces more verbose, polished answers. The fine-tuned model adopted the training data's concise style, which GPT-4o rates lower. This reveals a known trade-off: domain adaptation vs. general response quality.
 
 ---
 
@@ -64,8 +55,7 @@ Serving
 
 Evaluation
     ├── ROUGE (character-level tokenization for Chinese)
-    ├── BERTScore (bert-base-chinese)
-    └── LLM-as-Judge (GPT-4o via Azure OpenAI)
+    └── BERTScore (bert-base-chinese)
 ```
 
 ---
@@ -78,7 +68,7 @@ Evaluation
 - **Hardware**: Apple M5 MPS (1.5B) · GCP L4 24GB (7B)
 - **Serving**: MLX-LM (Apple Silicon) · vLLM (CUDA)
 - **UI**: Gradio
-- **Evaluation**: ROUGE, BERTScore, GPT-4o LLM-as-Judge
+- **Evaluation**: ROUGE (character-level), BERTScore (bert-base-chinese)
 
 ---
 
