@@ -1,24 +1,24 @@
 {
-  "timestamp": "2026-04-14T19:12:27.583451",
+  "timestamp": "2026-04-18T04:31:23.945582",
   "sample_size": 50,
-  "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
-  "fine_tuned": "/Users/yuxincui/PycharmProjects/Tuning/MedQwen/checkpoints/best",
+  "base_model": "Qwen/Qwen2.5-7B-Instruct",
+  "fine_tuned": "/home/yuxincui/MedQwen/checkpoints/best",
   "base": {
-    "rouge1": 0.028910256410256414,
-    "rouge2": 0.005,
-    "rougeL": 0.028910256410256414,
-    "bertscore": 0.6059112548828125
+    "rouge1": 0.04069422734128616,
+    "rouge2": 0.004,
+    "rougeL": 0.03887604552310435,
+    "bertscore": 0.595889151096344
   },
   "fine_tuned_scores": {
-    "rouge1": 0.004999999999999999,
-    "rouge2": 0.002608695652173913,
-    "rougeL": 0.004999999999999999,
-    "bertscore": 0.6619949340820312
+    "rouge1": 0.03298245614035088,
+    "rouge2": 0.002352941176470588,
+    "rougeL": 0.03298245614035088,
+    "bertscore": 0.6669579148292542
   },
   "improvement": {
-    "rouge1": -2.391,
-    "rouge2": -0.2391,
-    "rougeL": -2.391,
-    "bertscore": 5.6084
+    "rouge1": -0.7712,
+    "rouge2": -0.1647,
+    "rougeL": -0.5894,
+    "bertscore": 7.1069
   }
 }
