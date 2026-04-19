@@ -10,6 +10,12 @@ This project fine-tunes Qwen2.5 (1.5B and 7B variants) on a Chinese medical Q&A 
 
 ---
 
+## Demo
+
+![MedQwen Gradio Chatbot](frontend.png)
+
+> Gradio chatbot UI served via vLLM on GCP L4 GPU.
+
 ## Training Loss Curves
 
 **Qwen2.5-1.5B** (Apple M5, MPS)
