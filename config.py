@@ -16,8 +16,8 @@ class Config:
 
         # ── Model ─────────────────────────────────────────────────
         # Using Instruct variant: already understands chat template format
-        self.hf_model_id  = 'Qwen/Qwen2.5-1.5B-Instruct'
-        self.model_path   = str(self.project_root / 'Qwen2.5-1.5B-Instruct')
+        self.hf_model_id  = 'Qwen/Qwen2.5-3B-Instruct'
+        self.model_path   = str(self.project_root / 'Qwen2.5-3B-Instruct')
 
         # ── Data ──────────────────────────────────────────────────
         self.train_raw    = str(self.project_root / 'data' / 'medical_train.txt')
@@ -26,8 +26,8 @@ class Config:
         self.valid_jsonl  = str(self.project_root / 'data' / 'medical_valid.jsonl')
 
         # ── LoRA ──────────────────────────────────────────────────
-        self.lora_rank      = 8
-        self.lora_alpha     = 16        # typically 2x rank
+        self.lora_rank      = 16
+        self.lora_alpha     = 32        # typically 2x rank
         self.lora_dropout   = 0.05
         self.lora_target_modules = [    # Qwen2.5 attention projection layers
             'q_proj', 'k_proj', 'v_proj', 'o_proj',
@@ -41,7 +41,7 @@ class Config:
         self.learning_rate          = 2e-4
         self.weight_decay           = 0.01
         self.warmup_ratio           = 0.05
-        self.max_seq_len            = 256
+        self.max_seq_len            = 512
         self.max_grad_norm          = 1.0
         self.logging_steps          = 10
         self.save_steps             = 200
