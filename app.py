@@ -22,6 +22,8 @@ from openai import OpenAI
 
 # ── Server config ─────────────────────────────────────────────────────────────
 INFERENCE_URL = os.environ.get("INFERENCE_URL", "http://localhost:8080")
+# MLX server uses "MedQwen", vLLM uses the lora-module name "medqwen"
+MODEL_NAME    = os.environ.get("MODEL_NAME", "MedQwen")
 SYSTEM_PROMPT = "你是一个专业的医疗问答助手，请根据用户的问题给出准确、简洁的医疗建议。"
 MAX_TOKENS    = 512
 TEMPERATURE   = 0.7
@@ -51,7 +53,7 @@ def chat(message, history):
     api_messages.append({"role": "user", "content": message})
 
     response = client.chat.completions.create(
-        model="MedQwen",
+        model=MODEL_NAME,
         messages=api_messages,
         max_tokens=MAX_TOKENS,
         temperature=TEMPERATURE,
