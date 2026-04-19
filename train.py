@@ -188,9 +188,10 @@ def train():
     os.makedirs(cfg.save_dir, exist_ok=True)
     os.makedirs(cfg.best_dir, exist_ok=True)
 
-    best_eval_loss = float('inf')
-    global_step    = 0
-    tic            = time.time()
+    best_eval_loss    = float('inf')
+    global_step       = 0
+    patience_counter  = 0
+    tic               = time.time()
 
     for epoch in range(1, cfg.epochs + 1):
         print(f'\n=== Epoch {epoch}/{cfg.epochs} ===')
@@ -198,6 +199,7 @@ def train():
         optimizer.zero_grad()
         loss_buf = []
 
+        stop_training = False
         for batch_idx, (input_ids, labels) in enumerate(train_loader, start=1):
             input_ids = input_ids.to(cfg.device)
             labels    = labels.to(cfg.device)
@@ -242,11 +244,22 @@ def train():
                 eval_loss = evaluate(model, valid_loader)
                 print(f'eval loss: {eval_loss:.4f}')
                 if eval_loss < best_eval_loss:
-                    best_eval_loss = eval_loss
+                    best_eval_loss   = eval_loss
+                    patience_counter = 0
                     model.save_pretrained(cfg.best_dir)
                     tokenizer.save_pretrained(cfg.best_dir)
                     print(f'best model saved (loss={best_eval_loss:.4f})')
+                else:
+                    patience_counter += 1
+                    print(f'no improvement ({patience_counter}/{cfg.early_stopping_patience})')
+                    if patience_counter >= cfg.early_stopping_patience:
+                        print('early stopping triggered — stopping training.')
+                        stop_training = True
+                        break
                 tic = time.time()
+
+        if stop_training:
+            break
 
     # final eval + save
     eval_loss = evaluate(model, valid_loader)

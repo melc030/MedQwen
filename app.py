@@ -25,7 +25,7 @@ INFERENCE_URL = os.environ.get("INFERENCE_URL", "http://localhost:8080")
 # MLX server uses "MedQwen", vLLM uses the lora-module name "medqwen"
 MODEL_NAME    = os.environ.get("MODEL_NAME", "MedQwen")
 SYSTEM_PROMPT = "你是一个专业的医疗问答助手，请根据用户的问题给出准确、简洁的医疗建议。"
-MAX_TOKENS    = 512
+MAX_TOKENS    = 256
 TEMPERATURE   = 0.7
 
 client = OpenAI(

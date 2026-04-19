@@ -45,6 +45,7 @@ class Config:
         self.max_grad_norm          = 1.0
         self.logging_steps          = 10
         self.save_steps             = 200
+        self.early_stopping_patience = 3  # stop if eval loss doesn't improve for 3 evals
 
         # ── Output ────────────────────────────────────────────────
         self.save_dir     = str(self.project_root / 'checkpoints')
