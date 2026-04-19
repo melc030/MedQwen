@@ -1,4 +1,4 @@
-Hn# MedQwen — Chinese Medical Q&A Fine-Tuning
+HnIt# MedQwen — Chinese Medical Q&A Fine-Tuning
 
 LoRA fine-tuning of Qwen2.5-Instruct on 30K Chinese medical dialogue pairs, with multi-metric evaluation and a Gradio chatbot demo.
 
@@ -10,9 +10,13 @@ This project fine-tunes Qwen2.5 (1.5B and 7B variants) on a Chinese medical Q&A 
 
 ---
 
-## Training Loss Curve (Qwen2.5-1.5B)
+## Training Loss Curves
 
-![Loss Curve](loss_curve.png)
+**Qwen2.5-1.5B** (Apple M5, MPS)
+![Loss Curve 1.5B](loss_curve.png)
+
+**Qwen2.5-7B** (GCP L4 GPU)
+![Loss Curve 7B](loss_curve_7b.png)
 
 ## Results
 
