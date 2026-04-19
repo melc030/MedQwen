@@ -6,8 +6,9 @@ import re
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
-LOG_FILE = "training.log"
-OUT_FILE = "loss_curve.png"
+import sys
+LOG_FILE = sys.argv[1] if len(sys.argv) > 1 else "training.log"
+OUT_FILE = sys.argv[2] if len(sys.argv) > 2 else "loss_curve.png"
 
 train_steps, train_losses = [], []
 eval_steps,  eval_losses  = [], []
@@ -64,7 +65,8 @@ for i, step in enumerate(epoch_boundaries):
 
 ax.set_xlabel('Training Step', fontsize=11)
 ax.set_ylabel('Loss', fontsize=11)
-ax.set_title('MedQwen (Qwen2.5-1.5B) — Training & Eval Loss', fontsize=13, fontweight='bold')
+title = f'MedQwen — Training & Eval Loss ({LOG_FILE})'
+ax.set_title(title, fontsize=13, fontweight='bold')
 ax.legend(fontsize=10)
 ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f'{int(x):,}'))
 ax.grid(True, alpha=0.3)
