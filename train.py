@@ -137,7 +137,7 @@ def train():
     model = AutoModelForCausalLM.from_pretrained(
         cfg.model_path,
         trust_remote_code=True,
-        torch_dtype=torch.float16,
+        dtype=torch.float16,
         device_map='auto',   # loads directly to GPU, avoids CPU RAM bottleneck
     )
     # gradient checkpointing is unstable on MPS — only enable for CUDA

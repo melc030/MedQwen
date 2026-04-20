@@ -96,7 +96,7 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained(cfg.model_path, trust_remote_code=True)
     tokenizer.padding_side = 'left'
     base_model = AutoModelForCausalLM.from_pretrained(
-        cfg.model_path, torch_dtype=torch.float16, trust_remote_code=True,
+        cfg.model_path, dtype=torch.float16, trust_remote_code=True,
         device_map='auto',
     )
     base_model.eval()
