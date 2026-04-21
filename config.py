@@ -26,8 +26,8 @@ class Config:
         self.valid_jsonl  = str(self.project_root / 'data' / 'medical_valid.jsonl')
 
         # ── LoRA ──────────────────────────────────────────────────
-        self.lora_rank      = 8
-        self.lora_alpha     = 16        # typically 2x rank
+        self.lora_rank      = 16
+        self.lora_alpha     = 32        # typically 2x rank
         self.lora_dropout   = 0.05
         self.lora_target_modules = [    # Qwen2.5 attention projection layers
             'q_proj', 'k_proj', 'v_proj', 'o_proj',
