@@ -6,7 +6,7 @@ LoRA fine-tuning of Qwen2.5-Instruct on 30K Chinese medical dialogue pairs, with
 
 ## Overview
 
-This project fine-tunes Qwen2.5 (1.5B and 7B variants) on a Chinese medical Q&A dataset using parameter-efficient LoRA adapters. The goal is to adapt a general-purpose LLM to the medical domain while keeping training costs low — trained locally on Apple Silicon (M5, MPS) and on GCP (L4 GPU).
+This project fine-tunes Qwen2.5 (1.5B, 3B, and 7B variants) on a Chinese medical Q&A dataset using parameter-efficient LoRA adapters. The goal is to adapt a general-purpose LLM to the medical domain while keeping training costs low — trained locally on Apple Silicon (M5, MPS) and on GCP (L4 GPU).
 
 ---
 
@@ -21,31 +21,35 @@ This project fine-tunes Qwen2.5 (1.5B and 7B variants) on a Chinese medical Q&A 
 **Qwen2.5-1.5B** (Apple M5, MPS)
 ![Loss Curve 1.5B](loss_curve.png)
 
+**Qwen2.5-3B r=8** (GCP L4 GPU)
+![Loss Curve 3B](loss_curve_3b.png)
+
 **Qwen2.5-7B** (GCP L4 GPU)
 ![Loss Curve 7B](loss_curve_7b.png)
 
+---
+
 ## Results
 
-### Qwen2.5-1.5B (trained on Apple M5)
+### Model Scale Comparison (all r=8, lr=2e-4)
 
-| Metric | Base | Fine-tuned | Δ |
-|--------|------|------------|---|
-| ROUGE-1 | 0.0289 | 0.0050 | -2.39% |
-| ROUGE-2 | 0.0050 | 0.0026 | -0.24% |
-| ROUGE-L | 0.0289 | 0.0050 | -2.39% |
-| **BERTScore** | **0.6059** | **0.6620** | **+5.61%** |
+| Model | ROUGE-1 Δ | ROUGE-L Δ | BERTScore (base) | BERTScore (ft) | Δ |
+|-------|-----------|-----------|-----------------|----------------|---|
+| Qwen2.5-1.5B | -2.39% | -2.39% | 0.6059 | 0.6620 | +5.61% |
+| Qwen2.5-3B   | +2.04% | +1.70% | 0.6159 | 0.6683 | +5.24% |
+| Qwen2.5-7B   | -0.77% | -0.59% | 0.5959 | 0.6670 | +7.11% |
 
-### Qwen2.5-7B (trained on GCP L4 GPU)
+### LoRA Rank Ablation (Qwen2.5-3B, lr=2e-4)
 
-| Metric | Base | Fine-tuned | Δ |
-|--------|------|------------|---|
-| ROUGE-1 | 0.0407 | 0.0330 | -0.77% |
-| ROUGE-2 | 0.0040 | 0.0024 | -0.16% |
-| ROUGE-L | 0.0389 | 0.0330 | -0.59% |
-| **BERTScore** | **0.5959** | **0.6670** | **+7.11%** |
+| Rank | BERTScore (base) | BERTScore (ft) | Δ |
+|------|-----------------|----------------|---|
+| r=8  | 0.6159 | 0.6683 | +5.24% |
+| r=16 | 0.6159 | 0.6751 | +5.92% |
 
-> ROUGE scores are lower for the fine-tuned model because it learned to give concise, on-format answers rather than verbose outputs. BERTScore (semantic similarity) is the primary metric for open-ended Chinese generation — the 7B model shows **+7.11% semantic improvement**.
-
+> **Key findings:**
+> - BERTScore (semantic similarity) is the primary metric for open-ended Chinese generation — ROUGE is less reliable as fine-tuned models learn to give concise, on-format answers rather than verbose outputs.
+> - The 7B model achieves the highest absolute BERTScore improvement (+7.11%), consistent with larger models having more capacity to absorb domain-specific patterns.
+> - Higher LoRA rank (r=16) outperforms r=8 on the 3B model (+5.92% vs +5.24%), showing that increased adapter expressiveness helps for this task — but only when learning rate is held constant.
 
 ---
 
@@ -59,7 +63,7 @@ raw .txt Q&A pairs → JSONL (Qwen chat template format)
 Training
     ↓
 Qwen2.5-Instruct (frozen) + LoRA adapters (trainable ~1% params)
-FP16 mixed precision · gradient checkpointing · cosine LR schedule
+FP16 mixed precision · gradient checkpointing · cosine LR schedule · early stopping
 
 Serving
     ├── MLX-LM server (Apple Silicon, port 8080)
@@ -76,10 +80,10 @@ Evaluation
 
 ## Tech Stack
 
-- **Model**: Qwen2.5-1.5B / 7B-Instruct
-- **Fine-tuning**: LoRA via PEFT (`r=8`, `alpha=16`, 7 target modules)
-- **Training**: PyTorch, gradient accumulation, FP16 autocast
-- **Hardware**: Apple M5 MPS (1.5B) · GCP L4 24GB (7B)
+- **Model**: Qwen2.5-1.5B / 3B / 7B-Instruct
+- **Fine-tuning**: LoRA via PEFT (`r=8/16`, `alpha=2×rank`, 7 target modules)
+- **Training**: PyTorch, gradient accumulation, FP16 autocast, early stopping
+- **Hardware**: Apple M5 MPS (1.5B) · GCP L4 24GB (3B, 7B)
 - **Serving**: MLX-LM (Apple Silicon) · vLLM (CUDA)
 - **UI**: Gradio
 - **Evaluation**: ROUGE (character-level), BERTScore (bert-base-chinese)
@@ -93,6 +97,7 @@ MedQwen/
 ├── config.py              # centralized hyperparameters and paths
 ├── train.py               # LoRA fine-tuning loop
 ├── evaluate.py            # ROUGE + BERTScore evaluation
+├── plot_loss.py           # training loss curve plotting
 ├── LLM-as-judge.py        # GPT-4o judge evaluation
 ├── inference_test.py      # qualitative base vs fine-tuned comparison
 ├── app.py                 # Gradio chatbot UI
@@ -120,7 +125,7 @@ pip install -r requirements.txt
 ### Download base model
 
 ```bash
-hf download Qwen/Qwen2.5-7B-Instruct --local-dir Qwen2.5-7B-Instruct
+huggingface-cli download Qwen/Qwen2.5-7B-Instruct --local-dir Qwen2.5-7B-Instruct
 ```
 
 ### Train
@@ -133,6 +138,12 @@ python train.py
 
 ```bash
 python evaluate.py
+```
+
+### Plot loss curve
+
+```bash
+python plot_loss.py training.log loss_curve.png
 ```
 
 ### Run chatbot
@@ -170,10 +181,13 @@ Open `http://localhost:7860`
 
 ---
 
-## Trained Model
+## Trained Models
 
-The fine-tuned 7B LoRA adapter is available on HuggingFace:
-[mellee030/MedQwen-7B-LoRA](https://huggingface.co/mellee030/MedQwen-7B-LoRA)
+| Model | HuggingFace |
+|-------|-------------|
+| Qwen2.5-7B LoRA (r=8) | [mellee030/MedQwen-7B-LoRA](https://huggingface.co/mellee030/MedQwen-7B-LoRA) |
+| Qwen2.5-3B LoRA (r=8) | [mellee030/MedQwen-3B-LoRA](https://huggingface.co/mellee030/MedQwen-3B-LoRA) |
+| Qwen2.5-3B LoRA (r=16) | [mellee030/MedQwen-3B-LoRA-r16](https://huggingface.co/mellee030/MedQwen-3B-LoRA-r16) |
 
 ---
 

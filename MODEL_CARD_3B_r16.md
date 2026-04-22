@@ -11,28 +11,37 @@ tags:
 - fine-tuned
 ---
 
-# MedQwen-3B-LoRA
+# MedQwen-3B-LoRA-r16
 
-LoRA fine-tuned [Qwen2.5-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct) on 30K Chinese medical Q&A dialogue pairs.
+LoRA fine-tuned [Qwen2.5-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct) on 30K Chinese medical Q&A dialogue pairs with rank-16 adapters.
 
 ## Evaluation Results
 
 | Metric | Base | Fine-tuned | Δ |
 |--------|------|------------|---|
-| ROUGE-1 | 0.0160 | 0.0364 | +2.04% |
-| ROUGE-2 | 0.0000 | 0.0200 | +2.00% |
-| ROUGE-L | 0.0160 | 0.0330 | +1.70% |
-| **BERTScore** | **0.6159** | **0.6683** | **+5.24%** |
+| ROUGE-1 | 0.0160 | 0.0227 | +0.67% |
+| ROUGE-2 | 0.0000 | 0.0014 | +0.14% |
+| ROUGE-L | 0.0160 | 0.0193 | +0.33% |
+| **BERTScore** | **0.6159** | **0.6751** | **+5.92%** |
 
 > BERTScore uses `bert-base-chinese`. ROUGE uses character-level tokenization for Chinese.
+
+## Rank Ablation (Qwen2.5-3B, lr=2e-4)
+
+| Rank | Trainable Params | BERTScore (ft) | Δ |
+|------|-----------------|----------------|---|
+| r=8  | ~15M | 0.6683 | +5.24% |
+| **r=16** | **~30M** | **0.6751** | **+5.92%** |
+
+> r=16 outperforms r=8 by +0.68% BERTScore, showing that higher adapter expressiveness benefits Chinese medical Q&A fine-tuning when learning rate is held constant.
 
 ## Model Comparison
 
 | Model | Rank | Fine-tuned BERTScore | Δ |
 |-------|------|---------------------|---|
 | MedQwen-1.5B | r=8 | 0.6620 | +5.61% |
-| **MedQwen-3B** | **r=8** | **0.6683** | **+5.24%** |
-| MedQwen-3B | r=16 | 0.6751 | +5.92% |
+| MedQwen-3B | r=8 | 0.6683 | +5.24% |
+| **MedQwen-3B** | **r=16** | **0.6751** | **+5.92%** |
 | MedQwen-7B | r=8 | 0.6670 | +7.11% |
 
 ## Training Configuration
@@ -40,8 +49,8 @@ LoRA fine-tuned [Qwen2.5-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-3B-Ins
 | Parameter | Value |
 |-----------|-------|
 | Base model | Qwen2.5-3B-Instruct |
-| LoRA rank | 8 |
-| LoRA alpha | 16 |
+| LoRA rank | 16 |
+| LoRA alpha | 32 |
 | LoRA dropout | 0.05 |
 | Target modules | q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj |
 | Training samples | 30,284 |
@@ -50,6 +59,7 @@ LoRA fine-tuned [Qwen2.5-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-3B-Ins
 | Batch size (effective) | 8 |
 | Learning rate | 2e-4 |
 | LR schedule | Cosine with warmup |
+| Early stopping | patience=5, eval every 500 steps |
 | Hardware | GCP L4 24GB |
 | Precision | FP16 |
 
@@ -61,7 +71,7 @@ from peft import PeftModel
 import torch
 
 base_model_id = "Qwen/Qwen2.5-3B-Instruct"
-adapter_id    = "mellee030/MedQwen-3B-LoRA"
+adapter_id    = "mellee030/MedQwen-3B-LoRA-r16"
 
 tokenizer = AutoTokenizer.from_pretrained(base_model_id, trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained(
