@@ -36,7 +36,7 @@ class Config:
 
         # ── Training ──────────────────────────────────────────────
         self.batch_size             = 1
-        self.grad_accum_steps       = 16  # effective batch = 16
+        self.grad_accum_steps       = 8   # effective batch = 8
         self.epochs                 = 5
         self.learning_rate          = 2e-4
         self.weight_decay           = 0.01
