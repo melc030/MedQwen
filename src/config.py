@@ -16,14 +16,22 @@ class Config:
 
         # ── Model ─────────────────────────────────────────────────
         # Using Instruct variant: already understands chat template format
-        self.hf_model_id  = 'Qwen/Qwen2.5-3B-Instruct'
-        self.model_path   = str(self.project_root / 'Qwen2.5-3B-Instruct')
+        self.hf_model_id  = 'Qwen/Qwen2.5-1.5B-Instruct'
+        self.model_path   = str(self.project_root / 'Qwen2.5-1.5B-Instruct')
 
-        # ── Data ──────────────────────────────────────────────────
+        # ── Data (original split) ─────────────────────────────────
         self.train_raw    = str(self.project_root / 'data' / 'medical_train.txt')
         self.valid_raw    = str(self.project_root / 'data' / 'medical_valid.txt')
-        self.train_jsonl  = str(self.project_root / 'data' / 'medical_train.jsonl')
-        self.valid_jsonl  = str(self.project_root / 'data' / 'medical_valid.jsonl')
+        self.train_jsonl  = str(self.project_root / 'data' / 'medical_train_v2.jsonl')
+        self.valid_jsonl  = str(self.project_root / 'data' / 'medical_valid_v2.jsonl')
+
+        # ── Data (80/10/10 split) ─────────────────────────────────
+        self.train_raw_v2  = str(self.project_root / 'data' / 'medical_train_v2.txt')
+        self.valid_raw_v2  = str(self.project_root / 'data' / 'medical_valid_v2.txt')
+        self.test_raw_v2   = str(self.project_root / 'data' / 'medical_test_v2.txt')
+        self.train_jsonl_v2 = str(self.project_root / 'data' / 'medical_train_v2.jsonl')
+        self.valid_jsonl_v2 = str(self.project_root / 'data' / 'medical_valid_v2.jsonl')
+        self.test_jsonl_v2  = str(self.project_root / 'data' / 'medical_test_v2.jsonl')
 
         # ── LoRA ──────────────────────────────────────────────────
         self.lora_rank      = 16
@@ -41,7 +49,7 @@ class Config:
         self.learning_rate          = 2e-4
         self.weight_decay           = 0.01
         self.warmup_ratio           = 0.05
-        self.max_seq_len            = 512
+        self.max_seq_len            = 256
         self.max_grad_norm          = 1.0
         self.logging_steps          = 10
         self.save_steps             = 500
