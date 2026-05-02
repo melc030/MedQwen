@@ -12,20 +12,20 @@ This project fine-tunes Qwen2.5 (1.5B, 3B, and 7B variants) on a Chinese medical
 
 ## Demo
 
-![MedQwen Gradio Chatbot](frontend.png)
+![MedQwen Gradio Chatbot](assets/frontend.png)
 
 > Gradio chatbot UI served via vLLM on GCP L4 GPU.
 
 ## Training Loss Curves
 
 **Qwen2.5-1.5B** (Apple M5, MPS)
-![Loss Curve 1.5B](loss_curve.png)
+![Loss Curve 1.5B](assets/loss_curve.png)
 
 **Qwen2.5-3B r=8** (GCP L4 GPU)
-![Loss Curve 3B](loss_curve_3b.png)
+![Loss Curve 3B](assets/loss_curve_3b.png)
 
 **Qwen2.5-7B** (GCP L4 GPU)
-![Loss Curve 7B](loss_curve_7b.png)
+![Loss Curve 7B](assets/loss_curve_7b.png)
 
 ---
 

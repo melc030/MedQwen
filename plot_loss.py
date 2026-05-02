@@ -8,7 +8,7 @@ import matplotlib.ticker as ticker
 
 import sys
 LOG_FILE = sys.argv[1] if len(sys.argv) > 1 else "training.log"
-OUT_FILE = sys.argv[2] if len(sys.argv) > 2 else "loss_curve.png"
+OUT_FILE = sys.argv[2] if len(sys.argv) > 2 else "assets/loss_curve.png"
 
 train_steps, train_losses = [], []
 eval_steps,  eval_losses  = [], []
