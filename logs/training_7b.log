@@ -1,0 +1,1212 @@
+nohup: ignoring input
+device: cuda:0
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:53<5:00:48, 53.40s/it]Loading weights:   1%|          | 2/339 [00:59<2:24:45, 25.77s/it]Loading weights:  15%|█▌        | 52/339 [01:00<02:57,  1.62it/s] Loading weights:  16%|█▌        | 55/339 [01:02<02:57,  1.60it/s]Loading weights:  19%|█▉        | 64/339 [01:09<02:58,  1.54it/s]Loading weights:  19%|█▉        | 66/339 [01:10<02:50,  1.60it/s]Loading weights:  22%|██▏       | 76/339 [01:13<02:16,  1.93it/s]Loading weights:  23%|██▎       | 77/339 [01:16<02:52,  1.52it/s]Loading weights:  23%|██▎       | 78/339 [01:17<02:46,  1.56it/s]Loading weights:  26%|██▌       | 88/339 [01:20<02:03,  2.03it/s]Loading weights:  27%|██▋       | 90/339 [01:23<02:36,  1.59it/s]Loading weights:  29%|██▉       | 100/339 [01:28<02:12,  1.80it/s]Loading weights:  33%|███▎      | 112/339 [01:34<02:04,  1.82it/s]Loading weights:  33%|███▎      | 113/339 [01:35<02:11,  1.72it/s]Loading weights:  34%|███▎      | 114/339 [01:36<02:05,  1.80it/s]Loading weights:  37%|███▋      | 124/339 [01:38<01:25,  2.52it/s]Loading weights:  37%|███▋      | 125/339 [01:42<02:09,  1.65it/s]Loading weights:  37%|███▋      | 126/339 [01:43<02:18,  1.54it/s]Loading weights:  40%|████      | 136/339 [01:46<01:30,  2.24it/s]Loading weights:  40%|████      | 137/339 [01:46<01:31,  2.21it/s]Loading weights:  41%|████      | 138/339 [01:49<02:20,  1.43it/s]Loading weights:  44%|████▎     | 148/339 [01:53<01:40,  1.91it/s]Loading weights:  44%|████▍     | 149/339 [01:53<01:36,  1.97it/s]Loading weights:  47%|████▋     | 160/339 [02:00<01:37,  1.84it/s]Loading weights:  47%|████▋     | 161/339 [02:01<01:44,  1.71it/s]Loading weights:  51%|█████     | 172/339 [02:04<01:12,  2.31it/s]Loading weights:  51%|█████     | 173/339 [02:07<01:33,  1.78it/s]Loading weights:  51%|█████▏    | 174/339 [02:07<01:32,  1.79it/s]Loading weights:  54%|█████▍    | 184/339 [02:12<01:21,  1.91it/s]Loading weights:  55%|█████▍    | 185/339 [02:12<01:17,  2.00it/s]Loading weights:  55%|█████▍    | 186/339 [02:14<01:31,  1.68it/s]Loading weights:  58%|█████▊    | 196/339 [02:43<04:34,  1.92s/it]Loading weights:  58%|█████▊    | 197/339 [02:55<06:24,  2.70s/it]Loading weights:  58%|█████▊    | 198/339 [02:58<06:26,  2.74s/it]Loading weights:  61%|██████▏   | 208/339 [03:39<07:39,  3.51s/it]Loading weights:  62%|██████▏   | 209/339 [03:43<07:41,  3.55s/it]Loading weights:  62%|██████▏   | 210/339 [03:55<09:24,  4.38s/it]Loading weights:  65%|██████▍   | 220/339 [04:28<07:27,  3.76s/it]Loading weights:  65%|██████▌   | 221/339 [04:39<08:26,  4.29s/it]Loading weights:  65%|██████▌   | 222/339 [04:43<08:14,  4.23s/it]Loading weights:  68%|██████▊   | 232/339 [05:24<07:30,  4.21s/it]Loading weights:  69%|██████▊   | 233/339 [05:29<07:32,  4.27s/it]Loading weights:  69%|██████▉   | 234/339 [05:40<08:38,  4.94s/it]Loading weights:  72%|███████▏  | 244/339 [06:13<06:14,  3.94s/it]Loading weights:  72%|███████▏  | 245/339 [06:24<07:01,  4.48s/it]Loading weights:  73%|███████▎  | 246/339 [06:30<07:09,  4.62s/it]Loading weights:  76%|███████▌  | 256/339 [07:11<05:57,  4.31s/it]Loading weights:  76%|███████▌  | 257/339 [07:16<06:00,  4.39s/it]Loading weights:  76%|███████▌  | 258/339 [07:27<06:52,  5.10s/it]Loading weights:  79%|███████▉  | 268/339 [07:50<04:03,  3.43s/it]Loading weights:  79%|███████▉  | 269/339 [08:16<06:04,  5.20s/it]Loading weights:  80%|███████▉  | 270/339 [08:19<05:41,  4.95s/it]Loading weights:  83%|████████▎ | 280/339 [08:52<03:55,  3.99s/it]Loading weights:  83%|████████▎ | 281/339 [08:54<03:43,  3.85s/it]Loading weights:  83%|████████▎ | 282/339 [09:17<05:24,  5.70s/it]Loading weights:  86%|████████▌ | 292/339 [09:46<03:12,  4.09s/it]Loading weights:  86%|████████▋ | 293/339 [09:53<03:15,  4.26s/it]Loading weights:  87%|████████▋ | 294/339 [09:54<02:58,  3.96s/it]Loading weights:  90%|████████▉ | 304/339 [10:49<02:51,  4.90s/it]Loading weights:  90%|████████▉ | 305/339 [10:50<02:35,  4.58s/it]Loading weights:  93%|█████████▎| 316/339 [11:19<01:21,  3.53s/it]Loading weights:  94%|█████████▎| 317/339 [11:48<01:54,  5.21s/it]Loading weights:  94%|█████████▍| 318/339 [11:51<01:44,  4.97s/it]Loading weights:  97%|█████████▋| 328/339 [12:18<00:41,  3.75s/it]Loading weights:  97%|█████████▋| 329/339 [12:20<00:36,  3.61s/it]Loading weights:  97%|█████████▋| 330/339 [12:26<00:34,  3.83s/it]Loading weights: 100%|██████████| 339/339 [12:26<00:00,  2.20s/it]
+trainable params: 20,185,088 || all params: 7,635,801,600 || trainable%: 0.2643
+
+=== Epoch 1/3 ===
+step 10/11358 (0.1%) | loss 4.0301 | lr 3.53e-06 | ETA 1009.5min
+step 20/11358 (0.2%) | loss 3.7074 | lr 7.05e-06 | ETA 686.5min
+step 30/11358 (0.3%) | loss 3.5321 | lr 1.06e-05 | ETA 686.6min
+step 40/11358 (0.4%) | loss 2.6715 | lr 1.41e-05 | ETA 686.1min
+step 50/11358 (0.4%) | loss 2.2848 | lr 1.76e-05 | ETA 685.9min
+step 60/11358 (0.5%) | loss 2.0558 | lr 2.12e-05 | ETA 684.2min
+step 70/11358 (0.6%) | loss 1.9030 | lr 2.47e-05 | ETA 683.4min
+step 80/11358 (0.7%) | loss 2.0566 | lr 2.82e-05 | ETA 685.4min
+step 90/11358 (0.8%) | loss 2.1135 | lr 3.17e-05 | ETA 684.1min
+step 100/11358 (0.9%) | loss 1.8949 | lr 3.53e-05 | ETA 684.0min
+step 110/11358 (1.0%) | loss 1.9535 | lr 3.88e-05 | ETA 682.8min
+step 120/11358 (1.1%) | loss 1.9700 | lr 4.23e-05 | ETA 685.9min
+step 130/11358 (1.1%) | loss 1.8638 | lr 4.59e-05 | ETA 683.5min
+step 140/11358 (1.2%) | loss 2.0573 | lr 4.94e-05 | ETA 682.6min
+step 150/11358 (1.3%) | loss 1.9214 | lr 5.29e-05 | ETA 693.4min
+step 160/11358 (1.4%) | loss 1.7953 | lr 5.64e-05 | ETA 683.1min
+step 170/11358 (1.5%) | loss 2.0542 | lr 6.00e-05 | ETA 676.9min
+step 180/11358 (1.6%) | loss 1.8770 | lr 6.35e-05 | ETA 679.8min
+step 190/11358 (1.7%) | loss 1.8369 | lr 6.70e-05 | ETA 676.9min
+step 200/11358 (1.8%) | loss 1.7830 | lr 7.05e-05 | ETA 677.1min
+eval loss: 1.8675
+best model saved (loss=1.8675)
+step 210/11358 (1.8%) | loss 2.0122 | lr 7.41e-05 | ETA 675.3min
+step 220/11358 (1.9%) | loss 1.8702 | lr 7.76e-05 | ETA 674.4min
+step 230/11358 (2.0%) | loss 1.7997 | lr 8.11e-05 | ETA 675.7min
+step 240/11358 (2.1%) | loss 1.8432 | lr 8.47e-05 | ETA 671.0min
+step 250/11358 (2.2%) | loss 1.9812 | lr 8.82e-05 | ETA 675.0min
+step 260/11358 (2.3%) | loss 1.7413 | lr 9.17e-05 | ETA 673.1min
+step 270/11358 (2.4%) | loss 2.0960 | lr 9.52e-05 | ETA 675.1min
+step 280/11358 (2.5%) | loss 1.8815 | lr 9.88e-05 | ETA 669.8min
+step 290/11358 (2.6%) | loss 2.0389 | lr 1.02e-04 | ETA 671.3min
+step 300/11358 (2.6%) | loss 1.8561 | lr 1.06e-04 | ETA 669.6min
+step 310/11358 (2.7%) | loss 1.9607 | lr 1.09e-04 | ETA 669.8min
+step 320/11358 (2.8%) | loss 1.9857 | lr 1.13e-04 | ETA 667.8min
+step 330/11358 (2.9%) | loss 1.9611 | lr 1.16e-04 | ETA 666.4min
+step 340/11358 (3.0%) | loss 1.8058 | lr 1.20e-04 | ETA 665.8min
+step 350/11358 (3.1%) | loss 1.7921 | lr 1.23e-04 | ETA 665.9min
+step 360/11358 (3.2%) | loss 1.9601 | lr 1.27e-04 | ETA 666.5min
+step 370/11358 (3.3%) | loss 1.8253 | lr 1.31e-04 | ETA 665.3min
+step 380/11358 (3.3%) | loss 1.9136 | lr 1.34e-04 | ETA 664.8min
+step 390/11358 (3.4%) | loss 1.9108 | lr 1.38e-04 | ETA 663.1min
+step 400/11358 (3.5%) | loss 1.8599 | lr 1.41e-04 | ETA 662.7min
+eval loss: 1.8730
+step 410/11358 (3.6%) | loss 1.7482 | lr 1.45e-04 | ETA 664.3min
+step 420/11358 (3.7%) | loss 1.8072 | lr 1.48e-04 | ETA 664.3min
+step 430/11358 (3.8%) | loss 1.8299 | lr 1.52e-04 | ETA 659.1min
+step 440/11358 (3.9%) | loss 1.9374 | lr 1.55e-04 | ETA 659.2min
+step 450/11358 (4.0%) | loss 1.9086 | lr 1.59e-04 | ETA 656.1min
+step 460/11358 (4.1%) | loss 2.0490 | lr 1.62e-04 | ETA 656.6min
+step 470/11358 (4.1%) | loss 1.9288 | lr 1.66e-04 | ETA 664.7min
+step 480/11358 (4.2%) | loss 1.8355 | lr 1.69e-04 | ETA 665.1min
+step 490/11358 (4.3%) | loss 1.8269 | lr 1.73e-04 | ETA 665.6min
+step 500/11358 (4.4%) | loss 1.8532 | lr 1.76e-04 | ETA 661.8min
+step 510/11358 (4.5%) | loss 1.8654 | lr 1.80e-04 | ETA 664.6min
+step 520/11358 (4.6%) | loss 1.9010 | lr 1.83e-04 | ETA 672.5min
+step 530/11358 (4.7%) | loss 1.9184 | lr 1.87e-04 | ETA 669.2min
+step 540/11358 (4.8%) | loss 2.0697 | lr 1.90e-04 | ETA 662.0min
+step 550/11358 (4.8%) | loss 1.7119 | lr 1.94e-04 | ETA 662.0min
+step 560/11358 (4.9%) | loss 1.9180 | lr 1.98e-04 | ETA 652.9min
+step 570/11358 (5.0%) | loss 1.9404 | lr 2.00e-04 | ETA 657.7min
+step 580/11358 (5.1%) | loss 1.9475 | lr 2.00e-04 | ETA 667.1min
+step 590/11358 (5.2%) | loss 1.8433 | lr 2.00e-04 | ETA 671.6min
+step 600/11358 (5.3%) | loss 1.8849 | lr 2.00e-04 | ETA 667.6min
+eval loss: 1.8894
+step 610/11358 (5.4%) | loss 2.0958 | lr 2.00e-04 | ETA 664.6min
+step 620/11358 (5.5%) | loss 1.8367 | lr 2.00e-04 | ETA 664.1min
+step 630/11358 (5.5%) | loss 2.0604 | lr 2.00e-04 | ETA 663.2min
+step 640/11358 (5.6%) | loss 1.8287 | lr 2.00e-04 | ETA 665.0min
+step 650/11358 (5.7%) | loss 1.8351 | lr 2.00e-04 | ETA 662.9min
+step 660/11358 (5.8%) | loss 1.7954 | lr 2.00e-04 | ETA 661.6min
+step 670/11358 (5.9%) | loss 1.7919 | lr 2.00e-04 | ETA 663.4min
+step 680/11358 (6.0%) | loss 1.7602 | lr 2.00e-04 | ETA 659.4min
+step 690/11358 (6.1%) | loss 1.9417 | lr 2.00e-04 | ETA 660.5min
+step 700/11358 (6.2%) | loss 1.9309 | lr 2.00e-04 | ETA 659.3min
+step 710/11358 (6.3%) | loss 1.8495 | lr 2.00e-04 | ETA 650.4min
+step 720/11358 (6.3%) | loss 1.9504 | lr 2.00e-04 | ETA 649.0min
+step 730/11358 (6.4%) | loss 2.1247 | lr 2.00e-04 | ETA 651.2min
+step 740/11358 (6.5%) | loss 1.9179 | lr 2.00e-04 | ETA 652.4min
+step 750/11358 (6.6%) | loss 2.1154 | lr 2.00e-04 | ETA 659.7min
+step 760/11358 (6.7%) | loss 1.9189 | lr 2.00e-04 | ETA 654.0min
+step 770/11358 (6.8%) | loss 1.8419 | lr 2.00e-04 | ETA 657.6min
+step 780/11358 (6.9%) | loss 1.8238 | lr 2.00e-04 | ETA 653.7min
+step 790/11358 (7.0%) | loss 1.8110 | lr 2.00e-04 | ETA 651.9min
+step 800/11358 (7.0%) | loss 1.9564 | lr 2.00e-04 | ETA 654.6min
+eval loss: 1.8784
+step 810/11358 (7.1%) | loss 1.7753 | lr 2.00e-04 | ETA 652.9min
+step 820/11358 (7.2%) | loss 1.7861 | lr 2.00e-04 | ETA 654.4min
+step 830/11358 (7.3%) | loss 1.9829 | lr 2.00e-04 | ETA 653.1min
+step 840/11358 (7.4%) | loss 1.7102 | lr 2.00e-04 | ETA 656.3min
+step 850/11358 (7.5%) | loss 2.0187 | lr 2.00e-04 | ETA 647.4min
+step 860/11358 (7.6%) | loss 1.6705 | lr 2.00e-04 | ETA 648.1min
+step 870/11358 (7.7%) | loss 2.0082 | lr 2.00e-04 | ETA 648.9min
+step 880/11358 (7.7%) | loss 1.8709 | lr 2.00e-04 | ETA 652.1min
+step 890/11358 (7.8%) | loss 1.9709 | lr 2.00e-04 | ETA 648.0min
+step 900/11358 (7.9%) | loss 1.8499 | lr 2.00e-04 | ETA 647.4min
+step 910/11358 (8.0%) | loss 1.8431 | lr 2.00e-04 | ETA 644.7min
+step 920/11358 (8.1%) | loss 1.9658 | lr 1.99e-04 | ETA 642.5min
+step 930/11358 (8.2%) | loss 1.8594 | lr 1.99e-04 | ETA 644.0min
+step 940/11358 (8.3%) | loss 2.0135 | lr 1.99e-04 | ETA 644.1min
+step 950/11358 (8.4%) | loss 1.7192 | lr 1.99e-04 | ETA 638.8min
+step 960/11358 (8.5%) | loss 2.1122 | lr 1.99e-04 | ETA 640.5min
+step 970/11358 (8.5%) | loss 1.7074 | lr 1.99e-04 | ETA 641.6min
+step 980/11358 (8.6%) | loss 1.9638 | lr 1.99e-04 | ETA 642.0min
+step 990/11358 (8.7%) | loss 1.8124 | lr 1.99e-04 | ETA 640.2min
+step 1000/11358 (8.8%) | loss 1.7076 | lr 1.99e-04 | ETA 638.9min
+eval loss: 1.8708
+step 1010/11358 (8.9%) | loss 1.6580 | lr 1.99e-04 | ETA 638.8min
+step 1020/11358 (9.0%) | loss 1.8745 | lr 1.99e-04 | ETA 638.0min
+step 1030/11358 (9.1%) | loss 1.9605 | lr 1.99e-04 | ETA 635.6min
+step 1040/11358 (9.2%) | loss 1.7594 | lr 1.99e-04 | ETA 635.4min
+step 1050/11358 (9.2%) | loss 1.7832 | lr 1.99e-04 | ETA 636.9min
+step 1060/11358 (9.3%) | loss 1.7425 | lr 1.99e-04 | ETA 634.3min
+step 1070/11358 (9.4%) | loss 1.8185 | lr 1.99e-04 | ETA 632.0min
+step 1080/11358 (9.5%) | loss 1.9049 | lr 1.99e-04 | ETA 633.2min
+step 1090/11358 (9.6%) | loss 1.9701 | lr 1.99e-04 | ETA 636.1min
+step 1100/11358 (9.7%) | loss 1.9205 | lr 1.99e-04 | ETA 632.9min
+step 1110/11358 (9.8%) | loss 1.8826 | lr 1.99e-04 | ETA 633.2min
+step 1120/11358 (9.9%) | loss 1.9281 | lr 1.99e-04 | ETA 633.1min
+step 1130/11358 (9.9%) | loss 2.0003 | lr 1.99e-04 | ETA 632.7min
+step 1140/11358 (10.0%) | loss 1.8267 | lr 1.99e-04 | ETA 631.1min
+step 1150/11358 (10.1%) | loss 2.1105 | lr 1.99e-04 | ETA 630.3min
+step 1160/11358 (10.2%) | loss 1.8494 | lr 1.99e-04 | ETA 630.0min
+step 1170/11358 (10.3%) | loss 1.9416 | lr 1.98e-04 | ETA 628.4min
+step 1180/11358 (10.4%) | loss 1.9074 | lr 1.98e-04 | ETA 629.8min
+step 1190/11358 (10.5%) | loss 1.9208 | lr 1.98e-04 | ETA 625.4min
+step 1200/11358 (10.6%) | loss 1.8521 | lr 1.98e-04 | ETA 625.4min
+eval loss: 1.8747
+step 1210/11358 (10.7%) | loss 1.9281 | lr 1.98e-04 | ETA 625.9min
+step 1220/11358 (10.7%) | loss 1.7843 | lr 1.98e-04 | ETA 626.4min
+step 1230/11358 (10.8%) | loss 1.8239 | lr 1.98e-04 | ETA 625.4min
+step 1240/11358 (10.9%) | loss 1.8082 | lr 1.98e-04 | ETA 624.9min
+step 1250/11358 (11.0%) | loss 1.9345 | lr 1.98e-04 | ETA 623.6min
+step 1260/11358 (11.1%) | loss 1.7514 | lr 1.98e-04 | ETA 622.9min
+step 1270/11358 (11.2%) | loss 1.9195 | lr 1.98e-04 | ETA 621.6min
+step 1280/11358 (11.3%) | loss 1.8465 | lr 1.98e-04 | ETA 621.8min
+step 1290/11358 (11.4%) | loss 1.7796 | lr 1.98e-04 | ETA 621.2min
+step 1300/11358 (11.4%) | loss 1.8253 | lr 1.98e-04 | ETA 620.5min
+step 1310/11358 (11.5%) | loss 1.9803 | lr 1.98e-04 | ETA 618.3min
+step 1320/11358 (11.6%) | loss 1.8718 | lr 1.98e-04 | ETA 617.4min
+step 1330/11358 (11.7%) | loss 2.0640 | lr 1.98e-04 | ETA 612.6min
+step 1340/11358 (11.8%) | loss 1.8036 | lr 1.97e-04 | ETA 610.3min
+step 1350/11358 (11.9%) | loss 1.7846 | lr 1.97e-04 | ETA 610.2min
+step 1360/11358 (12.0%) | loss 1.8172 | lr 1.97e-04 | ETA 609.1min
+step 1370/11358 (12.1%) | loss 2.0917 | lr 1.97e-04 | ETA 609.4min
+step 1380/11358 (12.2%) | loss 2.0300 | lr 1.97e-04 | ETA 606.4min
+step 1390/11358 (12.2%) | loss 1.9352 | lr 1.97e-04 | ETA 607.3min
+step 1400/11358 (12.3%) | loss 1.7596 | lr 1.97e-04 | ETA 608.5min
+eval loss: 1.8677
+step 1410/11358 (12.4%) | loss 1.7524 | lr 1.97e-04 | ETA 605.8min
+step 1420/11358 (12.5%) | loss 1.9581 | lr 1.97e-04 | ETA 607.1min
+step 1430/11358 (12.6%) | loss 1.9080 | lr 1.97e-04 | ETA 603.7min
+step 1440/11358 (12.7%) | loss 1.8258 | lr 1.97e-04 | ETA 605.2min
+step 1450/11358 (12.8%) | loss 1.8240 | lr 1.97e-04 | ETA 601.0min
+step 1460/11358 (12.9%) | loss 1.7678 | lr 1.97e-04 | ETA 602.8min
+step 1470/11358 (12.9%) | loss 1.9257 | lr 1.97e-04 | ETA 601.5min
+step 1480/11358 (13.0%) | loss 1.7599 | lr 1.96e-04 | ETA 601.1min
+step 1490/11358 (13.1%) | loss 1.7411 | lr 1.96e-04 | ETA 602.7min
+step 1500/11358 (13.2%) | loss 1.7811 | lr 1.96e-04 | ETA 599.5min
+step 1510/11358 (13.3%) | loss 1.6072 | lr 1.96e-04 | ETA 600.6min
+step 1520/11358 (13.4%) | loss 2.0505 | lr 1.96e-04 | ETA 602.9min
+step 1530/11358 (13.5%) | loss 1.9902 | lr 1.96e-04 | ETA 600.6min
+step 1540/11358 (13.6%) | loss 1.7876 | lr 1.96e-04 | ETA 605.5min
+step 1550/11358 (13.6%) | loss 1.8140 | lr 1.96e-04 | ETA 599.9min
+step 1560/11358 (13.7%) | loss 1.6406 | lr 1.96e-04 | ETA 601.1min
+step 1570/11358 (13.8%) | loss 1.9939 | lr 1.96e-04 | ETA 606.8min
+step 1580/11358 (13.9%) | loss 1.9047 | lr 1.96e-04 | ETA 594.8min
+step 1590/11358 (14.0%) | loss 1.8077 | lr 1.96e-04 | ETA 591.6min
+step 1600/11358 (14.1%) | loss 1.8328 | lr 1.96e-04 | ETA 594.3min
+eval loss: 1.8692
+step 1610/11358 (14.2%) | loss 1.9681 | lr 1.95e-04 | ETA 595.8min
+step 1620/11358 (14.3%) | loss 1.9052 | lr 1.95e-04 | ETA 592.3min
+step 1630/11358 (14.4%) | loss 1.9254 | lr 1.95e-04 | ETA 593.8min
+step 1640/11358 (14.4%) | loss 1.8873 | lr 1.95e-04 | ETA 589.6min
+step 1650/11358 (14.5%) | loss 1.7577 | lr 1.95e-04 | ETA 588.6min
+step 1660/11358 (14.6%) | loss 1.8110 | lr 1.95e-04 | ETA 586.5min
+step 1670/11358 (14.7%) | loss 1.8815 | lr 1.95e-04 | ETA 584.2min
+step 1680/11358 (14.8%) | loss 1.9731 | lr 1.95e-04 | ETA 585.2min
+step 1690/11358 (14.9%) | loss 1.9110 | lr 1.95e-04 | ETA 581.8min
+step 1700/11358 (15.0%) | loss 1.8889 | lr 1.95e-04 | ETA 581.1min
+step 1710/11358 (15.1%) | loss 2.0447 | lr 1.95e-04 | ETA 581.9min
+step 1720/11358 (15.1%) | loss 1.9021 | lr 1.94e-04 | ETA 579.7min
+step 1730/11358 (15.2%) | loss 1.9158 | lr 1.94e-04 | ETA 578.9min
+step 1740/11358 (15.3%) | loss 1.9477 | lr 1.94e-04 | ETA 578.7min
+step 1750/11358 (15.4%) | loss 1.7901 | lr 1.94e-04 | ETA 578.1min
+step 1760/11358 (15.5%) | loss 1.9479 | lr 1.94e-04 | ETA 576.1min
+step 1770/11358 (15.6%) | loss 1.7525 | lr 1.94e-04 | ETA 575.8min
+step 1780/11358 (15.7%) | loss 1.8586 | lr 1.94e-04 | ETA 576.6min
+step 1790/11358 (15.8%) | loss 1.9631 | lr 1.94e-04 | ETA 576.0min
+step 1800/11358 (15.8%) | loss 1.9147 | lr 1.94e-04 | ETA 574.8min
+eval loss: 1.8763
+step 1810/11358 (15.9%) | loss 1.8178 | lr 1.94e-04 | ETA 576.2min
+step 1820/11358 (16.0%) | loss 1.9020 | lr 1.93e-04 | ETA 572.8min
+step 1830/11358 (16.1%) | loss 1.9375 | lr 1.93e-04 | ETA 573.2min
+step 1840/11358 (16.2%) | loss 1.9021 | lr 1.93e-04 | ETA 573.2min
+step 1850/11358 (16.3%) | loss 1.7605 | lr 1.93e-04 | ETA 571.8min
+step 1860/11358 (16.4%) | loss 1.8633 | lr 1.93e-04 | ETA 572.7min
+step 1870/11358 (16.5%) | loss 1.8992 | lr 1.93e-04 | ETA 568.8min
+step 1880/11358 (16.6%) | loss 1.8010 | lr 1.93e-04 | ETA 570.7min
+step 1890/11358 (16.6%) | loss 1.9136 | lr 1.93e-04 | ETA 569.0min
+step 1900/11358 (16.7%) | loss 1.9347 | lr 1.93e-04 | ETA 571.3min
+step 1910/11358 (16.8%) | loss 2.1344 | lr 1.92e-04 | ETA 568.2min
+step 1920/11358 (16.9%) | loss 1.9681 | lr 1.92e-04 | ETA 566.5min
+step 1930/11358 (17.0%) | loss 2.0552 | lr 1.92e-04 | ETA 566.9min
+step 1940/11358 (17.1%) | loss 1.9587 | lr 1.92e-04 | ETA 568.6min
+step 1950/11358 (17.2%) | loss 1.9440 | lr 1.92e-04 | ETA 565.3min
+step 1960/11358 (17.3%) | loss 1.8982 | lr 1.92e-04 | ETA 566.5min
+step 1970/11358 (17.3%) | loss 1.8648 | lr 1.92e-04 | ETA 563.6min
+step 1980/11358 (17.4%) | loss 1.9122 | lr 1.92e-04 | ETA 563.4min
+step 1990/11358 (17.5%) | loss 1.8814 | lr 1.92e-04 | ETA 562.8min
+step 2000/11358 (17.6%) | loss 1.9401 | lr 1.91e-04 | ETA 562.3min
+eval loss: 1.8594
+best model saved (loss=1.8594)
+step 2010/11358 (17.7%) | loss 1.8343 | lr 1.91e-04 | ETA 561.3min
+step 2020/11358 (17.8%) | loss 1.7563 | lr 1.91e-04 | ETA 561.0min
+step 2030/11358 (17.9%) | loss 2.0117 | lr 1.91e-04 | ETA 563.0min
+step 2040/11358 (18.0%) | loss 2.0926 | lr 1.91e-04 | ETA 560.2min
+step 2050/11358 (18.0%) | loss 2.1019 | lr 1.91e-04 | ETA 560.9min
+step 2060/11358 (18.1%) | loss 1.8819 | lr 1.91e-04 | ETA 560.1min
+step 2070/11358 (18.2%) | loss 2.0106 | lr 1.91e-04 | ETA 558.9min
+step 2080/11358 (18.3%) | loss 1.8618 | lr 1.90e-04 | ETA 558.0min
+step 2090/11358 (18.4%) | loss 1.8262 | lr 1.90e-04 | ETA 556.8min
+step 2100/11358 (18.5%) | loss 2.0713 | lr 1.90e-04 | ETA 557.8min
+step 2110/11358 (18.6%) | loss 1.8290 | lr 1.90e-04 | ETA 557.5min
+step 2120/11358 (18.7%) | loss 1.6393 | lr 1.90e-04 | ETA 556.9min
+step 2130/11358 (18.8%) | loss 2.0065 | lr 1.90e-04 | ETA 556.1min
+step 2140/11358 (18.8%) | loss 1.9755 | lr 1.90e-04 | ETA 554.7min
+step 2150/11358 (18.9%) | loss 1.8990 | lr 1.90e-04 | ETA 554.6min
+step 2160/11358 (19.0%) | loss 1.7601 | lr 1.89e-04 | ETA 553.3min
+step 2170/11358 (19.1%) | loss 1.9706 | lr 1.89e-04 | ETA 551.6min
+step 2180/11358 (19.2%) | loss 1.8645 | lr 1.89e-04 | ETA 552.5min
+step 2190/11358 (19.3%) | loss 2.0604 | lr 1.89e-04 | ETA 551.8min
+step 2200/11358 (19.4%) | loss 1.9296 | lr 1.89e-04 | ETA 550.7min
+eval loss: 1.8592
+best model saved (loss=1.8592)
+step 2210/11358 (19.5%) | loss 1.9936 | lr 1.89e-04 | ETA 553.5min
+step 2220/11358 (19.5%) | loss 1.7880 | lr 1.89e-04 | ETA 552.9min
+step 2230/11358 (19.6%) | loss 1.8289 | lr 1.89e-04 | ETA 548.8min
+step 2240/11358 (19.7%) | loss 1.9118 | lr 1.88e-04 | ETA 548.1min
+step 2250/11358 (19.8%) | loss 1.8246 | lr 1.88e-04 | ETA 547.3min
+step 2260/11358 (19.9%) | loss 1.9864 | lr 1.88e-04 | ETA 548.5min
+step 2270/11358 (20.0%) | loss 1.7784 | lr 1.88e-04 | ETA 548.3min
+step 2280/11358 (20.1%) | loss 1.7991 | lr 1.88e-04 | ETA 546.8min
+step 2290/11358 (20.2%) | loss 1.7554 | lr 1.88e-04 | ETA 546.3min
+step 2300/11358 (20.3%) | loss 2.0512 | lr 1.88e-04 | ETA 548.1min
+step 2310/11358 (20.3%) | loss 1.8164 | lr 1.87e-04 | ETA 559.0min
+step 2320/11358 (20.4%) | loss 1.7351 | lr 1.87e-04 | ETA 557.3min
+step 2330/11358 (20.5%) | loss 1.7456 | lr 1.87e-04 | ETA 556.4min
+step 2340/11358 (20.6%) | loss 1.8970 | lr 1.87e-04 | ETA 558.6min
+step 2350/11358 (20.7%) | loss 1.8808 | lr 1.87e-04 | ETA 552.6min
+step 2360/11358 (20.8%) | loss 1.9884 | lr 1.87e-04 | ETA 550.2min
+step 2370/11358 (20.9%) | loss 1.8158 | lr 1.87e-04 | ETA 545.6min
+step 2380/11358 (21.0%) | loss 1.8182 | lr 1.86e-04 | ETA 546.6min
+step 2390/11358 (21.0%) | loss 1.8810 | lr 1.86e-04 | ETA 544.3min
+step 2400/11358 (21.1%) | loss 1.8675 | lr 1.86e-04 | ETA 543.9min
+eval loss: 1.8554
+best model saved (loss=1.8554)
+step 2410/11358 (21.2%) | loss 2.0942 | lr 1.86e-04 | ETA 546.8min
+step 2420/11358 (21.3%) | loss 2.1613 | lr 1.86e-04 | ETA 545.5min
+step 2430/11358 (21.4%) | loss 1.6963 | lr 1.86e-04 | ETA 545.3min
+step 2440/11358 (21.5%) | loss 1.7501 | lr 1.85e-04 | ETA 543.0min
+step 2450/11358 (21.6%) | loss 1.9738 | lr 1.85e-04 | ETA 541.8min
+step 2460/11358 (21.7%) | loss 1.9227 | lr 1.85e-04 | ETA 540.4min
+step 2470/11358 (21.7%) | loss 1.9074 | lr 1.85e-04 | ETA 541.7min
+step 2480/11358 (21.8%) | loss 1.8539 | lr 1.85e-04 | ETA 540.7min
+step 2490/11358 (21.9%) | loss 1.8754 | lr 1.85e-04 | ETA 541.8min
+step 2500/11358 (22.0%) | loss 1.9023 | lr 1.85e-04 | ETA 538.1min
+step 2510/11358 (22.1%) | loss 1.8393 | lr 1.84e-04 | ETA 538.3min
+step 2520/11358 (22.2%) | loss 1.7248 | lr 1.84e-04 | ETA 538.4min
+step 2530/11358 (22.3%) | loss 1.9208 | lr 1.84e-04 | ETA 541.7min
+step 2540/11358 (22.4%) | loss 1.9772 | lr 1.84e-04 | ETA 539.0min
+step 2550/11358 (22.5%) | loss 1.8596 | lr 1.84e-04 | ETA 538.1min
+step 2560/11358 (22.5%) | loss 1.9009 | lr 1.84e-04 | ETA 536.2min
+step 2570/11358 (22.6%) | loss 1.9286 | lr 1.83e-04 | ETA 534.7min
+step 2580/11358 (22.7%) | loss 2.0306 | lr 1.83e-04 | ETA 533.5min
+step 2590/11358 (22.8%) | loss 1.8935 | lr 1.83e-04 | ETA 533.3min
+step 2600/11358 (22.9%) | loss 1.8236 | lr 1.83e-04 | ETA 533.5min
+eval loss: 1.8551
+best model saved (loss=1.8551)
+step 2610/11358 (23.0%) | loss 1.9427 | lr 1.83e-04 | ETA 533.7min
+step 2620/11358 (23.1%) | loss 1.7728 | lr 1.83e-04 | ETA 531.8min
+step 2630/11358 (23.2%) | loss 1.7960 | lr 1.82e-04 | ETA 529.8min
+step 2640/11358 (23.2%) | loss 2.0509 | lr 1.82e-04 | ETA 529.3min
+step 2650/11358 (23.3%) | loss 1.8689 | lr 1.82e-04 | ETA 532.2min
+step 2660/11358 (23.4%) | loss 1.7831 | lr 1.82e-04 | ETA 531.5min
+step 2670/11358 (23.5%) | loss 1.8694 | lr 1.82e-04 | ETA 530.8min
+step 2680/11358 (23.6%) | loss 1.9400 | lr 1.82e-04 | ETA 529.2min
+step 2690/11358 (23.7%) | loss 1.9189 | lr 1.81e-04 | ETA 528.7min
+step 2700/11358 (23.8%) | loss 1.9529 | lr 1.81e-04 | ETA 528.1min
+step 2710/11358 (23.9%) | loss 1.8154 | lr 1.81e-04 | ETA 526.4min
+step 2720/11358 (23.9%) | loss 1.9432 | lr 1.81e-04 | ETA 526.7min
+step 2730/11358 (24.0%) | loss 1.8725 | lr 1.81e-04 | ETA 523.4min
+step 2740/11358 (24.1%) | loss 1.8852 | lr 1.81e-04 | ETA 526.4min
+step 2750/11358 (24.2%) | loss 1.8878 | lr 1.80e-04 | ETA 522.6min
+step 2760/11358 (24.3%) | loss 1.9313 | lr 1.80e-04 | ETA 523.4min
+step 2770/11358 (24.4%) | loss 2.0158 | lr 1.80e-04 | ETA 523.7min
+step 2780/11358 (24.5%) | loss 2.0248 | lr 1.80e-04 | ETA 521.6min
+step 2790/11358 (24.6%) | loss 1.7865 | lr 1.80e-04 | ETA 521.6min
+step 2800/11358 (24.7%) | loss 1.8120 | lr 1.80e-04 | ETA 520.9min
+eval loss: 1.8556
+step 2810/11358 (24.7%) | loss 1.6291 | lr 1.79e-04 | ETA 520.6min
+step 2820/11358 (24.8%) | loss 1.8771 | lr 1.79e-04 | ETA 519.7min
+step 2830/11358 (24.9%) | loss 1.8572 | lr 1.79e-04 | ETA 522.3min
+step 2840/11358 (25.0%) | loss 1.9564 | lr 1.79e-04 | ETA 518.9min
+step 2850/11358 (25.1%) | loss 1.8045 | lr 1.79e-04 | ETA 520.9min
+step 2860/11358 (25.2%) | loss 1.8710 | lr 1.79e-04 | ETA 516.2min
+step 2870/11358 (25.3%) | loss 1.9643 | lr 1.78e-04 | ETA 515.6min
+step 2880/11358 (25.4%) | loss 1.9554 | lr 1.78e-04 | ETA 516.2min
+step 2890/11358 (25.4%) | loss 2.0736 | lr 1.78e-04 | ETA 517.3min
+step 2900/11358 (25.5%) | loss 1.9408 | lr 1.78e-04 | ETA 514.9min
+step 2910/11358 (25.6%) | loss 1.9266 | lr 1.78e-04 | ETA 513.7min
+step 2920/11358 (25.7%) | loss 1.8220 | lr 1.77e-04 | ETA 513.7min
+step 2930/11358 (25.8%) | loss 1.8946 | lr 1.77e-04 | ETA 513.4min
+step 2940/11358 (25.9%) | loss 1.8500 | lr 1.77e-04 | ETA 511.9min
+step 2950/11358 (26.0%) | loss 1.9457 | lr 1.77e-04 | ETA 512.1min
+step 2960/11358 (26.1%) | loss 1.9029 | lr 1.77e-04 | ETA 509.6min
+step 2970/11358 (26.1%) | loss 1.7267 | lr 1.77e-04 | ETA 510.7min
+step 2980/11358 (26.2%) | loss 1.7302 | lr 1.76e-04 | ETA 510.7min
+step 2990/11358 (26.3%) | loss 1.8761 | lr 1.76e-04 | ETA 510.0min
+step 3000/11358 (26.4%) | loss 1.8388 | lr 1.76e-04 | ETA 511.7min
+eval loss: 1.8502
+best model saved (loss=1.8502)
+step 3010/11358 (26.5%) | loss 1.8718 | lr 1.76e-04 | ETA 508.9min
+step 3020/11358 (26.6%) | loss 1.8544 | lr 1.76e-04 | ETA 508.5min
+step 3030/11358 (26.7%) | loss 2.0392 | lr 1.75e-04 | ETA 507.6min
+step 3040/11358 (26.8%) | loss 1.9167 | lr 1.75e-04 | ETA 506.1min
+step 3050/11358 (26.9%) | loss 1.7086 | lr 1.75e-04 | ETA 507.2min
+step 3060/11358 (26.9%) | loss 1.8913 | lr 1.75e-04 | ETA 505.4min
+step 3070/11358 (27.0%) | loss 1.9147 | lr 1.75e-04 | ETA 505.1min
+step 3080/11358 (27.1%) | loss 2.0024 | lr 1.74e-04 | ETA 505.9min
+step 3090/11358 (27.2%) | loss 1.7930 | lr 1.74e-04 | ETA 504.8min
+step 3100/11358 (27.3%) | loss 1.8576 | lr 1.74e-04 | ETA 503.0min
+step 3110/11358 (27.4%) | loss 1.7686 | lr 1.74e-04 | ETA 500.9min
+step 3120/11358 (27.5%) | loss 1.9388 | lr 1.74e-04 | ETA 502.0min
+step 3130/11358 (27.6%) | loss 1.8018 | lr 1.73e-04 | ETA 501.4min
+step 3140/11358 (27.6%) | loss 1.8350 | lr 1.73e-04 | ETA 500.7min
+step 3150/11358 (27.7%) | loss 1.7920 | lr 1.73e-04 | ETA 501.0min
+step 3160/11358 (27.8%) | loss 1.8577 | lr 1.73e-04 | ETA 499.8min
+step 3170/11358 (27.9%) | loss 1.8239 | lr 1.73e-04 | ETA 498.6min
+step 3180/11358 (28.0%) | loss 1.9336 | lr 1.72e-04 | ETA 497.8min
+step 3190/11358 (28.1%) | loss 1.8658 | lr 1.72e-04 | ETA 498.1min
+step 3200/11358 (28.2%) | loss 1.8200 | lr 1.72e-04 | ETA 498.8min
+eval loss: 1.8528
+step 3210/11358 (28.3%) | loss 1.8464 | lr 1.72e-04 | ETA 498.5min
+step 3220/11358 (28.4%) | loss 1.8653 | lr 1.72e-04 | ETA 494.6min
+step 3230/11358 (28.4%) | loss 1.7670 | lr 1.71e-04 | ETA 495.7min
+step 3240/11358 (28.5%) | loss 1.6984 | lr 1.71e-04 | ETA 496.7min
+step 3250/11358 (28.6%) | loss 1.9491 | lr 1.71e-04 | ETA 494.0min
+step 3260/11358 (28.7%) | loss 1.8005 | lr 1.71e-04 | ETA 492.0min
+step 3270/11358 (28.8%) | loss 1.6899 | lr 1.71e-04 | ETA 493.9min
+step 3280/11358 (28.9%) | loss 1.9774 | lr 1.70e-04 | ETA 493.0min
+step 3290/11358 (29.0%) | loss 1.8457 | lr 1.70e-04 | ETA 490.7min
+step 3300/11358 (29.1%) | loss 1.8543 | lr 1.70e-04 | ETA 492.3min
+step 3310/11358 (29.1%) | loss 1.8131 | lr 1.70e-04 | ETA 491.5min
+step 3320/11358 (29.2%) | loss 1.7785 | lr 1.70e-04 | ETA 489.9min
+step 3330/11358 (29.3%) | loss 1.8724 | lr 1.69e-04 | ETA 489.6min
+step 3340/11358 (29.4%) | loss 1.9041 | lr 1.69e-04 | ETA 486.3min
+step 3350/11358 (29.5%) | loss 1.9484 | lr 1.69e-04 | ETA 486.1min
+step 3360/11358 (29.6%) | loss 1.7179 | lr 1.69e-04 | ETA 488.5min
+step 3370/11358 (29.7%) | loss 1.8086 | lr 1.69e-04 | ETA 486.3min
+step 3380/11358 (29.8%) | loss 1.7582 | lr 1.68e-04 | ETA 485.9min
+step 3390/11358 (29.8%) | loss 1.7926 | lr 1.68e-04 | ETA 486.4min
+step 3400/11358 (29.9%) | loss 2.0621 | lr 1.68e-04 | ETA 485.6min
+eval loss: 1.8592
+step 3410/11358 (30.0%) | loss 1.9802 | lr 1.68e-04 | ETA 484.8min
+step 3420/11358 (30.1%) | loss 1.8063 | lr 1.67e-04 | ETA 483.9min
+step 3430/11358 (30.2%) | loss 1.7396 | lr 1.67e-04 | ETA 482.5min
+step 3440/11358 (30.3%) | loss 1.8075 | lr 1.67e-04 | ETA 481.7min
+step 3450/11358 (30.4%) | loss 1.8336 | lr 1.67e-04 | ETA 481.8min
+step 3460/11358 (30.5%) | loss 1.6518 | lr 1.67e-04 | ETA 480.8min
+step 3470/11358 (30.6%) | loss 2.1110 | lr 1.66e-04 | ETA 480.9min
+step 3480/11358 (30.6%) | loss 1.8600 | lr 1.66e-04 | ETA 477.9min
+step 3490/11358 (30.7%) | loss 1.6831 | lr 1.66e-04 | ETA 480.9min
+step 3500/11358 (30.8%) | loss 1.8217 | lr 1.66e-04 | ETA 475.0min
+step 3510/11358 (30.9%) | loss 1.6739 | lr 1.65e-04 | ETA 479.8min
+step 3520/11358 (31.0%) | loss 1.9119 | lr 1.65e-04 | ETA 479.4min
+step 3530/11358 (31.1%) | loss 1.7633 | lr 1.65e-04 | ETA 479.1min
+step 3540/11358 (31.2%) | loss 1.9982 | lr 1.65e-04 | ETA 477.8min
+step 3550/11358 (31.3%) | loss 1.7626 | lr 1.65e-04 | ETA 476.6min
+step 3560/11358 (31.3%) | loss 1.8132 | lr 1.64e-04 | ETA 473.2min
+step 3570/11358 (31.4%) | loss 1.8221 | lr 1.64e-04 | ETA 473.4min
+step 3580/11358 (31.5%) | loss 1.8956 | lr 1.64e-04 | ETA 472.4min
+step 3590/11358 (31.6%) | loss 1.9468 | lr 1.64e-04 | ETA 472.8min
+step 3600/11358 (31.7%) | loss 1.7719 | lr 1.63e-04 | ETA 472.7min
+eval loss: 1.8426
+best model saved (loss=1.8426)
+step 3610/11358 (31.8%) | loss 1.8628 | lr 1.63e-04 | ETA 473.3min
+step 3620/11358 (31.9%) | loss 1.7525 | lr 1.63e-04 | ETA 471.9min
+step 3630/11358 (32.0%) | loss 1.8257 | lr 1.63e-04 | ETA 471.5min
+step 3640/11358 (32.0%) | loss 1.9057 | lr 1.63e-04 | ETA 471.0min
+step 3650/11358 (32.1%) | loss 1.8943 | lr 1.62e-04 | ETA 468.9min
+step 3660/11358 (32.2%) | loss 1.8467 | lr 1.62e-04 | ETA 468.6min
+step 3670/11358 (32.3%) | loss 1.8483 | lr 1.62e-04 | ETA 470.1min
+step 3680/11358 (32.4%) | loss 1.9097 | lr 1.62e-04 | ETA 468.1min
+step 3690/11358 (32.5%) | loss 1.7645 | lr 1.61e-04 | ETA 466.9min
+step 3700/11358 (32.6%) | loss 1.9556 | lr 1.61e-04 | ETA 466.9min
+step 3710/11358 (32.7%) | loss 1.8138 | lr 1.61e-04 | ETA 464.6min
+step 3720/11358 (32.8%) | loss 1.7874 | lr 1.61e-04 | ETA 463.4min
+step 3730/11358 (32.8%) | loss 1.8711 | lr 1.61e-04 | ETA 464.8min
+step 3740/11358 (32.9%) | loss 1.9934 | lr 1.60e-04 | ETA 463.4min
+step 3750/11358 (33.0%) | loss 1.8020 | lr 1.60e-04 | ETA 462.1min
+step 3760/11358 (33.1%) | loss 1.8790 | lr 1.60e-04 | ETA 463.5min
+step 3770/11358 (33.2%) | loss 1.8781 | lr 1.60e-04 | ETA 461.6min
+step 3780/11358 (33.3%) | loss 1.8538 | lr 1.59e-04 | ETA 461.8min
+
+=== Epoch 2/3 ===
+step 3790/11358 (33.4%) | loss 1.8579 | lr 1.59e-04 | ETA 438.9min
+step 3800/11358 (33.5%) | loss 1.7020 | lr 1.59e-04 | ETA 460.1min
+eval loss: 1.8438
+step 3810/11358 (33.5%) | loss 1.6364 | lr 1.59e-04 | ETA 459.7min
+step 3820/11358 (33.6%) | loss 1.6508 | lr 1.58e-04 | ETA 460.6min
+step 3830/11358 (33.7%) | loss 1.6638 | lr 1.58e-04 | ETA 459.3min
+step 3840/11358 (33.8%) | loss 1.6804 | lr 1.58e-04 | ETA 458.1min
+step 3850/11358 (33.9%) | loss 1.6683 | lr 1.58e-04 | ETA 457.2min
+step 3860/11358 (34.0%) | loss 1.6231 | lr 1.57e-04 | ETA 457.6min
+step 3870/11358 (34.1%) | loss 1.6491 | lr 1.57e-04 | ETA 456.8min
+step 3880/11358 (34.2%) | loss 1.5777 | lr 1.57e-04 | ETA 455.2min
+step 3890/11358 (34.2%) | loss 1.6039 | lr 1.57e-04 | ETA 455.3min
+step 3900/11358 (34.3%) | loss 1.6395 | lr 1.57e-04 | ETA 453.5min
+step 3910/11358 (34.4%) | loss 1.5206 | lr 1.56e-04 | ETA 452.6min
+step 3920/11358 (34.5%) | loss 1.6021 | lr 1.56e-04 | ETA 452.8min
+step 3930/11358 (34.6%) | loss 1.5780 | lr 1.56e-04 | ETA 452.3min
+step 3940/11358 (34.7%) | loss 1.7494 | lr 1.56e-04 | ETA 452.9min
+step 3950/11358 (34.8%) | loss 1.6510 | lr 1.55e-04 | ETA 453.8min
+step 3960/11358 (34.9%) | loss 1.7715 | lr 1.55e-04 | ETA 450.0min
+step 3970/11358 (35.0%) | loss 1.6890 | lr 1.55e-04 | ETA 444.9min
+step 3980/11358 (35.0%) | loss 1.6051 | lr 1.55e-04 | ETA 448.6min
+step 3990/11358 (35.1%) | loss 1.5689 | lr 1.54e-04 | ETA 449.2min
+step 4000/11358 (35.2%) | loss 1.7201 | lr 1.54e-04 | ETA 451.9min
+eval loss: 1.8569
+step 4010/11358 (35.3%) | loss 1.7850 | lr 1.54e-04 | ETA 448.6min
+step 4020/11358 (35.4%) | loss 1.7096 | lr 1.54e-04 | ETA 448.9min
+step 4030/11358 (35.5%) | loss 1.5711 | lr 1.53e-04 | ETA 445.6min
+step 4040/11358 (35.6%) | loss 1.6010 | lr 1.53e-04 | ETA 443.6min
+step 4050/11358 (35.7%) | loss 1.6823 | lr 1.53e-04 | ETA 443.9min
+step 4060/11358 (35.7%) | loss 1.6565 | lr 1.53e-04 | ETA 445.6min
+step 4070/11358 (35.8%) | loss 1.5433 | lr 1.52e-04 | ETA 442.9min
+step 4080/11358 (35.9%) | loss 1.6167 | lr 1.52e-04 | ETA 444.5min
+step 4090/11358 (36.0%) | loss 1.3467 | lr 1.52e-04 | ETA 442.2min
+step 4100/11358 (36.1%) | loss 1.6499 | lr 1.52e-04 | ETA 439.9min
+step 4110/11358 (36.2%) | loss 1.6051 | lr 1.51e-04 | ETA 441.4min
+step 4120/11358 (36.3%) | loss 1.4195 | lr 1.51e-04 | ETA 438.1min
+step 4130/11358 (36.4%) | loss 1.6689 | lr 1.51e-04 | ETA 438.5min
+step 4140/11358 (36.5%) | loss 1.6620 | lr 1.51e-04 | ETA 440.2min
+step 4150/11358 (36.5%) | loss 1.6471 | lr 1.50e-04 | ETA 438.4min
+step 4160/11358 (36.6%) | loss 1.4680 | lr 1.50e-04 | ETA 437.5min
+step 4170/11358 (36.7%) | loss 1.5662 | lr 1.50e-04 | ETA 438.5min
+step 4180/11358 (36.8%) | loss 1.5361 | lr 1.50e-04 | ETA 437.7min
+step 4190/11358 (36.9%) | loss 1.6291 | lr 1.49e-04 | ETA 434.6min
+step 4200/11358 (37.0%) | loss 1.6422 | lr 1.49e-04 | ETA 435.5min
+eval loss: 1.8540
+step 4210/11358 (37.1%) | loss 1.6437 | lr 1.49e-04 | ETA 434.7min
+step 4220/11358 (37.2%) | loss 1.7831 | lr 1.49e-04 | ETA 433.7min
+step 4230/11358 (37.2%) | loss 1.6965 | lr 1.48e-04 | ETA 433.5min
+step 4240/11358 (37.3%) | loss 1.5662 | lr 1.48e-04 | ETA 433.3min
+step 4250/11358 (37.4%) | loss 1.6135 | lr 1.48e-04 | ETA 433.1min
+step 4260/11358 (37.5%) | loss 1.6076 | lr 1.48e-04 | ETA 431.9min
+step 4270/11358 (37.6%) | loss 1.6789 | lr 1.47e-04 | ETA 431.7min
+step 4280/11358 (37.7%) | loss 1.5910 | lr 1.47e-04 | ETA 430.1min
+step 4290/11358 (37.8%) | loss 1.6353 | lr 1.47e-04 | ETA 430.8min
+step 4300/11358 (37.9%) | loss 1.6789 | lr 1.47e-04 | ETA 430.2min
+step 4310/11358 (37.9%) | loss 1.8070 | lr 1.46e-04 | ETA 428.4min
+step 4320/11358 (38.0%) | loss 1.4264 | lr 1.46e-04 | ETA 428.1min
+step 4330/11358 (38.1%) | loss 1.6171 | lr 1.46e-04 | ETA 428.3min
+step 4340/11358 (38.2%) | loss 1.5117 | lr 1.45e-04 | ETA 428.2min
+step 4350/11358 (38.3%) | loss 1.5458 | lr 1.45e-04 | ETA 426.6min
+step 4360/11358 (38.4%) | loss 1.5475 | lr 1.45e-04 | ETA 424.7min
+step 4370/11358 (38.5%) | loss 1.7691 | lr 1.45e-04 | ETA 425.3min
+step 4380/11358 (38.6%) | loss 1.6377 | lr 1.44e-04 | ETA 424.4min
+step 4390/11358 (38.7%) | loss 1.6060 | lr 1.44e-04 | ETA 423.9min
+step 4400/11358 (38.7%) | loss 1.6023 | lr 1.44e-04 | ETA 424.3min
+eval loss: 1.8824
+step 4410/11358 (38.8%) | loss 1.6455 | lr 1.44e-04 | ETA 422.5min
+step 4420/11358 (38.9%) | loss 1.7161 | lr 1.43e-04 | ETA 421.8min
+step 4430/11358 (39.0%) | loss 1.6841 | lr 1.43e-04 | ETA 421.7min
+step 4440/11358 (39.1%) | loss 1.4565 | lr 1.43e-04 | ETA 421.2min
+step 4450/11358 (39.2%) | loss 1.8251 | lr 1.43e-04 | ETA 421.7min
+step 4460/11358 (39.3%) | loss 1.6154 | lr 1.42e-04 | ETA 422.3min
+step 4470/11358 (39.4%) | loss 1.5663 | lr 1.42e-04 | ETA 422.1min
+step 4480/11358 (39.4%) | loss 1.6378 | lr 1.42e-04 | ETA 418.7min
+step 4490/11358 (39.5%) | loss 1.6191 | lr 1.42e-04 | ETA 417.5min
+step 4500/11358 (39.6%) | loss 1.6168 | lr 1.41e-04 | ETA 423.5min
+step 4510/11358 (39.7%) | loss 1.6892 | lr 1.41e-04 | ETA 425.3min
+step 4520/11358 (39.8%) | loss 1.5620 | lr 1.41e-04 | ETA 426.1min
+step 4530/11358 (39.9%) | loss 1.6430 | lr 1.41e-04 | ETA 424.5min
+step 4540/11358 (40.0%) | loss 1.6213 | lr 1.40e-04 | ETA 427.4min
+step 4550/11358 (40.1%) | loss 1.5085 | lr 1.40e-04 | ETA 426.2min
+step 4560/11358 (40.1%) | loss 1.5578 | lr 1.40e-04 | ETA 422.7min
+step 4570/11358 (40.2%) | loss 1.6934 | lr 1.39e-04 | ETA 417.6min
+step 4580/11358 (40.3%) | loss 1.6276 | lr 1.39e-04 | ETA 417.4min
+step 4590/11358 (40.4%) | loss 1.6784 | lr 1.39e-04 | ETA 417.0min
+step 4600/11358 (40.5%) | loss 1.6773 | lr 1.39e-04 | ETA 411.9min
+eval loss: 1.8652
+step 4610/11358 (40.6%) | loss 1.6631 | lr 1.38e-04 | ETA 412.4min
+step 4620/11358 (40.7%) | loss 1.7861 | lr 1.38e-04 | ETA 410.6min
+step 4630/11358 (40.8%) | loss 1.5369 | lr 1.38e-04 | ETA 409.8min
+step 4640/11358 (40.9%) | loss 1.7234 | lr 1.38e-04 | ETA 447.2min
+step 4650/11358 (40.9%) | loss 1.8166 | lr 1.37e-04 | ETA 467.9min
+step 4660/11358 (41.0%) | loss 1.4859 | lr 1.37e-04 | ETA 466.3min
+step 4670/11358 (41.1%) | loss 1.6445 | lr 1.37e-04 | ETA 462.4min
+step 4680/11358 (41.2%) | loss 1.6581 | lr 1.36e-04 | ETA 448.4min
+step 4690/11358 (41.3%) | loss 1.5320 | lr 1.36e-04 | ETA 456.2min
+step 4700/11358 (41.4%) | loss 1.5110 | lr 1.36e-04 | ETA 441.8min
+step 4710/11358 (41.5%) | loss 1.7548 | lr 1.36e-04 | ETA 441.8min
+step 4720/11358 (41.6%) | loss 1.5767 | lr 1.35e-04 | ETA 441.3min
+step 4730/11358 (41.6%) | loss 1.6266 | lr 1.35e-04 | ETA 439.3min
+step 4740/11358 (41.7%) | loss 1.5125 | lr 1.35e-04 | ETA 438.3min
+step 4750/11358 (41.8%) | loss 1.5828 | lr 1.35e-04 | ETA 442.3min
+step 4760/11358 (41.9%) | loss 1.4661 | lr 1.34e-04 | ETA 436.9min
+step 4770/11358 (42.0%) | loss 1.5380 | lr 1.34e-04 | ETA 450.0min
+step 4780/11358 (42.1%) | loss 1.7186 | lr 1.34e-04 | ETA 462.9min
+step 4790/11358 (42.2%) | loss 1.5249 | lr 1.33e-04 | ETA 437.0min
+step 4800/11358 (42.3%) | loss 1.6686 | lr 1.33e-04 | ETA 458.3min
+eval loss: 1.8776
+step 4810/11358 (42.3%) | loss 1.6488 | lr 1.33e-04 | ETA 442.3min
+step 4820/11358 (42.4%) | loss 1.6449 | lr 1.33e-04 | ETA 398.2min
+step 4830/11358 (42.5%) | loss 1.4568 | lr 1.32e-04 | ETA 397.8min
+step 4840/11358 (42.6%) | loss 1.4958 | lr 1.32e-04 | ETA 399.1min
+step 4850/11358 (42.7%) | loss 1.5699 | lr 1.32e-04 | ETA 399.5min
+step 4860/11358 (42.8%) | loss 1.5975 | lr 1.32e-04 | ETA 400.3min
+step 4870/11358 (42.9%) | loss 1.7021 | lr 1.31e-04 | ETA 399.9min
+step 4880/11358 (43.0%) | loss 1.7677 | lr 1.31e-04 | ETA 403.4min
+step 4890/11358 (43.1%) | loss 1.7609 | lr 1.31e-04 | ETA 396.8min
+step 4900/11358 (43.1%) | loss 1.5618 | lr 1.30e-04 | ETA 395.5min
+step 4910/11358 (43.2%) | loss 1.5157 | lr 1.30e-04 | ETA 395.3min
+step 4920/11358 (43.3%) | loss 1.7484 | lr 1.30e-04 | ETA 395.5min
+step 4930/11358 (43.4%) | loss 1.5153 | lr 1.30e-04 | ETA 397.9min
+step 4940/11358 (43.5%) | loss 1.6796 | lr 1.29e-04 | ETA 393.8min
+step 4950/11358 (43.6%) | loss 1.5270 | lr 1.29e-04 | ETA 392.8min
+step 4960/11358 (43.7%) | loss 1.6905 | lr 1.29e-04 | ETA 392.6min
+step 4970/11358 (43.8%) | loss 1.5908 | lr 1.28e-04 | ETA 391.0min
+step 4980/11358 (43.8%) | loss 1.7242 | lr 1.28e-04 | ETA 389.7min
+step 4990/11358 (43.9%) | loss 1.5612 | lr 1.28e-04 | ETA 390.4min
+step 5000/11358 (44.0%) | loss 1.5486 | lr 1.28e-04 | ETA 388.8min
+eval loss: 1.8716
+step 5010/11358 (44.1%) | loss 1.6752 | lr 1.27e-04 | ETA 386.4min
+step 5020/11358 (44.2%) | loss 1.5289 | lr 1.27e-04 | ETA 386.3min
+step 5030/11358 (44.3%) | loss 1.5695 | lr 1.27e-04 | ETA 386.7min
+step 5040/11358 (44.4%) | loss 1.4785 | lr 1.27e-04 | ETA 386.6min
+step 5050/11358 (44.5%) | loss 1.6671 | lr 1.26e-04 | ETA 384.9min
+step 5060/11358 (44.6%) | loss 1.5459 | lr 1.26e-04 | ETA 387.5min
+step 5070/11358 (44.6%) | loss 1.5695 | lr 1.26e-04 | ETA 385.3min
+step 5080/11358 (44.7%) | loss 1.6583 | lr 1.25e-04 | ETA 382.8min
+step 5090/11358 (44.8%) | loss 1.7291 | lr 1.25e-04 | ETA 383.1min
+step 5100/11358 (44.9%) | loss 1.7060 | lr 1.25e-04 | ETA 381.8min
+step 5110/11358 (45.0%) | loss 1.6234 | lr 1.25e-04 | ETA 380.6min
+step 5120/11358 (45.1%) | loss 1.6519 | lr 1.24e-04 | ETA 380.9min
+step 5130/11358 (45.2%) | loss 1.7242 | lr 1.24e-04 | ETA 378.9min
+step 5140/11358 (45.3%) | loss 1.4890 | lr 1.24e-04 | ETA 378.8min
+step 5150/11358 (45.3%) | loss 1.5344 | lr 1.23e-04 | ETA 378.9min
+step 5160/11358 (45.4%) | loss 1.6207 | lr 1.23e-04 | ETA 377.4min
+step 5170/11358 (45.5%) | loss 1.4972 | lr 1.23e-04 | ETA 377.7min
+step 5180/11358 (45.6%) | loss 1.6524 | lr 1.23e-04 | ETA 377.4min
+step 5190/11358 (45.7%) | loss 1.5769 | lr 1.22e-04 | ETA 376.7min
+step 5200/11358 (45.8%) | loss 1.5805 | lr 1.22e-04 | ETA 376.5min
+eval loss: 1.8709
+step 5210/11358 (45.9%) | loss 1.6227 | lr 1.22e-04 | ETA 375.0min
+step 5220/11358 (46.0%) | loss 1.5884 | lr 1.21e-04 | ETA 374.3min
+step 5230/11358 (46.0%) | loss 1.6319 | lr 1.21e-04 | ETA 374.6min
+step 5240/11358 (46.1%) | loss 1.7139 | lr 1.21e-04 | ETA 373.7min
+step 5250/11358 (46.2%) | loss 1.6106 | lr 1.21e-04 | ETA 371.9min
+step 5260/11358 (46.3%) | loss 1.6689 | lr 1.20e-04 | ETA 373.4min
+step 5270/11358 (46.4%) | loss 1.6856 | lr 1.20e-04 | ETA 372.1min
+step 5280/11358 (46.5%) | loss 1.6401 | lr 1.20e-04 | ETA 371.7min
+step 5290/11358 (46.6%) | loss 1.5621 | lr 1.19e-04 | ETA 372.0min
+step 5300/11358 (46.7%) | loss 1.6074 | lr 1.19e-04 | ETA 368.6min
+step 5310/11358 (46.8%) | loss 1.7519 | lr 1.19e-04 | ETA 371.5min
+step 5320/11358 (46.8%) | loss 1.6913 | lr 1.19e-04 | ETA 368.3min
+step 5330/11358 (46.9%) | loss 1.5299 | lr 1.18e-04 | ETA 370.0min
+step 5340/11358 (47.0%) | loss 1.6696 | lr 1.18e-04 | ETA 367.3min
+step 5350/11358 (47.1%) | loss 1.6392 | lr 1.18e-04 | ETA 366.4min
+step 5360/11358 (47.2%) | loss 1.7355 | lr 1.17e-04 | ETA 367.3min
+step 5370/11358 (47.3%) | loss 1.6235 | lr 1.17e-04 | ETA 365.8min
+step 5380/11358 (47.4%) | loss 1.7584 | lr 1.17e-04 | ETA 366.3min
+step 5390/11358 (47.5%) | loss 1.6374 | lr 1.17e-04 | ETA 365.5min
+step 5400/11358 (47.5%) | loss 1.5329 | lr 1.16e-04 | ETA 365.1min
+eval loss: 1.8573
+step 5410/11358 (47.6%) | loss 1.7140 | lr 1.16e-04 | ETA 365.4min
+step 5420/11358 (47.7%) | loss 1.6852 | lr 1.16e-04 | ETA 365.5min
+step 5430/11358 (47.8%) | loss 1.6063 | lr 1.15e-04 | ETA 367.0min
+step 5440/11358 (47.9%) | loss 1.5797 | lr 1.15e-04 | ETA 362.3min
+step 5450/11358 (48.0%) | loss 1.6817 | lr 1.15e-04 | ETA 361.6min
+step 5460/11358 (48.1%) | loss 1.5344 | lr 1.15e-04 | ETA 359.4min
+step 5470/11358 (48.2%) | loss 1.5716 | lr 1.14e-04 | ETA 362.9min
+step 5480/11358 (48.2%) | loss 1.6515 | lr 1.14e-04 | ETA 359.9min
+step 5490/11358 (48.3%) | loss 1.6929 | lr 1.14e-04 | ETA 363.9min
+step 5500/11358 (48.4%) | loss 1.6257 | lr 1.13e-04 | ETA 359.1min
+step 5510/11358 (48.5%) | loss 1.6844 | lr 1.13e-04 | ETA 357.8min
+step 5520/11358 (48.6%) | loss 1.5591 | lr 1.13e-04 | ETA 356.1min
+step 5530/11358 (48.7%) | loss 1.6957 | lr 1.13e-04 | ETA 356.0min
+step 5540/11358 (48.8%) | loss 1.6281 | lr 1.12e-04 | ETA 354.6min
+step 5550/11358 (48.9%) | loss 1.6447 | lr 1.12e-04 | ETA 355.7min
+step 5560/11358 (49.0%) | loss 1.5294 | lr 1.12e-04 | ETA 353.8min
+step 5570/11358 (49.0%) | loss 1.6135 | lr 1.11e-04 | ETA 353.2min
+step 5580/11358 (49.1%) | loss 1.6177 | lr 1.11e-04 | ETA 353.3min
+step 5590/11358 (49.2%) | loss 1.5095 | lr 1.11e-04 | ETA 353.8min
+step 5600/11358 (49.3%) | loss 1.5335 | lr 1.11e-04 | ETA 351.6min
+eval loss: 1.8540
+step 5610/11358 (49.4%) | loss 1.6771 | lr 1.10e-04 | ETA 355.1min
+step 5620/11358 (49.5%) | loss 1.5330 | lr 1.10e-04 | ETA 350.4min
+step 5630/11358 (49.6%) | loss 1.6209 | lr 1.10e-04 | ETA 350.0min
+step 5640/11358 (49.7%) | loss 1.6668 | lr 1.09e-04 | ETA 349.4min
+step 5650/11358 (49.7%) | loss 1.6216 | lr 1.09e-04 | ETA 349.4min
+step 5660/11358 (49.8%) | loss 1.4797 | lr 1.09e-04 | ETA 349.5min
+step 5670/11358 (49.9%) | loss 1.7382 | lr 1.09e-04 | ETA 347.2min
+step 5680/11358 (50.0%) | loss 1.7028 | lr 1.08e-04 | ETA 346.9min
+step 5690/11358 (50.1%) | loss 1.6397 | lr 1.08e-04 | ETA 346.9min
+step 5700/11358 (50.2%) | loss 1.5361 | lr 1.08e-04 | ETA 345.6min
+step 5710/11358 (50.3%) | loss 1.5999 | lr 1.07e-04 | ETA 345.8min
+step 5720/11358 (50.4%) | loss 1.7037 | lr 1.07e-04 | ETA 345.1min
+step 5730/11358 (50.4%) | loss 1.6539 | lr 1.07e-04 | ETA 343.5min
+step 5740/11358 (50.5%) | loss 1.5614 | lr 1.06e-04 | ETA 344.3min
+step 5750/11358 (50.6%) | loss 1.6088 | lr 1.06e-04 | ETA 343.6min
+step 5760/11358 (50.7%) | loss 1.7060 | lr 1.06e-04 | ETA 344.4min
+step 5770/11358 (50.8%) | loss 1.7285 | lr 1.06e-04 | ETA 349.0min
+step 5780/11358 (50.9%) | loss 1.5771 | lr 1.05e-04 | ETA 342.2min
+step 5790/11358 (51.0%) | loss 1.6103 | lr 1.05e-04 | ETA 339.5min
+step 5800/11358 (51.1%) | loss 1.5317 | lr 1.05e-04 | ETA 340.2min
+eval loss: 1.8580
+step 5810/11358 (51.2%) | loss 1.5863 | lr 1.04e-04 | ETA 339.5min
+step 5820/11358 (51.2%) | loss 1.5868 | lr 1.04e-04 | ETA 337.9min
+step 5830/11358 (51.3%) | loss 1.6897 | lr 1.04e-04 | ETA 338.3min
+step 5840/11358 (51.4%) | loss 1.6050 | lr 1.04e-04 | ETA 336.6min
+step 5850/11358 (51.5%) | loss 1.3930 | lr 1.03e-04 | ETA 337.0min
+step 5860/11358 (51.6%) | loss 1.6186 | lr 1.03e-04 | ETA 336.8min
+step 5870/11358 (51.7%) | loss 1.6352 | lr 1.03e-04 | ETA 336.2min
+step 5880/11358 (51.8%) | loss 1.5852 | lr 1.02e-04 | ETA 335.7min
+step 5890/11358 (51.9%) | loss 1.4761 | lr 1.02e-04 | ETA 334.6min
+step 5900/11358 (51.9%) | loss 1.6610 | lr 1.02e-04 | ETA 334.0min
+step 5910/11358 (52.0%) | loss 1.6393 | lr 1.02e-04 | ETA 334.3min
+step 5920/11358 (52.1%) | loss 1.5812 | lr 1.01e-04 | ETA 332.3min
+step 5930/11358 (52.2%) | loss 1.6928 | lr 1.01e-04 | ETA 331.2min
+step 5940/11358 (52.3%) | loss 1.6995 | lr 1.01e-04 | ETA 333.9min
+step 5950/11358 (52.4%) | loss 1.6011 | lr 1.00e-04 | ETA 335.6min
+step 5960/11358 (52.5%) | loss 1.6244 | lr 1.00e-04 | ETA 331.1min
+step 5970/11358 (52.6%) | loss 1.7629 | lr 9.98e-05 | ETA 329.5min
+step 5980/11358 (52.7%) | loss 1.6004 | lr 9.95e-05 | ETA 329.9min
+step 5990/11358 (52.7%) | loss 1.8318 | lr 9.92e-05 | ETA 326.6min
+step 6000/11358 (52.8%) | loss 1.6630 | lr 9.89e-05 | ETA 327.6min
+eval loss: 1.8485
+step 6010/11358 (52.9%) | loss 1.6996 | lr 9.86e-05 | ETA 326.8min
+step 6020/11358 (53.0%) | loss 1.6673 | lr 9.83e-05 | ETA 326.1min
+step 6030/11358 (53.1%) | loss 1.5874 | lr 9.80e-05 | ETA 324.2min
+step 6040/11358 (53.2%) | loss 1.7170 | lr 9.77e-05 | ETA 324.0min
+step 6050/11358 (53.3%) | loss 1.7910 | lr 9.75e-05 | ETA 324.6min
+step 6060/11358 (53.4%) | loss 1.7104 | lr 9.72e-05 | ETA 323.3min
+step 6070/11358 (53.4%) | loss 1.6047 | lr 9.69e-05 | ETA 322.2min
+step 6080/11358 (53.5%) | loss 1.5148 | lr 9.66e-05 | ETA 322.5min
+step 6090/11358 (53.6%) | loss 1.5824 | lr 9.63e-05 | ETA 321.9min
+step 6100/11358 (53.7%) | loss 1.6239 | lr 9.60e-05 | ETA 320.7min
+step 6110/11358 (53.8%) | loss 1.6157 | lr 9.57e-05 | ETA 320.3min
+step 6120/11358 (53.9%) | loss 1.7726 | lr 9.54e-05 | ETA 318.8min
+step 6130/11358 (54.0%) | loss 1.5759 | lr 9.51e-05 | ETA 318.8min
+step 6140/11358 (54.1%) | loss 1.4429 | lr 9.48e-05 | ETA 319.2min
+step 6150/11358 (54.1%) | loss 1.8297 | lr 9.45e-05 | ETA 317.2min
+step 6160/11358 (54.2%) | loss 1.7658 | lr 9.43e-05 | ETA 317.8min
+step 6170/11358 (54.3%) | loss 1.7268 | lr 9.40e-05 | ETA 318.2min
+step 6180/11358 (54.4%) | loss 1.6324 | lr 9.37e-05 | ETA 315.3min
+step 6190/11358 (54.5%) | loss 1.6354 | lr 9.34e-05 | ETA 314.5min
+step 6200/11358 (54.6%) | loss 1.6186 | lr 9.31e-05 | ETA 315.0min
+eval loss: 1.8505
+step 6210/11358 (54.7%) | loss 1.6577 | lr 9.28e-05 | ETA 314.4min
+step 6220/11358 (54.8%) | loss 1.4784 | lr 9.25e-05 | ETA 312.8min
+step 6230/11358 (54.9%) | loss 1.5665 | lr 9.22e-05 | ETA 313.9min
+step 6240/11358 (54.9%) | loss 1.6028 | lr 9.19e-05 | ETA 312.4min
+step 6250/11358 (55.0%) | loss 1.5737 | lr 9.16e-05 | ETA 311.5min
+step 6260/11358 (55.1%) | loss 1.5564 | lr 9.13e-05 | ETA 310.6min
+step 6270/11358 (55.2%) | loss 1.7212 | lr 9.11e-05 | ETA 309.0min
+step 6280/11358 (55.3%) | loss 1.6743 | lr 9.08e-05 | ETA 310.6min
+step 6290/11358 (55.4%) | loss 1.5529 | lr 9.05e-05 | ETA 310.3min
+step 6300/11358 (55.5%) | loss 1.4623 | lr 9.02e-05 | ETA 308.6min
+step 6310/11358 (55.6%) | loss 1.5343 | lr 8.99e-05 | ETA 308.5min
+step 6320/11358 (55.6%) | loss 1.5485 | lr 8.96e-05 | ETA 306.8min
+step 6330/11358 (55.7%) | loss 1.6116 | lr 8.93e-05 | ETA 306.9min
+step 6340/11358 (55.8%) | loss 1.5872 | lr 8.90e-05 | ETA 306.2min
+step 6350/11358 (55.9%) | loss 1.6629 | lr 8.87e-05 | ETA 305.3min
+step 6360/11358 (56.0%) | loss 1.5635 | lr 8.85e-05 | ETA 306.1min
+step 6370/11358 (56.1%) | loss 1.5947 | lr 8.82e-05 | ETA 304.9min
+step 6380/11358 (56.2%) | loss 1.4959 | lr 8.79e-05 | ETA 304.3min
+step 6390/11358 (56.3%) | loss 1.6021 | lr 8.76e-05 | ETA 305.1min
+step 6400/11358 (56.3%) | loss 1.4993 | lr 8.73e-05 | ETA 307.0min
+eval loss: 1.8733
+step 6410/11358 (56.4%) | loss 1.6094 | lr 8.70e-05 | ETA 304.7min
+step 6420/11358 (56.5%) | loss 1.3459 | lr 8.67e-05 | ETA 303.6min
+step 6430/11358 (56.6%) | loss 1.5154 | lr 8.64e-05 | ETA 301.0min
+step 6440/11358 (56.7%) | loss 1.7069 | lr 8.61e-05 | ETA 299.8min
+step 6450/11358 (56.8%) | loss 1.6426 | lr 8.59e-05 | ETA 300.4min
+step 6460/11358 (56.9%) | loss 1.6482 | lr 8.56e-05 | ETA 299.5min
+step 6470/11358 (57.0%) | loss 1.6114 | lr 8.53e-05 | ETA 303.8min
+step 6480/11358 (57.1%) | loss 1.7070 | lr 8.50e-05 | ETA 297.1min
+step 6490/11358 (57.1%) | loss 1.8132 | lr 8.47e-05 | ETA 297.3min
+step 6500/11358 (57.2%) | loss 1.7208 | lr 8.44e-05 | ETA 297.3min
+step 6510/11358 (57.3%) | loss 1.6325 | lr 8.41e-05 | ETA 295.7min
+step 6520/11358 (57.4%) | loss 1.6874 | lr 8.38e-05 | ETA 295.4min
+step 6530/11358 (57.5%) | loss 1.6306 | lr 8.36e-05 | ETA 295.2min
+step 6540/11358 (57.6%) | loss 1.3259 | lr 8.33e-05 | ETA 293.5min
+step 6550/11358 (57.7%) | loss 1.6657 | lr 8.30e-05 | ETA 293.4min
+step 6560/11358 (57.8%) | loss 1.5840 | lr 8.27e-05 | ETA 292.9min
+step 6570/11358 (57.8%) | loss 1.6740 | lr 8.24e-05 | ETA 292.9min
+step 6580/11358 (57.9%) | loss 1.5500 | lr 8.21e-05 | ETA 291.6min
+step 6590/11358 (58.0%) | loss 1.6741 | lr 8.18e-05 | ETA 291.7min
+step 6600/11358 (58.1%) | loss 1.7558 | lr 8.15e-05 | ETA 289.9min
+eval loss: 1.8531
+step 6610/11358 (58.2%) | loss 1.6061 | lr 8.13e-05 | ETA 290.2min
+step 6620/11358 (58.3%) | loss 1.4109 | lr 8.10e-05 | ETA 288.9min
+step 6630/11358 (58.4%) | loss 1.5994 | lr 8.07e-05 | ETA 289.8min
+step 6640/11358 (58.5%) | loss 1.6366 | lr 8.04e-05 | ETA 288.6min
+step 6650/11358 (58.5%) | loss 1.6631 | lr 8.01e-05 | ETA 287.6min
+step 6660/11358 (58.6%) | loss 1.5004 | lr 7.98e-05 | ETA 287.5min
+step 6670/11358 (58.7%) | loss 1.5659 | lr 7.95e-05 | ETA 288.3min
+step 6680/11358 (58.8%) | loss 1.7117 | lr 7.93e-05 | ETA 288.8min
+step 6690/11358 (58.9%) | loss 1.7288 | lr 7.90e-05 | ETA 288.6min
+step 6700/11358 (59.0%) | loss 1.6896 | lr 7.87e-05 | ETA 286.7min
+step 6710/11358 (59.1%) | loss 1.7175 | lr 7.84e-05 | ETA 285.4min
+step 6720/11358 (59.2%) | loss 1.6711 | lr 7.81e-05 | ETA 284.8min
+step 6730/11358 (59.3%) | loss 1.5523 | lr 7.78e-05 | ETA 285.3min
+step 6740/11358 (59.3%) | loss 1.7847 | lr 7.76e-05 | ETA 284.1min
+step 6750/11358 (59.4%) | loss 1.4250 | lr 7.73e-05 | ETA 283.2min
+step 6760/11358 (59.5%) | loss 1.6660 | lr 7.70e-05 | ETA 282.2min
+step 6770/11358 (59.6%) | loss 1.6767 | lr 7.67e-05 | ETA 282.7min
+step 6780/11358 (59.7%) | loss 1.6922 | lr 7.64e-05 | ETA 282.1min
+step 6790/11358 (59.8%) | loss 1.7013 | lr 7.61e-05 | ETA 283.3min
+step 6800/11358 (59.9%) | loss 1.6735 | lr 7.59e-05 | ETA 280.4min
+eval loss: 1.8461
+step 6810/11358 (60.0%) | loss 1.6379 | lr 7.56e-05 | ETA 281.9min
+step 6820/11358 (60.0%) | loss 1.4770 | lr 7.53e-05 | ETA 279.5min
+step 6830/11358 (60.1%) | loss 1.5990 | lr 7.50e-05 | ETA 284.7min
+step 6840/11358 (60.2%) | loss 1.7191 | lr 7.47e-05 | ETA 280.4min
+step 6850/11358 (60.3%) | loss 1.5538 | lr 7.44e-05 | ETA 278.7min
+step 6860/11358 (60.4%) | loss 1.5511 | lr 7.42e-05 | ETA 277.1min
+step 6870/11358 (60.5%) | loss 1.4396 | lr 7.39e-05 | ETA 273.7min
+step 6880/11358 (60.6%) | loss 1.7441 | lr 7.36e-05 | ETA 274.1min
+step 6890/11358 (60.7%) | loss 1.6245 | lr 7.33e-05 | ETA 275.3min
+step 6900/11358 (60.8%) | loss 1.5610 | lr 7.30e-05 | ETA 275.2min
+step 6910/11358 (60.8%) | loss 1.6784 | lr 7.28e-05 | ETA 273.7min
+step 6920/11358 (60.9%) | loss 1.6981 | lr 7.25e-05 | ETA 273.5min
+step 6930/11358 (61.0%) | loss 1.7323 | lr 7.22e-05 | ETA 272.5min
+step 6940/11358 (61.1%) | loss 1.6204 | lr 7.19e-05 | ETA 273.7min
+step 6950/11358 (61.2%) | loss 1.6098 | lr 7.16e-05 | ETA 273.3min
+step 6960/11358 (61.3%) | loss 1.6550 | lr 7.14e-05 | ETA 272.3min
+step 6970/11358 (61.4%) | loss 1.6084 | lr 7.11e-05 | ETA 271.7min
+step 6980/11358 (61.5%) | loss 1.3957 | lr 7.08e-05 | ETA 271.7min
+step 6990/11358 (61.5%) | loss 1.4905 | lr 7.05e-05 | ETA 269.8min
+step 7000/11358 (61.6%) | loss 1.5294 | lr 7.03e-05 | ETA 269.5min
+eval loss: 1.8578
+step 7010/11358 (61.7%) | loss 1.7789 | lr 7.00e-05 | ETA 269.8min
+step 7020/11358 (61.8%) | loss 1.7025 | lr 6.97e-05 | ETA 268.7min
+step 7030/11358 (61.9%) | loss 1.5611 | lr 6.94e-05 | ETA 269.5min
+step 7040/11358 (62.0%) | loss 1.7411 | lr 6.91e-05 | ETA 268.0min
+step 7050/11358 (62.1%) | loss 1.5026 | lr 6.89e-05 | ETA 268.0min
+step 7060/11358 (62.2%) | loss 1.6300 | lr 6.86e-05 | ETA 269.0min
+step 7070/11358 (62.2%) | loss 1.5906 | lr 6.83e-05 | ETA 265.3min
+step 7080/11358 (62.3%) | loss 1.6373 | lr 6.80e-05 | ETA 266.5min
+step 7090/11358 (62.4%) | loss 1.7891 | lr 6.78e-05 | ETA 265.6min
+step 7100/11358 (62.5%) | loss 1.5665 | lr 6.75e-05 | ETA 266.1min
+step 7110/11358 (62.6%) | loss 1.5127 | lr 6.72e-05 | ETA 263.0min
+step 7120/11358 (62.7%) | loss 1.5982 | lr 6.69e-05 | ETA 261.7min
+step 7130/11358 (62.8%) | loss 1.5106 | lr 6.67e-05 | ETA 263.2min
+step 7140/11358 (62.9%) | loss 1.5314 | lr 6.64e-05 | ETA 262.0min
+step 7150/11358 (63.0%) | loss 1.6514 | lr 6.61e-05 | ETA 262.5min
+step 7160/11358 (63.0%) | loss 1.6012 | lr 6.58e-05 | ETA 261.5min
+step 7170/11358 (63.1%) | loss 1.5446 | lr 6.56e-05 | ETA 261.6min
+step 7180/11358 (63.2%) | loss 1.5558 | lr 6.53e-05 | ETA 260.0min
+step 7190/11358 (63.3%) | loss 1.6354 | lr 6.50e-05 | ETA 260.6min
+step 7200/11358 (63.4%) | loss 1.7192 | lr 6.47e-05 | ETA 260.1min
+eval loss: 1.8515
+step 7210/11358 (63.5%) | loss 1.5405 | lr 6.45e-05 | ETA 258.5min
+step 7220/11358 (63.6%) | loss 1.5258 | lr 6.42e-05 | ETA 257.6min
+step 7230/11358 (63.7%) | loss 1.5727 | lr 6.39e-05 | ETA 256.3min
+step 7240/11358 (63.7%) | loss 1.6518 | lr 6.37e-05 | ETA 256.3min
+step 7250/11358 (63.8%) | loss 1.6120 | lr 6.34e-05 | ETA 256.7min
+step 7260/11358 (63.9%) | loss 1.5868 | lr 6.31e-05 | ETA 254.3min
+step 7270/11358 (64.0%) | loss 1.6055 | lr 6.28e-05 | ETA 256.7min
+step 7280/11358 (64.1%) | loss 1.5591 | lr 6.26e-05 | ETA 256.1min
+step 7290/11358 (64.2%) | loss 1.5334 | lr 6.23e-05 | ETA 258.1min
+step 7300/11358 (64.3%) | loss 1.4153 | lr 6.20e-05 | ETA 252.8min
+step 7310/11358 (64.4%) | loss 1.6321 | lr 6.18e-05 | ETA 252.2min
+step 7320/11358 (64.4%) | loss 1.5498 | lr 6.15e-05 | ETA 254.2min
+step 7330/11358 (64.5%) | loss 1.5610 | lr 6.12e-05 | ETA 253.5min
+step 7340/11358 (64.6%) | loss 1.5822 | lr 6.10e-05 | ETA 253.6min
+step 7350/11358 (64.7%) | loss 1.6751 | lr 6.07e-05 | ETA 250.7min
+step 7360/11358 (64.8%) | loss 1.7616 | lr 6.04e-05 | ETA 248.6min
+step 7370/11358 (64.9%) | loss 1.5824 | lr 6.02e-05 | ETA 248.8min
+step 7380/11358 (65.0%) | loss 1.5915 | lr 5.99e-05 | ETA 247.9min
+step 7390/11358 (65.1%) | loss 1.6802 | lr 5.96e-05 | ETA 248.0min
+step 7400/11358 (65.2%) | loss 1.5966 | lr 5.94e-05 | ETA 246.5min
+eval loss: 1.8460
+step 7410/11358 (65.2%) | loss 1.6380 | lr 5.91e-05 | ETA 245.6min
+step 7420/11358 (65.3%) | loss 1.4421 | lr 5.88e-05 | ETA 244.9min
+step 7430/11358 (65.4%) | loss 1.5247 | lr 5.86e-05 | ETA 243.2min
+step 7440/11358 (65.5%) | loss 1.6685 | lr 5.83e-05 | ETA 241.7min
+step 7450/11358 (65.6%) | loss 1.4634 | lr 5.80e-05 | ETA 240.3min
+step 7460/11358 (65.7%) | loss 1.5925 | lr 5.78e-05 | ETA 238.2min
+step 7470/11358 (65.8%) | loss 1.5695 | lr 5.75e-05 | ETA 237.3min
+step 7480/11358 (65.9%) | loss 1.7522 | lr 5.72e-05 | ETA 236.6min
+step 7490/11358 (65.9%) | loss 1.5505 | lr 5.70e-05 | ETA 237.4min
+step 7500/11358 (66.0%) | loss 1.5664 | lr 5.67e-05 | ETA 235.9min
+step 7510/11358 (66.1%) | loss 1.4842 | lr 5.65e-05 | ETA 236.1min
+step 7520/11358 (66.2%) | loss 1.5298 | lr 5.62e-05 | ETA 237.1min
+step 7530/11358 (66.3%) | loss 1.5640 | lr 5.59e-05 | ETA 239.0min
+step 7540/11358 (66.4%) | loss 1.6757 | lr 5.57e-05 | ETA 235.0min
+step 7550/11358 (66.5%) | loss 1.9432 | lr 5.54e-05 | ETA 233.6min
+step 7560/11358 (66.6%) | loss 1.7910 | lr 5.52e-05 | ETA 233.5min
+step 7570/11358 (66.6%) | loss 1.6113 | lr 5.49e-05 | ETA 232.6min
+
+=== Epoch 3/3 ===
+step 7580/11358 (66.7%) | loss 1.2180 | lr 5.46e-05 | ETA 220.7min
+step 7590/11358 (66.8%) | loss 1.3469 | lr 5.44e-05 | ETA 231.7min
+step 7600/11358 (66.9%) | loss 1.2553 | lr 5.41e-05 | ETA 231.0min
+eval loss: 1.9029
+step 7610/11358 (67.0%) | loss 1.4168 | lr 5.39e-05 | ETA 229.7min
+step 7620/11358 (67.1%) | loss 1.2887 | lr 5.36e-05 | ETA 230.8min
+step 7630/11358 (67.2%) | loss 1.2097 | lr 5.33e-05 | ETA 229.6min
+step 7640/11358 (67.3%) | loss 1.4844 | lr 5.31e-05 | ETA 227.6min
+step 7650/11358 (67.4%) | loss 1.2010 | lr 5.28e-05 | ETA 227.7min
+step 7660/11358 (67.4%) | loss 1.2331 | lr 5.26e-05 | ETA 226.9min
+step 7670/11358 (67.5%) | loss 1.2984 | lr 5.23e-05 | ETA 227.1min
+step 7680/11358 (67.6%) | loss 1.3439 | lr 5.21e-05 | ETA 226.5min
+step 7690/11358 (67.7%) | loss 1.2727 | lr 5.18e-05 | ETA 226.8min
+step 7700/11358 (67.8%) | loss 1.1983 | lr 5.15e-05 | ETA 224.3min
+step 7710/11358 (67.9%) | loss 1.2584 | lr 5.13e-05 | ETA 224.8min
+step 7720/11358 (68.0%) | loss 1.2151 | lr 5.10e-05 | ETA 224.7min
+step 7730/11358 (68.1%) | loss 1.3282 | lr 5.08e-05 | ETA 223.0min
+step 7740/11358 (68.1%) | loss 1.3555 | lr 5.05e-05 | ETA 225.5min
+step 7750/11358 (68.2%) | loss 1.2590 | lr 5.03e-05 | ETA 224.1min
+step 7760/11358 (68.3%) | loss 1.3452 | lr 5.00e-05 | ETA 222.1min
+step 7770/11358 (68.4%) | loss 1.2891 | lr 4.98e-05 | ETA 221.8min
+step 7780/11358 (68.5%) | loss 1.3332 | lr 4.95e-05 | ETA 222.9min
+step 7790/11358 (68.6%) | loss 1.1377 | lr 4.93e-05 | ETA 219.9min
+step 7800/11358 (68.7%) | loss 1.3110 | lr 4.90e-05 | ETA 219.0min
+eval loss: 1.9617
+step 7810/11358 (68.8%) | loss 1.3669 | lr 4.88e-05 | ETA 219.1min
+step 7820/11358 (68.9%) | loss 1.3150 | lr 4.85e-05 | ETA 219.2min
+step 7830/11358 (68.9%) | loss 1.3490 | lr 4.83e-05 | ETA 218.3min
+step 7840/11358 (69.0%) | loss 1.0501 | lr 4.80e-05 | ETA 216.8min
+step 7850/11358 (69.1%) | loss 1.2054 | lr 4.78e-05 | ETA 216.8min
+step 7860/11358 (69.2%) | loss 1.5286 | lr 4.75e-05 | ETA 213.5min
+step 7870/11358 (69.3%) | loss 1.2653 | lr 4.73e-05 | ETA 215.0min
+step 7880/11358 (69.4%) | loss 1.2625 | lr 4.70e-05 | ETA 214.4min
+step 7890/11358 (69.5%) | loss 1.1023 | lr 4.68e-05 | ETA 215.3min
+step 7900/11358 (69.6%) | loss 1.2779 | lr 4.65e-05 | ETA 214.4min
+step 7910/11358 (69.6%) | loss 1.4036 | lr 4.63e-05 | ETA 212.6min
+step 7920/11358 (69.7%) | loss 1.1960 | lr 4.60e-05 | ETA 212.2min
+step 7930/11358 (69.8%) | loss 1.1751 | lr 4.58e-05 | ETA 212.9min
+step 7940/11358 (69.9%) | loss 1.4032 | lr 4.56e-05 | ETA 213.6min
+step 7950/11358 (70.0%) | loss 1.3067 | lr 4.53e-05 | ETA 210.0min
+step 7960/11358 (70.1%) | loss 1.4385 | lr 4.51e-05 | ETA 210.8min
+step 7970/11358 (70.2%) | loss 1.2354 | lr 4.48e-05 | ETA 210.1min
+step 7980/11358 (70.3%) | loss 1.3291 | lr 4.46e-05 | ETA 210.0min
+step 7990/11358 (70.3%) | loss 1.2331 | lr 4.43e-05 | ETA 208.4min
+step 8000/11358 (70.4%) | loss 1.3489 | lr 4.41e-05 | ETA 207.9min
+eval loss: 1.9881
+step 8010/11358 (70.5%) | loss 1.3352 | lr 4.39e-05 | ETA 207.8min
+step 8020/11358 (70.6%) | loss 1.0073 | lr 4.36e-05 | ETA 207.4min
+step 8030/11358 (70.7%) | loss 1.2158 | lr 4.34e-05 | ETA 206.0min
+step 8040/11358 (70.8%) | loss 1.2715 | lr 4.31e-05 | ETA 206.0min
+step 8050/11358 (70.9%) | loss 1.3990 | lr 4.29e-05 | ETA 205.5min
+step 8060/11358 (71.0%) | loss 1.2146 | lr 4.27e-05 | ETA 205.1min
+step 8070/11358 (71.1%) | loss 1.3440 | lr 4.24e-05 | ETA 204.4min
+step 8080/11358 (71.1%) | loss 1.0904 | lr 4.22e-05 | ETA 203.6min
+step 8090/11358 (71.2%) | loss 1.2257 | lr 4.19e-05 | ETA 203.4min
+step 8100/11358 (71.3%) | loss 1.3059 | lr 4.17e-05 | ETA 202.0min
+step 8110/11358 (71.4%) | loss 1.2471 | lr 4.15e-05 | ETA 201.4min
+step 8120/11358 (71.5%) | loss 1.2758 | lr 4.12e-05 | ETA 201.0min
+step 8130/11358 (71.6%) | loss 1.2635 | lr 4.10e-05 | ETA 201.1min
+step 8140/11358 (71.7%) | loss 1.1982 | lr 4.08e-05 | ETA 200.3min
+step 8150/11358 (71.8%) | loss 1.3296 | lr 4.05e-05 | ETA 199.0min
+step 8160/11358 (71.8%) | loss 1.3216 | lr 4.03e-05 | ETA 197.9min
+step 8170/11358 (71.9%) | loss 1.1681 | lr 4.01e-05 | ETA 199.0min
+step 8180/11358 (72.0%) | loss 1.4524 | lr 3.98e-05 | ETA 197.6min
+step 8190/11358 (72.1%) | loss 1.2824 | lr 3.96e-05 | ETA 198.8min
+step 8200/11358 (72.2%) | loss 1.2698 | lr 3.94e-05 | ETA 198.9min
+eval loss: 1.9806
+step 8210/11358 (72.3%) | loss 1.2715 | lr 3.91e-05 | ETA 197.6min
+step 8220/11358 (72.4%) | loss 1.1336 | lr 3.89e-05 | ETA 196.9min
+step 8230/11358 (72.5%) | loss 1.3396 | lr 3.87e-05 | ETA 197.1min
+step 8240/11358 (72.5%) | loss 1.1518 | lr 3.84e-05 | ETA 195.3min
+step 8250/11358 (72.6%) | loss 1.3836 | lr 3.82e-05 | ETA 192.4min
+step 8260/11358 (72.7%) | loss 1.2971 | lr 3.80e-05 | ETA 192.0min
+step 8270/11358 (72.8%) | loss 1.3638 | lr 3.78e-05 | ETA 193.8min
+step 8280/11358 (72.9%) | loss 1.3112 | lr 3.75e-05 | ETA 191.1min
+step 8290/11358 (73.0%) | loss 1.2467 | lr 3.73e-05 | ETA 190.5min
+step 8300/11358 (73.1%) | loss 1.5118 | lr 3.71e-05 | ETA 186.6min
+step 8310/11358 (73.2%) | loss 1.2819 | lr 3.69e-05 | ETA 185.8min
+step 8320/11358 (73.3%) | loss 1.2868 | lr 3.66e-05 | ETA 185.3min
+step 8330/11358 (73.3%) | loss 1.2010 | lr 3.64e-05 | ETA 185.2min
+step 8340/11358 (73.4%) | loss 1.2871 | lr 3.62e-05 | ETA 184.2min
+step 8350/11358 (73.5%) | loss 1.0754 | lr 3.60e-05 | ETA 183.6min
+step 8360/11358 (73.6%) | loss 1.3789 | lr 3.57e-05 | ETA 183.8min
+step 8370/11358 (73.7%) | loss 1.3005 | lr 3.55e-05 | ETA 183.3min
+step 8380/11358 (73.8%) | loss 1.3551 | lr 3.53e-05 | ETA 183.6min
+step 8390/11358 (73.9%) | loss 1.2553 | lr 3.51e-05 | ETA 184.6min
+step 8400/11358 (74.0%) | loss 1.2911 | lr 3.48e-05 | ETA 182.1min
+eval loss: 1.9834
+step 8410/11358 (74.0%) | loss 1.2596 | lr 3.46e-05 | ETA 180.8min
+step 8420/11358 (74.1%) | loss 1.2674 | lr 3.44e-05 | ETA 180.8min
+step 8430/11358 (74.2%) | loss 1.3115 | lr 3.42e-05 | ETA 180.6min
+step 8440/11358 (74.3%) | loss 1.2918 | lr 3.40e-05 | ETA 181.6min
+step 8450/11358 (74.4%) | loss 1.3430 | lr 3.37e-05 | ETA 179.9min
+step 8460/11358 (74.5%) | loss 1.2844 | lr 3.35e-05 | ETA 179.4min
+step 8470/11358 (74.6%) | loss 1.3194 | lr 3.33e-05 | ETA 178.6min
+step 8480/11358 (74.7%) | loss 1.4589 | lr 3.31e-05 | ETA 178.8min
+step 8490/11358 (74.7%) | loss 1.3556 | lr 3.29e-05 | ETA 177.1min
+step 8500/11358 (74.8%) | loss 1.1352 | lr 3.27e-05 | ETA 176.7min
+step 8510/11358 (74.9%) | loss 1.2863 | lr 3.24e-05 | ETA 176.4min
+step 8520/11358 (75.0%) | loss 1.1752 | lr 3.22e-05 | ETA 174.9min
+step 8530/11358 (75.1%) | loss 1.1481 | lr 3.20e-05 | ETA 174.8min
+step 8540/11358 (75.2%) | loss 1.4220 | lr 3.18e-05 | ETA 174.8min
+step 8550/11358 (75.3%) | loss 1.2075 | lr 3.16e-05 | ETA 174.5min
+step 8560/11358 (75.4%) | loss 1.2431 | lr 3.14e-05 | ETA 172.7min
+step 8570/11358 (75.5%) | loss 1.3760 | lr 3.12e-05 | ETA 172.4min
+step 8580/11358 (75.5%) | loss 1.3388 | lr 3.10e-05 | ETA 171.8min
+step 8590/11358 (75.6%) | loss 1.2864 | lr 3.08e-05 | ETA 172.7min
+step 8600/11358 (75.7%) | loss 1.3802 | lr 3.05e-05 | ETA 171.3min
+eval loss: 1.9943
+step 8610/11358 (75.8%) | loss 1.2918 | lr 3.03e-05 | ETA 169.3min
+step 8620/11358 (75.9%) | loss 1.1906 | lr 3.01e-05 | ETA 171.0min
+step 8630/11358 (76.0%) | loss 1.2174 | lr 2.99e-05 | ETA 168.0min
+step 8640/11358 (76.1%) | loss 1.2070 | lr 2.97e-05 | ETA 168.7min
+step 8650/11358 (76.2%) | loss 1.3080 | lr 2.95e-05 | ETA 168.0min
+step 8660/11358 (76.2%) | loss 1.3967 | lr 2.93e-05 | ETA 168.1min
+step 8670/11358 (76.3%) | loss 1.3602 | lr 2.91e-05 | ETA 166.4min
+step 8680/11358 (76.4%) | loss 1.1022 | lr 2.89e-05 | ETA 166.1min
+step 8690/11358 (76.5%) | loss 1.2831 | lr 2.87e-05 | ETA 165.2min
+step 8700/11358 (76.6%) | loss 1.3017 | lr 2.85e-05 | ETA 165.4min
+step 8710/11358 (76.7%) | loss 1.1734 | lr 2.83e-05 | ETA 166.2min
+step 8720/11358 (76.8%) | loss 1.3173 | lr 2.81e-05 | ETA 165.1min
+step 8730/11358 (76.9%) | loss 1.3066 | lr 2.79e-05 | ETA 162.8min
+step 8740/11358 (77.0%) | loss 1.2475 | lr 2.77e-05 | ETA 163.0min
+step 8750/11358 (77.0%) | loss 1.3711 | lr 2.75e-05 | ETA 163.2min
+step 8760/11358 (77.1%) | loss 1.4013 | lr 2.73e-05 | ETA 162.3min
+step 8770/11358 (77.2%) | loss 1.2144 | lr 2.71e-05 | ETA 161.2min
+step 8780/11358 (77.3%) | loss 1.2220 | lr 2.69e-05 | ETA 161.5min
+step 8790/11358 (77.4%) | loss 1.0587 | lr 2.67e-05 | ETA 160.8min
+step 8800/11358 (77.5%) | loss 1.2630 | lr 2.65e-05 | ETA 160.3min
+eval loss: 1.9942
+step 8810/11358 (77.6%) | loss 1.2260 | lr 2.63e-05 | ETA 157.0min
+step 8820/11358 (77.7%) | loss 1.4217 | lr 2.61e-05 | ETA 155.6min
+step 8830/11358 (77.7%) | loss 1.1965 | lr 2.59e-05 | ETA 155.2min
+step 8840/11358 (77.8%) | loss 1.3611 | lr 2.57e-05 | ETA 153.7min
+step 8850/11358 (77.9%) | loss 1.3753 | lr 2.55e-05 | ETA 154.8min
+step 8860/11358 (78.0%) | loss 1.3079 | lr 2.53e-05 | ETA 155.4min
+step 8870/11358 (78.1%) | loss 1.2315 | lr 2.51e-05 | ETA 154.7min
+step 8880/11358 (78.2%) | loss 1.3559 | lr 2.49e-05 | ETA 154.4min
+step 8890/11358 (78.3%) | loss 1.3919 | lr 2.47e-05 | ETA 152.6min
+step 8900/11358 (78.4%) | loss 1.2293 | lr 2.45e-05 | ETA 152.1min
+step 8910/11358 (78.4%) | loss 1.2703 | lr 2.43e-05 | ETA 151.3min
+step 8920/11358 (78.5%) | loss 1.3809 | lr 2.41e-05 | ETA 150.5min
+step 8930/11358 (78.6%) | loss 1.3075 | lr 2.40e-05 | ETA 149.5min
+step 8940/11358 (78.7%) | loss 1.2675 | lr 2.38e-05 | ETA 149.4min
+step 8950/11358 (78.8%) | loss 1.2328 | lr 2.36e-05 | ETA 148.3min
+step 8960/11358 (78.9%) | loss 1.1948 | lr 2.34e-05 | ETA 147.6min
+step 8970/11358 (79.0%) | loss 1.2825 | lr 2.32e-05 | ETA 146.9min
+step 8980/11358 (79.1%) | loss 1.2902 | lr 2.30e-05 | ETA 145.9min
+step 8990/11358 (79.2%) | loss 1.3322 | lr 2.28e-05 | ETA 145.3min
+step 9000/11358 (79.2%) | loss 1.1845 | lr 2.27e-05 | ETA 145.1min
+eval loss: 1.9824
+step 9010/11358 (79.3%) | loss 1.4165 | lr 2.25e-05 | ETA 145.8min
+step 9020/11358 (79.4%) | loss 1.3547 | lr 2.23e-05 | ETA 146.1min
+step 9030/11358 (79.5%) | loss 1.3555 | lr 2.21e-05 | ETA 145.3min
+step 9040/11358 (79.6%) | loss 1.4478 | lr 2.19e-05 | ETA 144.2min
+step 9050/11358 (79.7%) | loss 1.2630 | lr 2.17e-05 | ETA 142.8min
+step 9060/11358 (79.8%) | loss 1.3334 | lr 2.16e-05 | ETA 142.3min
+step 9070/11358 (79.9%) | loss 1.3967 | lr 2.14e-05 | ETA 141.0min
+step 9080/11358 (79.9%) | loss 1.2022 | lr 2.12e-05 | ETA 140.3min
+step 9090/11358 (80.0%) | loss 1.2916 | lr 2.10e-05 | ETA 139.4min
+step 9100/11358 (80.1%) | loss 1.2237 | lr 2.08e-05 | ETA 138.8min
+step 9110/11358 (80.2%) | loss 1.3683 | lr 2.07e-05 | ETA 138.4min
+step 9120/11358 (80.3%) | loss 1.3359 | lr 2.05e-05 | ETA 138.4min
+step 9130/11358 (80.4%) | loss 1.2221 | lr 2.03e-05 | ETA 137.5min
+step 9140/11358 (80.5%) | loss 1.1264 | lr 2.01e-05 | ETA 136.7min
+step 9150/11358 (80.6%) | loss 1.4940 | lr 2.00e-05 | ETA 135.9min
+step 9160/11358 (80.6%) | loss 1.2658 | lr 1.98e-05 | ETA 138.3min
+step 9170/11358 (80.7%) | loss 1.3556 | lr 1.96e-05 | ETA 137.3min
+step 9180/11358 (80.8%) | loss 1.2372 | lr 1.94e-05 | ETA 139.0min
+step 9190/11358 (80.9%) | loss 1.3565 | lr 1.93e-05 | ETA 135.8min
+step 9200/11358 (81.0%) | loss 1.1572 | lr 1.91e-05 | ETA 135.0min
+eval loss: 1.9920
+step 9210/11358 (81.1%) | loss 1.2521 | lr 1.89e-05 | ETA 135.6min
+step 9220/11358 (81.2%) | loss 1.1738 | lr 1.88e-05 | ETA 132.1min
+step 9230/11358 (81.3%) | loss 1.1395 | lr 1.86e-05 | ETA 130.9min
+step 9240/11358 (81.4%) | loss 1.3229 | lr 1.84e-05 | ETA 130.6min
+step 9250/11358 (81.4%) | loss 1.3617 | lr 1.82e-05 | ETA 129.2min
+step 9260/11358 (81.5%) | loss 1.3459 | lr 1.81e-05 | ETA 129.2min
+step 9270/11358 (81.6%) | loss 1.2523 | lr 1.79e-05 | ETA 128.0min
+step 9280/11358 (81.7%) | loss 1.3719 | lr 1.77e-05 | ETA 127.2min
+step 9290/11358 (81.8%) | loss 1.1339 | lr 1.76e-05 | ETA 127.1min
+step 9300/11358 (81.9%) | loss 1.2922 | lr 1.74e-05 | ETA 127.9min
+step 9310/11358 (82.0%) | loss 1.3287 | lr 1.73e-05 | ETA 126.4min
+step 9320/11358 (82.1%) | loss 1.3920 | lr 1.71e-05 | ETA 125.3min
+step 9330/11358 (82.1%) | loss 1.2033 | lr 1.69e-05 | ETA 125.3min
+step 9340/11358 (82.2%) | loss 1.1262 | lr 1.68e-05 | ETA 125.6min
+step 9350/11358 (82.3%) | loss 1.2238 | lr 1.66e-05 | ETA 124.3min
+step 9360/11358 (82.4%) | loss 1.3273 | lr 1.64e-05 | ETA 122.8min
+step 9370/11358 (82.5%) | loss 1.2317 | lr 1.63e-05 | ETA 122.7min
+step 9380/11358 (82.6%) | loss 1.1500 | lr 1.61e-05 | ETA 121.5min
+step 9390/11358 (82.7%) | loss 1.3484 | lr 1.60e-05 | ETA 121.5min
+step 9400/11358 (82.8%) | loss 1.3745 | lr 1.58e-05 | ETA 119.8min
+eval loss: 1.9882
+step 9410/11358 (82.8%) | loss 1.3657 | lr 1.57e-05 | ETA 119.7min
+step 9420/11358 (82.9%) | loss 1.1756 | lr 1.55e-05 | ETA 119.1min
+step 9430/11358 (83.0%) | loss 1.2986 | lr 1.53e-05 | ETA 119.3min
+step 9440/11358 (83.1%) | loss 1.4193 | lr 1.52e-05 | ETA 117.6min
+step 9450/11358 (83.2%) | loss 1.2929 | lr 1.50e-05 | ETA 117.2min
+step 9460/11358 (83.3%) | loss 1.3405 | lr 1.49e-05 | ETA 116.6min
+step 9470/11358 (83.4%) | loss 1.0934 | lr 1.47e-05 | ETA 115.6min
+step 9480/11358 (83.5%) | loss 1.2235 | lr 1.46e-05 | ETA 114.9min
+step 9490/11358 (83.6%) | loss 1.0865 | lr 1.44e-05 | ETA 114.2min
+step 9500/11358 (83.6%) | loss 1.3019 | lr 1.43e-05 | ETA 114.0min
+step 9510/11358 (83.7%) | loss 1.2861 | lr 1.41e-05 | ETA 113.3min
+step 9520/11358 (83.8%) | loss 1.2377 | lr 1.40e-05 | ETA 112.8min
+step 9530/11358 (83.9%) | loss 1.2321 | lr 1.38e-05 | ETA 112.0min
+step 9540/11358 (84.0%) | loss 1.1479 | lr 1.37e-05 | ETA 111.1min
+step 9550/11358 (84.1%) | loss 1.3407 | lr 1.35e-05 | ETA 111.5min
+step 9560/11358 (84.2%) | loss 1.2885 | lr 1.34e-05 | ETA 109.9min
+step 9570/11358 (84.3%) | loss 1.2960 | lr 1.32e-05 | ETA 109.4min
+step 9580/11358 (84.3%) | loss 1.1821 | lr 1.31e-05 | ETA 108.7min
+step 9590/11358 (84.4%) | loss 1.2868 | lr 1.30e-05 | ETA 109.8min
+step 9600/11358 (84.5%) | loss 1.2936 | lr 1.28e-05 | ETA 109.7min
+eval loss: 1.9868
+step 9610/11358 (84.6%) | loss 1.3374 | lr 1.27e-05 | ETA 107.0min
+step 9620/11358 (84.7%) | loss 1.2313 | lr 1.25e-05 | ETA 106.4min
+step 9630/11358 (84.8%) | loss 1.1711 | lr 1.24e-05 | ETA 105.4min
+step 9640/11358 (84.9%) | loss 1.3095 | lr 1.22e-05 | ETA 105.1min
+step 9650/11358 (85.0%) | loss 1.3052 | lr 1.21e-05 | ETA 104.3min
+step 9660/11358 (85.1%) | loss 1.3046 | lr 1.20e-05 | ETA 104.0min
+step 9670/11358 (85.1%) | loss 1.2177 | lr 1.18e-05 | ETA 103.8min
+step 9680/11358 (85.2%) | loss 1.2001 | lr 1.17e-05 | ETA 102.7min
+step 9690/11358 (85.3%) | loss 1.3493 | lr 1.16e-05 | ETA 102.4min
+step 9700/11358 (85.4%) | loss 1.3773 | lr 1.14e-05 | ETA 101.7min
+step 9710/11358 (85.5%) | loss 1.4294 | lr 1.13e-05 | ETA 100.8min
+step 9720/11358 (85.6%) | loss 1.2678 | lr 1.12e-05 | ETA 100.3min
+step 9730/11358 (85.7%) | loss 1.3889 | lr 1.10e-05 | ETA 99.6min
+step 9740/11358 (85.8%) | loss 1.2361 | lr 1.09e-05 | ETA 99.4min
+step 9750/11358 (85.8%) | loss 1.2437 | lr 1.08e-05 | ETA 98.7min
+step 9760/11358 (85.9%) | loss 1.2396 | lr 1.06e-05 | ETA 98.0min
+step 9770/11358 (86.0%) | loss 1.3980 | lr 1.05e-05 | ETA 97.6min
+step 9780/11358 (86.1%) | loss 1.3613 | lr 1.04e-05 | ETA 96.7min
+step 9790/11358 (86.2%) | loss 1.1271 | lr 1.02e-05 | ETA 96.0min
+step 9800/11358 (86.3%) | loss 1.2764 | lr 1.01e-05 | ETA 95.2min
+eval loss: 1.9822
+step 9810/11358 (86.4%) | loss 1.3355 | lr 9.98e-06 | ETA 94.8min
+step 9820/11358 (86.5%) | loss 1.3179 | lr 9.86e-06 | ETA 94.3min
+step 9830/11358 (86.5%) | loss 1.4425 | lr 9.73e-06 | ETA 93.3min
+step 9840/11358 (86.6%) | loss 1.2542 | lr 9.61e-06 | ETA 92.7min
+step 9850/11358 (86.7%) | loss 1.1368 | lr 9.48e-06 | ETA 92.5min
+step 9860/11358 (86.8%) | loss 1.2703 | lr 9.36e-06 | ETA 92.2min
+step 9870/11358 (86.9%) | loss 1.2465 | lr 9.24e-06 | ETA 93.3min
+step 9880/11358 (87.0%) | loss 1.1444 | lr 9.12e-06 | ETA 90.5min
+step 9890/11358 (87.1%) | loss 1.3022 | lr 8.99e-06 | ETA 90.3min
+step 9900/11358 (87.2%) | loss 1.1809 | lr 8.87e-06 | ETA 88.9min
+step 9910/11358 (87.3%) | loss 1.1537 | lr 8.75e-06 | ETA 88.7min
+step 9920/11358 (87.3%) | loss 1.1363 | lr 8.64e-06 | ETA 88.1min
+step 9930/11358 (87.4%) | loss 1.2205 | lr 8.52e-06 | ETA 88.3min
+step 9940/11358 (87.5%) | loss 1.3054 | lr 8.40e-06 | ETA 87.1min
+step 9950/11358 (87.6%) | loss 1.1961 | lr 8.28e-06 | ETA 86.3min
+step 9960/11358 (87.7%) | loss 1.4457 | lr 8.17e-06 | ETA 85.8min
+step 9970/11358 (87.8%) | loss 1.3685 | lr 8.05e-06 | ETA 85.2min
+step 9980/11358 (87.9%) | loss 1.3596 | lr 7.94e-06 | ETA 84.8min
+step 9990/11358 (88.0%) | loss 1.1376 | lr 7.83e-06 | ETA 83.7min
+step 10000/11358 (88.0%) | loss 1.1104 | lr 7.71e-06 | ETA 83.1min
+eval loss: 1.9773
+step 10010/11358 (88.1%) | loss 1.2599 | lr 7.60e-06 | ETA 82.7min
+step 10020/11358 (88.2%) | loss 1.2238 | lr 7.49e-06 | ETA 82.2min
+step 10030/11358 (88.3%) | loss 1.3467 | lr 7.38e-06 | ETA 81.5min
+step 10040/11358 (88.4%) | loss 1.2999 | lr 7.27e-06 | ETA 80.9min
+step 10050/11358 (88.5%) | loss 1.1951 | lr 7.16e-06 | ETA 80.4min
+step 10060/11358 (88.6%) | loss 1.2815 | lr 7.06e-06 | ETA 79.5min
+step 10070/11358 (88.7%) | loss 1.0227 | lr 6.95e-06 | ETA 79.0min
+step 10080/11358 (88.7%) | loss 1.2149 | lr 6.84e-06 | ETA 78.6min
+step 10090/11358 (88.8%) | loss 1.0791 | lr 6.74e-06 | ETA 77.3min
+step 10100/11358 (88.9%) | loss 1.2339 | lr 6.63e-06 | ETA 76.5min
+step 10110/11358 (89.0%) | loss 1.2580 | lr 6.53e-06 | ETA 76.3min
+step 10120/11358 (89.1%) | loss 1.3355 | lr 6.43e-06 | ETA 77.0min
+step 10130/11358 (89.2%) | loss 1.3210 | lr 6.32e-06 | ETA 78.2min
+step 10140/11358 (89.3%) | loss 1.2052 | lr 6.22e-06 | ETA 75.9min
+step 10150/11358 (89.4%) | loss 1.1435 | lr 6.12e-06 | ETA 75.4min
+step 10160/11358 (89.5%) | loss 1.2767 | lr 6.02e-06 | ETA 73.7min
+step 10170/11358 (89.5%) | loss 1.1631 | lr 5.92e-06 | ETA 72.9min
+step 10180/11358 (89.6%) | loss 1.2790 | lr 5.82e-06 | ETA 72.0min
+step 10190/11358 (89.7%) | loss 1.2961 | lr 5.73e-06 | ETA 71.6min
+step 10200/11358 (89.8%) | loss 1.4237 | lr 5.63e-06 | ETA 70.9min
+eval loss: 1.9847
+step 10210/11358 (89.9%) | loss 1.2718 | lr 5.53e-06 | ETA 70.5min
+step 10220/11358 (90.0%) | loss 1.2861 | lr 5.44e-06 | ETA 69.9min
+step 10230/11358 (90.1%) | loss 1.3243 | lr 5.34e-06 | ETA 69.3min
+step 10240/11358 (90.2%) | loss 1.4076 | lr 5.25e-06 | ETA 69.2min
+step 10250/11358 (90.2%) | loss 1.3179 | lr 5.16e-06 | ETA 68.3min
+step 10260/11358 (90.3%) | loss 1.1232 | lr 5.07e-06 | ETA 67.2min
+step 10270/11358 (90.4%) | loss 1.2672 | lr 4.97e-06 | ETA 67.0min
+step 10280/11358 (90.5%) | loss 1.2378 | lr 4.88e-06 | ETA 66.4min
+step 10290/11358 (90.6%) | loss 1.2871 | lr 4.79e-06 | ETA 66.9min
+step 10300/11358 (90.7%) | loss 1.2354 | lr 4.71e-06 | ETA 65.1min
+step 10310/11358 (90.8%) | loss 1.2198 | lr 4.62e-06 | ETA 64.2min
+step 10320/11358 (90.9%) | loss 1.1701 | lr 4.53e-06 | ETA 63.7min
+step 10330/11358 (90.9%) | loss 1.3027 | lr 4.45e-06 | ETA 62.7min
+step 10340/11358 (91.0%) | loss 1.2727 | lr 4.36e-06 | ETA 62.4min
+step 10350/11358 (91.1%) | loss 1.2312 | lr 4.28e-06 | ETA 62.0min
+step 10360/11358 (91.2%) | loss 1.2536 | lr 4.19e-06 | ETA 61.2min
+step 10370/11358 (91.3%) | loss 1.5038 | lr 4.11e-06 | ETA 60.4min
+step 10380/11358 (91.4%) | loss 1.0877 | lr 4.03e-06 | ETA 59.6min
+step 10390/11358 (91.5%) | loss 1.0676 | lr 3.94e-06 | ETA 59.1min
+step 10400/11358 (91.6%) | loss 1.2173 | lr 3.86e-06 | ETA 58.7min
+eval loss: 1.9830
+step 10410/11358 (91.7%) | loss 1.2111 | lr 3.78e-06 | ETA 58.0min
+step 10420/11358 (91.7%) | loss 1.2714 | lr 3.71e-06 | ETA 57.4min
+step 10430/11358 (91.8%) | loss 1.1062 | lr 3.63e-06 | ETA 56.9min
+step 10440/11358 (91.9%) | loss 1.2821 | lr 3.55e-06 | ETA 56.1min
+step 10450/11358 (92.0%) | loss 1.1984 | lr 3.47e-06 | ETA 55.4min
+step 10460/11358 (92.1%) | loss 1.3154 | lr 3.40e-06 | ETA 54.9min
+step 10470/11358 (92.2%) | loss 1.2162 | lr 3.32e-06 | ETA 54.3min
+step 10480/11358 (92.3%) | loss 1.1871 | lr 3.25e-06 | ETA 53.8min
+step 10490/11358 (92.4%) | loss 1.2905 | lr 3.18e-06 | ETA 53.3min
+step 10500/11358 (92.4%) | loss 1.1779 | lr 3.10e-06 | ETA 52.4min
+step 10510/11358 (92.5%) | loss 1.3680 | lr 3.03e-06 | ETA 51.9min
+step 10520/11358 (92.6%) | loss 1.3977 | lr 2.96e-06 | ETA 51.3min
+step 10530/11358 (92.7%) | loss 1.1995 | lr 2.89e-06 | ETA 50.7min
+step 10540/11358 (92.8%) | loss 1.2418 | lr 2.82e-06 | ETA 50.0min
+step 10550/11358 (92.9%) | loss 1.3307 | lr 2.75e-06 | ETA 49.4min
+step 10560/11358 (93.0%) | loss 1.2084 | lr 2.69e-06 | ETA 48.8min
+step 10570/11358 (93.1%) | loss 1.4088 | lr 2.62e-06 | ETA 48.8min
+step 10580/11358 (93.2%) | loss 1.5767 | lr 2.55e-06 | ETA 48.3min
+step 10590/11358 (93.2%) | loss 1.1343 | lr 2.49e-06 | ETA 46.9min
+step 10600/11358 (93.3%) | loss 1.2679 | lr 2.43e-06 | ETA 46.8min
+eval loss: 1.9843
+step 10610/11358 (93.4%) | loss 1.2642 | lr 2.36e-06 | ETA 45.6min
+step 10620/11358 (93.5%) | loss 1.2602 | lr 2.30e-06 | ETA 45.3min
+step 10630/11358 (93.6%) | loss 1.1533 | lr 2.24e-06 | ETA 44.5min
+step 10640/11358 (93.7%) | loss 1.3186 | lr 2.18e-06 | ETA 44.0min
+step 10650/11358 (93.8%) | loss 1.1596 | lr 2.12e-06 | ETA 43.4min
+step 10660/11358 (93.9%) | loss 1.3182 | lr 2.06e-06 | ETA 42.7min
+step 10670/11358 (93.9%) | loss 1.2274 | lr 2.00e-06 | ETA 42.2min
+step 10680/11358 (94.0%) | loss 1.2921 | lr 1.94e-06 | ETA 41.6min
+step 10690/11358 (94.1%) | loss 1.2292 | lr 1.89e-06 | ETA 40.7min
+step 10700/11358 (94.2%) | loss 1.2875 | lr 1.83e-06 | ETA 40.4min
+step 10710/11358 (94.3%) | loss 1.2958 | lr 1.77e-06 | ETA 39.9min
+step 10720/11358 (94.4%) | loss 1.1630 | lr 1.72e-06 | ETA 39.7min
+step 10730/11358 (94.5%) | loss 1.1845 | lr 1.67e-06 | ETA 39.1min
+step 10740/11358 (94.6%) | loss 1.1200 | lr 1.61e-06 | ETA 38.2min
+step 10750/11358 (94.6%) | loss 1.2805 | lr 1.56e-06 | ETA 37.5min
+step 10760/11358 (94.7%) | loss 1.4616 | lr 1.51e-06 | ETA 36.6min
+step 10770/11358 (94.8%) | loss 1.1135 | lr 1.46e-06 | ETA 35.9min
+step 10780/11358 (94.9%) | loss 1.2175 | lr 1.41e-06 | ETA 35.4min
+step 10790/11358 (95.0%) | loss 1.4454 | lr 1.36e-06 | ETA 34.8min
+step 10800/11358 (95.1%) | loss 1.4655 | lr 1.32e-06 | ETA 34.1min
+eval loss: 1.9823
+step 10810/11358 (95.2%) | loss 1.0233 | lr 1.27e-06 | ETA 33.5min
+step 10820/11358 (95.3%) | loss 1.2432 | lr 1.22e-06 | ETA 33.0min
+step 10830/11358 (95.4%) | loss 1.3482 | lr 1.18e-06 | ETA 32.3min
+step 10840/11358 (95.4%) | loss 1.2818 | lr 1.13e-06 | ETA 32.2min
+step 10850/11358 (95.5%) | loss 1.3178 | lr 1.09e-06 | ETA 31.5min
+step 10860/11358 (95.6%) | loss 1.2455 | lr 1.05e-06 | ETA 30.7min
+step 10870/11358 (95.7%) | loss 1.2453 | lr 1.01e-06 | ETA 30.0min
+step 10880/11358 (95.8%) | loss 1.2920 | lr 9.67e-07 | ETA 29.4min
+step 10890/11358 (95.9%) | loss 1.4595 | lr 9.27e-07 | ETA 28.8min
+step 10900/11358 (96.0%) | loss 1.2864 | lr 8.88e-07 | ETA 28.2min
+step 10910/11358 (96.1%) | loss 1.2358 | lr 8.49e-07 | ETA 27.5min
+step 10920/11358 (96.1%) | loss 1.1163 | lr 8.12e-07 | ETA 26.8min
+step 10930/11358 (96.2%) | loss 1.2110 | lr 7.75e-07 | ETA 26.2min
+step 10940/11358 (96.3%) | loss 1.2353 | lr 7.40e-07 | ETA 25.6min
+step 10950/11358 (96.4%) | loss 1.1545 | lr 7.05e-07 | ETA 25.0min
+step 10960/11358 (96.5%) | loss 1.2193 | lr 6.71e-07 | ETA 24.3min
+step 10970/11358 (96.6%) | loss 1.2510 | lr 6.37e-07 | ETA 24.0min
+step 10980/11358 (96.7%) | loss 1.1400 | lr 6.05e-07 | ETA 23.2min
+step 10990/11358 (96.8%) | loss 1.0682 | lr 5.73e-07 | ETA 22.5min
+step 11000/11358 (96.8%) | loss 1.1847 | lr 5.43e-07 | ETA 21.9min
+eval loss: 1.9826
+step 11010/11358 (96.9%) | loss 1.2076 | lr 5.13e-07 | ETA 21.3min
+step 11020/11358 (97.0%) | loss 1.2704 | lr 4.84e-07 | ETA 20.7min
+step 11030/11358 (97.1%) | loss 1.2307 | lr 4.56e-07 | ETA 20.1min
+step 11040/11358 (97.2%) | loss 1.2482 | lr 4.28e-07 | ETA 19.5min
+step 11050/11358 (97.3%) | loss 1.1793 | lr 4.02e-07 | ETA 18.9min
+step 11060/11358 (97.4%) | loss 1.1593 | lr 3.76e-07 | ETA 18.2min
+step 11070/11358 (97.5%) | loss 1.1896 | lr 3.51e-07 | ETA 17.6min
+step 11080/11358 (97.6%) | loss 1.3928 | lr 3.27e-07 | ETA 17.1min
+step 11090/11358 (97.6%) | loss 1.3117 | lr 3.04e-07 | ETA 16.4min
+step 11100/11358 (97.7%) | loss 1.3214 | lr 2.82e-07 | ETA 16.0min
+step 11110/11358 (97.8%) | loss 1.3718 | lr 2.61e-07 | ETA 15.5min
+step 11120/11358 (97.9%) | loss 1.1299 | lr 2.40e-07 | ETA 14.6min
+step 11130/11358 (98.0%) | loss 1.3075 | lr 2.20e-07 | ETA 14.0min
+step 11140/11358 (98.1%) | loss 1.0970 | lr 2.01e-07 | ETA 13.3min
+step 11150/11358 (98.2%) | loss 1.3106 | lr 1.83e-07 | ETA 12.7min
+step 11160/11358 (98.3%) | loss 1.2955 | lr 1.66e-07 | ETA 12.3min
+step 11170/11358 (98.3%) | loss 1.3071 | lr 1.50e-07 | ETA 11.5min
+step 11180/11358 (98.4%) | loss 1.1480 | lr 1.34e-07 | ETA 10.9min
+step 11190/11358 (98.5%) | loss 1.3041 | lr 1.20e-07 | ETA 10.3min
+step 11200/11358 (98.6%) | loss 1.3129 | lr 1.06e-07 | ETA 9.7min
+eval loss: 1.9827
+step 11210/11358 (98.7%) | loss 1.2078 | lr 9.28e-08 | ETA 9.1min
+step 11220/11358 (98.8%) | loss 1.2447 | lr 8.07e-08 | ETA 8.5min
+step 11230/11358 (98.9%) | loss 1.3612 | lr 6.94e-08 | ETA 7.9min
+step 11240/11358 (99.0%) | loss 1.2405 | lr 5.90e-08 | ETA 7.3min
+step 11250/11358 (99.0%) | loss 1.2999 | lr 4.94e-08 | ETA 6.6min
+step 11260/11358 (99.1%) | loss 1.4327 | lr 4.07e-08 | ETA 6.0min
+step 11270/11358 (99.2%) | loss 1.3762 | lr 3.28e-08 | ETA 5.4min
+step 11280/11358 (99.3%) | loss 1.3459 | lr 2.58e-08 | ETA 4.8min
+step 11290/11358 (99.4%) | loss 1.3989 | lr 1.96e-08 | ETA 4.2min
+step 11300/11358 (99.5%) | loss 1.0060 | lr 1.43e-08 | ETA 3.6min
+step 11310/11358 (99.6%) | loss 1.3668 | lr 9.76e-09 | ETA 2.9min
+step 11320/11358 (99.7%) | loss 1.2011 | lr 6.12e-09 | ETA 2.3min
+step 11330/11358 (99.8%) | loss 1.4006 | lr 3.32e-09 | ETA 1.7min
+step 11340/11358 (99.8%) | loss 1.3548 | lr 1.37e-09 | ETA 1.1min
+step 11350/11358 (99.9%) | loss 1.2001 | lr 2.71e-10 | ETA 0.5min
+
+final eval loss: 1.9829
+training complete.

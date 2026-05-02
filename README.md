@@ -4,28 +4,53 @@ LoRA fine-tuning of Qwen2.5-Instruct on 30K Chinese medical dialogue pairs, with
 
 ---
 
-## Overview
-
-This project fine-tunes Qwen2.5 (1.5B, 3B, and 7B variants) on a Chinese medical Q&A dataset using parameter-efficient LoRA adapters. The goal is to adapt a general-purpose LLM to the medical domain while keeping training costs low — trained locally on Apple Silicon (M5, MPS) and on GCP (L4 GPU).
-
----
-
 ## Demo
 
 ![MedQwen Gradio Chatbot](assets/frontend.png)
 
 > Gradio chatbot UI served via vLLM on GCP L4 GPU.
 
-## Training Loss Curves
+---
 
-**Qwen2.5-1.5B** (Apple M5, MPS)
-![Loss Curve 1.5B](assets/loss_curve.png)
+## ML Pipeline
 
-**Qwen2.5-3B r=8** (GCP L4 GPU)
-![Loss Curve 3B](assets/loss_curve_3b.png)
-
-**Qwen2.5-7B** (GCP L4 GPU)
-![Loss Curve 7B](assets/loss_curve_7b.png)
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        DATA PREPARATION                         │
+│                                                                 │
+│  medical_train.txt  ──┐                                         │
+│  medical_valid.txt  ──┴─► resplit_data.py ─► 80/10/10 split    │
+│                          convert_data.py  ─► JSONL chat format  │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                           TRAINING                              │
+│                                                                 │
+│  Qwen2.5-Instruct (frozen base weights)                         │
+│       +                                                         │
+│  LoRA Adapters  r=8 / r=16  (trainable ~1% params)             │
+│                                                                 │
+│  FP16 autocast · gradient checkpointing · cosine LR schedule   │
+│  gradient accumulation · early stopping (patience=5)           │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                         EVALUATION                              │
+│                                                                 │
+│  ROUGE  (character-level tokenization for Chinese)              │
+│  BERTScore  (bert-base-chinese semantic similarity)             │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                           SERVING                               │
+│                                                                 │
+│  MLX-LM  (Apple Silicon, port 8080)                             │
+│  vLLM    (CUDA GPU, port 8000)      ──► Gradio UI (port 7860)  │
+└─────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -47,34 +72,15 @@ This project fine-tunes Qwen2.5 (1.5B, 3B, and 7B variants) on a Chinese medical
 | r=16 | 0.6159 | 0.6751 | +5.92% |
 
 > **Key findings:**
-> - BERTScore (semantic similarity) is the primary metric for open-ended Chinese generation — ROUGE is less reliable as fine-tuned models learn to give concise, on-format answers rather than verbose outputs.
+> - BERTScore (semantic similarity) is the primary metric for open-ended Chinese generation — ROUGE is less reliable as fine-tuned models learn to give concise, on-format answers.
 > - The 7B model achieves the highest absolute BERTScore improvement (+7.11%), consistent with larger models having more capacity to absorb domain-specific patterns.
-> - Higher LoRA rank (r=16) outperforms r=8 on the 3B model (+5.92% vs +5.24%), showing that increased adapter expressiveness helps for this task — but only when learning rate is held constant.
+> - Higher LoRA rank (r=16) outperforms r=8 on the 3B model (+5.92% vs +5.24%) when learning rate is held constant.
 
----
+### Training Loss Curves
 
-## Architecture
-
-```
-Data Pipeline (Producer-Consumer)
-    ↓
-raw .txt Q&A pairs → JSONL (Qwen chat template format)
-
-Training
-    ↓
-Qwen2.5-Instruct (frozen) + LoRA adapters (trainable ~1% params)
-FP16 mixed precision · gradient checkpointing · cosine LR schedule · early stopping
-
-Serving
-    ├── MLX-LM server (Apple Silicon, port 8080)
-    └── vLLM server   (CUDA GPU, port 8000)
-         ↓
-    Gradio chatbot UI (port 7860)
-
-Evaluation
-    ├── ROUGE (character-level tokenization for Chinese)
-    └── BERTScore (bert-base-chinese)
-```
+| 1.5B (Apple M5) | 3B (GCP L4) | 7B (GCP L4) |
+|:-:|:-:|:-:|
+| ![](assets/loss_curve.png) | ![](assets/loss_curve_3b.png) | ![](assets/loss_curve_7b.png) |
 
 ---
 
@@ -94,21 +100,38 @@ Evaluation
 
 ```
 MedQwen/
-├── config.py              # centralized hyperparameters and paths
-├── train.py               # LoRA fine-tuning loop
-├── evaluate.py            # ROUGE + BERTScore evaluation
-├── plot_loss.py           # training loss curve plotting
-├── LLM-as-judge.py        # GPT-4o judge evaluation
-├── inference_test.py      # qualitative base vs fine-tuned comparison
-├── app.py                 # Gradio chatbot UI
-├── serve/
-│   ├── mlx_serve.py       # MLX-LM OpenAI-compatible server (Mac)
-│   └── vllm_serve.py      # vLLM OpenAI-compatible server (GPU)
-├── data_preprocess/
-│   └── convert_data.py    # producer-consumer data pipeline
-└── data/
-    ├── medical_train.jsonl
-    └── medical_valid.jsonl
+├── src/
+│   ├── config.py              # centralized hyperparameters and paths
+│   ├── train.py               # LoRA fine-tuning loop
+│   ├── evaluate.py            # ROUGE + BERTScore evaluation
+│   ├── inference_test.py      # qualitative base vs fine-tuned comparison
+│   ├── plot_loss.py           # training loss curve plotting
+│   ├── LLM-as-judge.py        # GPT-4o judge evaluation
+│   ├── app.py                 # Gradio chatbot UI
+│   ├── data/
+│   │   ├── convert_data.py    # producer-consumer txt → JSONL pipeline
+│   │   └── resplit_data.py    # 80/10/10 train/val/test split
+│   └── serve/
+│       ├── mlx_serve.py       # MLX-LM OpenAI-compatible server (Mac)
+│       └── vllm_serve.py      # vLLM OpenAI-compatible server (GPU)
+├── data/
+│   ├── medical_train.jsonl
+│   ├── medical_valid.jsonl
+│   └── medical_test.jsonl
+├── assets/
+│   ├── frontend.png
+│   ├── loss_curve.png
+│   ├── loss_curve_3b.png
+│   └── loss_curve_7b.png
+├── logs/
+│   └── training_*.log
+├── model_cards/
+│   ├── MODEL_CARD_7B.md
+│   ├── MODEL_CARD_3B.md
+│   └── MODEL_CARD_3B_r16.md
+├── checkpoints/
+│   └── best/                  # saved LoRA adapter weights
+└── requirements.txt
 ```
 
 ---
@@ -125,56 +148,60 @@ pip install -r requirements.txt
 ### Download base model
 
 ```bash
-huggingface-cli download Qwen/Qwen2.5-7B-Instruct --local-dir Qwen2.5-7B-Instruct
+huggingface-cli download Qwen/Qwen2.5-3B-Instruct --local-dir Qwen2.5-3B-Instruct
+```
+
+### Prepare data
+
+```bash
+# re-split into 80/10/10 train/val/test
+python src/data/resplit_data.py
+
+# convert txt → JSONL chat format
+python src/data/convert_data.py
 ```
 
 ### Train
 
 ```bash
-python train.py
+python src/train.py
 ```
 
 ### Evaluate
 
 ```bash
-python evaluate.py
+python src/evaluate.py
 ```
 
 ### Plot loss curve
 
 ```bash
-python plot_loss.py training.log loss_curve.png
+python src/plot_loss.py logs/training.log assets/loss_curve.png
 ```
 
 ### Run chatbot
 
-Two serving backends are supported — pick based on your hardware:
-
 **Option A — Apple Silicon Mac (MLX-LM, port 8080)**
 ```bash
-# fuse LoRA weights into base model first (one-time step)
 python -m mlx_lm.fuse \
   --model Qwen2.5-1.5B-Instruct \
   --adapter-path checkpoints/best \
   --save-path checkpoints/mlx-medqwen
 
-# start server
-python serve/mlx_serve.py
+python src/serve/mlx_serve.py
 ```
 
 **Option B — Cloud GPU / CUDA (vLLM, port 8000)**
 ```bash
 pip install vllm
-python serve/vllm_serve.py
+python src/serve/vllm_serve.py
 ```
 
-> vLLM requires CUDA — it will not run on Mac. For Mac, use MLX-LM.
-
-Terminal 2 — launch Gradio UI (works with either server):
+Terminal 2 — launch Gradio UI:
 ```bash
-python app.py                                      # defaults to localhost:8080 (MLX)
-INFERENCE_URL=http://localhost:8000 python app.py  # point at vLLM
-INFERENCE_URL=http://<vm-ip>:8000 python app.py   # point at remote GPU VM
+python src/app.py
+INFERENCE_URL=http://localhost:8000 python src/app.py   # point at vLLM
+INFERENCE_URL=http://<vm-ip>:8000 python src/app.py     # point at remote GPU
 ```
 
 Open `http://localhost:7860`

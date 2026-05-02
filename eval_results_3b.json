@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-04-21T17:09:02.626969",
+  "sample_size": 50,
+  "base_model": "Qwen/Qwen2.5-3B-Instruct",
+  "fine_tuned": "/home/yuxincui/MedQwen/checkpoints/best",
+  "base": {
+    "rouge1": 0.016,
+    "rouge2": 0.0,
+    "rougeL": 0.016,
+    "bertscore": 0.6159251928329468
+  },
+  "fine_tuned_scores": {
+    "rouge1": 0.03638095238095238,
+    "rouge2": 0.02,
+    "rougeL": 0.03304761904761905,
+    "bertscore": 0.6682971715927124
+  },
+  "improvement": {
+    "rouge1": 2.0381,
+    "rouge2": 2.0,
+    "rougeL": 1.7048,
+    "bertscore": 5.2372
+  }
+}
