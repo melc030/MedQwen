@@ -220,4 +220,14 @@ Open `http://localhost:7860`
 
 ## Dataset
 
-30,284 training pairs and 412 validation pairs from a Chinese medical Q&A corpus, converted to Qwen2.5 chat template format (system / user / assistant).
+~30,900 Chinese medical Q&A pairs from a medical dialogue corpus, converted to Qwen2.5 chat template format (system / user / assistant).
+
+The dataset is split 80/10/10 into three non-overlapping subsets:
+
+| Split | Samples | Purpose |
+|-------|---------|---------|
+| **Train** (80%) | ~24,700 | Model weight updates during fine-tuning |
+| **Validation** (10%) | ~3,090 | Early stopping — evaluated every 500 steps to decide when to stop training and which checkpoint to save |
+| **Test** (10%) | ~3,090 | Final evaluation only — never seen during training, provides an unbiased BERTScore and ROUGE report |
+
+The train/validation/test split is shuffled with a fixed seed (`seed=42`) before splitting to ensure reproducibility. The validation set drives training decisions (early stopping), so a separate test set is required to report honest final metrics — using the validation set for both would inflate reported performance.
