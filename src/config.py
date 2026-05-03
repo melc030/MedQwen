@@ -16,8 +16,8 @@ class Config:
 
         # ── Model ─────────────────────────────────────────────────
         # Using Instruct variant: already understands chat template format
-        self.hf_model_id  = 'Qwen/Qwen2.5-1.5B-Instruct'
-        self.model_path   = str(self.project_root / 'Qwen2.5-1.5B-Instruct')
+        self.hf_model_id  = 'Qwen/Qwen2.5-3B-Instruct'
+        self.model_path   = str(self.project_root / 'Qwen2.5-3B-Instruct')
 
         # ── Data (original split) ─────────────────────────────────
         self.train_raw    = str(self.project_root / 'data' / 'medical_train.txt')
