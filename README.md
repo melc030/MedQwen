@@ -220,7 +220,7 @@ Open `http://localhost:7860`
 
 ## Dataset
 
-~30,900 Chinese medical Q&A pairs from a medical dialogue corpus, converted to Qwen2.5 chat template format (system / user / assistant).
+~30,900 Chinese medical Q&A pairs derived from a structured Chinese medical knowledge base (`medical.json`, ~45MB), which contains disease records with fields such as name, description, symptoms, causes, and treatments — originally exported from a MongoDB collection. The raw records were converted into Q&A dialogue pairs and formatted into Qwen2.5 chat template format (system / user / assistant).
 
 The dataset is split 80/10/10 into three non-overlapping subsets:
 
