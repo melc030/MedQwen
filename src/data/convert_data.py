@@ -174,6 +174,16 @@ def convert(source_path, target_path, num_consumers=None):
 
 
 if __name__ == '__main__':
-    convert(cfg.train_raw, cfg.train_jsonl)
-    convert(cfg.valid_raw, cfg.valid_jsonl)
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--v2', action='store_true', help='convert 80/10/10 v2 splits instead of original')
+    args = parser.parse_args()
+
+    if args.v2:
+        convert(cfg.train_raw_v2, cfg.train_jsonl_v2)
+        convert(cfg.valid_raw_v2, cfg.valid_jsonl_v2)
+        convert(cfg.test_raw_v2,  cfg.test_jsonl_v2)
+    else:
+        convert(cfg.train_raw, cfg.train_jsonl)
+        convert(cfg.valid_raw, cfg.valid_jsonl)
     print('all done.')
