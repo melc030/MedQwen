@@ -11,7 +11,7 @@ from peft import PeftModel
 from config import Config
 
 cfg = Config()
-SAMPLE_SIZE = 50  # increase for more thorough eval, 50 is fast enough
+SAMPLE_SIZE = 200  # randomly sampled from test set for evaluation
 
 
 def build_prompt(tokenizer, question):
