@@ -88,7 +88,7 @@ def main():
     import random
     random.seed(42)
 
-    with open(cfg.test_jsonl_v2, 'r') as f:
+    with open(cfg.test_jsonl_mg, 'r') as f:
         all_samples = [json.loads(l) for l in f]
     samples = random.sample(all_samples, min(SAMPLE_SIZE, len(all_samples)))
 

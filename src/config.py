@@ -16,14 +16,14 @@ class Config:
 
         # ── Model ─────────────────────────────────────────────────
         # Using Instruct variant: already understands chat template format
-        self.hf_model_id  = 'Qwen/Qwen2.5-7B-Instruct'
-        self.model_path   = str(self.project_root / 'Qwen2.5-7B-Instruct')
+        self.hf_model_id  = 'Qwen/Qwen2.5-1.5B-Instruct'
+        self.model_path   = str(self.project_root / 'Qwen2.5-1.5B-Instruct')
 
         # ── Data (original split) ─────────────────────────────────
         self.train_raw    = str(self.project_root / 'data' / 'medical_train.txt')
         self.valid_raw    = str(self.project_root / 'data' / 'medical_valid.txt')
-        self.train_jsonl  = str(self.project_root / 'data' / 'medical_train_v2.jsonl')
-        self.valid_jsonl  = str(self.project_root / 'data' / 'medical_valid_v2.jsonl')
+        self.train_jsonl  = str(self.project_root / 'data' / 'medgraphrag_qa_clean' / 'train.jsonl')
+        self.valid_jsonl  = str(self.project_root / 'data' / 'medgraphrag_qa_clean' / 'valid.jsonl')
 
         # ── Data (80/10/10 split) ─────────────────────────────────
         self.train_raw_v2  = str(self.project_root / 'data' / 'medical_train_v2.txt')
@@ -32,6 +32,11 @@ class Config:
         self.train_jsonl_v2 = str(self.project_root / 'data' / 'medical_train_v2.jsonl')
         self.valid_jsonl_v2 = str(self.project_root / 'data' / 'medical_valid_v2.jsonl')
         self.test_jsonl_v2  = str(self.project_root / 'data' / 'medical_test_v2.jsonl')
+
+        # ── Data (MedGraphRAG, filtered answer ≥ 15 chars) ────────
+        self.train_jsonl_mg = str(self.project_root / 'data' / 'medgraphrag_qa_clean' / 'train.jsonl')
+        self.valid_jsonl_mg = str(self.project_root / 'data' / 'medgraphrag_qa_clean' / 'valid.jsonl')
+        self.test_jsonl_mg  = str(self.project_root / 'data' / 'medgraphrag_qa_clean' / 'test.jsonl')
 
         # ── LoRA ──────────────────────────────────────────────────
         self.lora_rank      = 16
