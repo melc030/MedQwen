@@ -1,79 +1,0 @@
-nohup: ignoring input
-loading tokenizer + base model...
-Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   0%|          | 1/338 [00:20<1:54:09, 20.33s/it]Loading weights:  40%|███▉      | 135/338 [00:21<00:23,  8.83it/s]Loading weights:  44%|████▍     | 148/338 [00:22<00:21,  8.81it/s]Loading weights:  47%|████▋     | 159/338 [00:23<00:18,  9.44it/s]Loading weights:  49%|████▊     | 164/338 [00:24<00:19,  9.16it/s]Loading weights:  51%|█████     | 171/338 [00:24<00:17,  9.34it/s]Loading weights:  54%|█████▎    | 181/338 [00:24<00:13, 11.54it/s]Loading weights:  55%|█████▌    | 186/338 [00:26<00:16,  9.01it/s]Loading weights:  58%|█████▊    | 195/338 [00:26<00:14,  9.97it/s]Loading weights:  59%|█████▊    | 198/338 [00:27<00:16,  8.25it/s]Loading weights:  61%|██████    | 207/338 [00:28<00:12, 10.08it/s]Loading weights:  62%|██████▏   | 209/338 [00:28<00:15,  8.47it/s]Loading weights:  65%|██████▍   | 219/338 [00:29<00:12,  9.78it/s]Loading weights:  65%|██████▌   | 221/338 [00:29<00:11, 10.02it/s]Loading weights:  68%|██████▊   | 231/338 [00:31<00:11,  9.25it/s]Loading weights:  69%|██████▉   | 233/338 [00:31<00:11,  9.01it/s]Loading weights:  72%|███████▏  | 243/338 [00:31<00:08, 10.97it/s]Loading weights:  72%|███████▏  | 245/338 [00:32<00:10,  9.15it/s]Loading weights:  75%|███████▌  | 255/338 [00:33<00:08,  9.91it/s]Loading weights:  76%|███████▌  | 257/338 [00:33<00:08,  9.04it/s]Loading weights:  79%|███████▉  | 267/338 [00:34<00:07,  9.58it/s]Loading weights:  80%|███████▉  | 269/338 [00:34<00:07,  9.39it/s]Loading weights:  83%|████████▎ | 279/338 [00:35<00:05,  9.92it/s]Loading weights:  83%|████████▎ | 280/338 [00:36<00:05,  9.69it/s]Loading weights:  86%|████████▌ | 291/338 [00:37<00:04,  9.91it/s]Loading weights:  87%|████████▋ | 293/338 [00:37<00:05,  8.68it/s]Loading weights:  90%|████████▉ | 304/338 [00:38<00:03, 11.32it/s]Loading weights:  93%|█████████▎| 315/338 [00:39<00:02, 10.42it/s]Loading weights:  94%|█████████▍| 317/338 [00:39<00:02, 10.40it/s]Loading weights:  97%|█████████▋| 327/338 [00:40<00:00, 12.98it/s]Loading weights:  97%|█████████▋| 329/338 [00:40<00:00, 11.60it/s]Loading weights: 100%|██████████| 338/338 [00:40<00:00,  8.37it/s]
-
-evaluating BASE Qwen2.5-1.5B-Instruct on 50 samples...
-The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-  10/50 done...
-  20/50 done...
-  30/50 done...
-  40/50 done...
-  50/50 done...
-  computing BERTScore...
-Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   3%|▎         | 6/199 [00:00<00:05, 35.40it/s]Loading weights:  10%|█         | 20/199 [00:00<00:02, 69.68it/s]Loading weights:  15%|█▌        | 30/199 [00:00<00:02, 79.71it/s]Loading weights:  20%|█▉        | 39/199 [00:00<00:02, 75.56it/s]Loading weights:  24%|██▎       | 47/199 [00:00<00:02, 75.20it/s]Loading weights:  28%|██▊       | 55/199 [00:00<00:02, 51.39it/s]Loading weights:  33%|███▎      | 66/199 [00:01<00:02, 59.26it/s]Loading weights:  37%|███▋      | 74/199 [00:01<00:01, 62.85it/s]Loading weights:  42%|████▏     | 84/199 [00:01<00:01, 59.65it/s]Loading weights:  47%|████▋     | 94/199 [00:01<00:01, 63.66it/s]Loading weights:  53%|█████▎    | 105/199 [00:01<00:01, 70.22it/s]Loading weights:  57%|█████▋    | 113/199 [00:01<00:01, 58.76it/s]Loading weights:  60%|██████    | 120/199 [00:01<00:01, 57.86it/s]Loading weights:  65%|██████▌   | 130/199 [00:02<00:01, 59.86it/s]Loading weights:  73%|███████▎  | 146/199 [00:02<00:00, 67.74it/s]Loading weights:  78%|███████▊  | 156/199 [00:02<00:00, 71.57it/s]Loading weights:  83%|████████▎ | 165/199 [00:02<00:00, 66.19it/s]Loading weights:  88%|████████▊ | 176/199 [00:02<00:00, 70.21it/s]Loading weights:  92%|█████████▏| 184/199 [00:02<00:00, 64.19it/s]Loading weights: 100%|██████████| 199/199 [00:02<00:00, 68.63it/s]
-[1mBertModel LOAD REPORT[0m from: bert-base-chinese
-Key                                        | Status     |  | 
--------------------------------------------+------------+--+-
-cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
-cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
-cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
-cls.seq_relationship.bias                  | UNEXPECTED |  | 
-cls.predictions.bias                       | UNEXPECTED |  | 
-cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
-cls.seq_relationship.weight                | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-
-────────────────────────────────────────
-  BASE Qwen2.5-1.5B-Instruct
-────────────────────────────────────────
-  ROUGE-1    : 0.0672
-  ROUGE-2    : 0.0488
-  ROUGE-L    : 0.0672
-  BERTScore  : 0.5892
-────────────────────────────────────────
-
-loading LoRA adapter...
-
-evaluating FINE-TUNED MedQwen on 50 samples...
-  10/50 done...
-  20/50 done...
-  30/50 done...
-  40/50 done...
-  50/50 done...
-  computing BERTScore...
-Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 2885.13it/s]
-[1mBertModel LOAD REPORT[0m from: bert-base-chinese
-Key                                        | Status     |  | 
--------------------------------------------+------------+--+-
-cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
-cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
-cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
-cls.seq_relationship.bias                  | UNEXPECTED |  | 
-cls.predictions.bias                       | UNEXPECTED |  | 
-cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
-cls.seq_relationship.weight                | UNEXPECTED |  | 
-
-Notes:
-- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
-
-────────────────────────────────────────
-  FINE-TUNED MedQwen
-────────────────────────────────────────
-  ROUGE-1    : 0.0464
-  ROUGE-2    : 0.0400
-  ROUGE-L    : 0.0436
-  BERTScore  : 0.6726
-────────────────────────────────────────
-
-========================================
-  IMPROVEMENT SUMMARY
-========================================
-  ROUGE-1    : 0.0672 → 0.0464  (-2.08%)
-  ROUGE-2    : 0.0488 → 0.0400  (-0.88%)
-  ROUGE-L    : 0.0672 → 0.0436  (-2.37%)
-  BERTScore  : 0.5892 → 0.6726  (+8.34%)
-========================================
-
-results saved to eval_results.json
