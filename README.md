@@ -1,6 +1,6 @@
-HnIt# MedQwen — Chinese Medical Q&A Fine-Tuning
+# MedQwen — Chinese Medical Q&A Fine-Tuning
 
-LoRA fine-tuning of Qwen2.5-Instruct on 30K Chinese medical dialogue pairs, with multi-metric evaluation and a Gradio chatbot demo.
+LoRA fine-tuning of Qwen2.5-Instruct on 43K Chinese medical Q&A pairs derived from the MedGraphRAG knowledge base, with multi-metric evaluation and a Gradio chatbot demo.
 
 ---
 
@@ -18,9 +18,10 @@ LoRA fine-tuning of Qwen2.5-Instruct on 30K Chinese medical dialogue pairs, with
 ┌─────────────────────────────────────────────────────────────────┐
 │                        DATA PREPARATION                         │
 │                                                                 │
-│  medical_train.txt  ──┐                                         │
-│  medical_valid.txt  ──┴─► resplit_data.py ─► 80/10/10 split    │
-│                          convert_data.py  ─► JSONL chat format  │
+│  medical.json (8,807 diseases)                                  │
+│       └─► generate_qa.py ─► 14 Q&A templates per disease       │
+│                           ─► filter answers ≥ 15 chars          │
+│                           ─► 80/10/10 train/val/test split      │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
@@ -29,7 +30,7 @@ LoRA fine-tuning of Qwen2.5-Instruct on 30K Chinese medical dialogue pairs, with
 │                                                                 │
 │  Qwen2.5-Instruct (frozen base weights)                         │
 │       +                                                         │
-│  LoRA Adapters  r=8 / r=16  (trainable ~1% params)             │
+│  LoRA Adapters  r=16  (trainable ~0.5% params)                  │
 │                                                                 │
 │  FP16 autocast · gradient checkpointing · cosine LR schedule   │
 │  gradient accumulation · early stopping (patience=5)           │
@@ -56,40 +57,30 @@ LoRA fine-tuning of Qwen2.5-Instruct on 30K Chinese medical dialogue pairs, with
 
 ## Results
 
-### Model Scale Comparison (all r=8, lr=2e-4)
+### MedQwen-1.5B-LoRA-medrag
 
-| Model | ROUGE-1 Δ | ROUGE-L Δ | BERTScore (base) | BERTScore (ft) | Δ |
-|-------|-----------|-----------|-----------------|----------------|---|
-| Qwen2.5-1.5B | -2.39% | -2.39% | 0.6059 | 0.6620 | +5.61% |
-| Qwen2.5-3B   | +2.04% | +1.70% | 0.6159 | 0.6683 | +5.24% |
-| Qwen2.5-7B   | -0.77% | -0.59% | 0.5959 | 0.6670 | +7.11% |
+| Metric | Base Qwen2.5-1.5B | Fine-tuned | Δ |
+|--------|------------------|------------|---|
+| ROUGE-1 | 0.1139 | 0.1470 | +3.31% |
+| ROUGE-2 | 0.0691 | 0.0861 | +1.70% |
+| ROUGE-L | 0.1077 | 0.1339 | +2.63% |
+| **BERTScore** | **0.6235** | **0.7203** | **+9.68%** |
 
-### LoRA Rank Ablation (Qwen2.5-3B, lr=2e-4)
-
-| Rank | BERTScore (base) | BERTScore (ft) | Δ |
-|------|-----------------|----------------|---|
-| r=8  | 0.6159 | 0.6683 | +5.24% |
-| r=16 | 0.6159 | 0.6751 | +5.92% |
+> Evaluated on 200 randomly sampled held-out test pairs (seed=42). BERTScore uses `bert-base-chinese`. ROUGE uses character-level tokenization for Chinese.
 
 > **Key findings:**
-> - BERTScore (semantic similarity) is the primary metric for open-ended Chinese generation — ROUGE is less reliable as fine-tuned models learn to give concise, on-format answers.
-> - The 7B model achieves the highest absolute BERTScore improvement (+7.11%), consistent with larger models having more capacity to absorb domain-specific patterns.
-> - Higher LoRA rank (r=16) outperforms r=8 on the 3B model (+5.92% vs +5.24%) when learning rate is held constant.
-
-### Training Loss Curves
-
-| 1.5B (Apple M5) | 3B (GCP L4) | 7B (GCP L4) |
-|:-:|:-:|:-:|
-| ![](assets/loss_curve.png) | ![](assets/loss_curve_3b.png) | ![](assets/loss_curve_7b.png) |
+> - BERTScore (semantic similarity) is the primary metric for open-ended Chinese generation — ROUGE is less reliable as fine-tuned models learn concise, on-format answers.
+> - Positive ROUGE deltas indicate the model matches the style and structure of the dataset answers, not just the semantics.
+> - The medgraphrag dataset (+9.68%) outperforms the previous medical split dataset (+6.57%) — richer templates and more diverse coverage improve fine-tuning quality.
 
 ---
 
 ## Tech Stack
 
-- **Model**: Qwen2.5-1.5B / 3B / 7B-Instruct
-- **Fine-tuning**: LoRA via PEFT (`r=8/16`, `alpha=2×rank`, 7 target modules)
+- **Model**: Qwen2.5-1.5B-Instruct
+- **Fine-tuning**: LoRA via PEFT (`r=16`, `alpha=32`, 7 target modules)
 - **Training**: PyTorch, gradient accumulation, FP16 autocast, early stopping
-- **Hardware**: Apple M5 MPS (1.5B) · GCP L4 24GB (3B, 7B)
+- **Hardware**: GCP L4 24GB
 - **Serving**: MLX-LM (Apple Silicon) · vLLM (CUDA)
 - **UI**: Gradio
 - **Evaluation**: ROUGE (character-level), BERTScore (bert-base-chinese)
@@ -109,26 +100,25 @@ MedQwen/
 │   ├── LLM-as-judge.py        # GPT-4o judge evaluation
 │   ├── app.py                 # Gradio chatbot UI
 │   ├── data/
-│   │   ├── convert_data.py    # producer-consumer txt → JSONL pipeline
-│   │   └── resplit_data.py    # 80/10/10 train/val/test split
+│   │   ├── generate_qa.py     # medical.json → Q&A pairs (14 templates, --min-answer filter)
+│   │   └── resplit_data.py    # 80/10/10 train/val/test split utility
 │   └── serve/
 │       ├── mlx_serve.py       # MLX-LM OpenAI-compatible server (Mac)
 │       └── vllm_serve.py      # vLLM OpenAI-compatible server (GPU)
 ├── data/
-│   ├── medical_train.jsonl
-│   ├── medical_valid.jsonl
-│   └── medical_test.jsonl
+│   ├── MedDataGen/
+│   │   ├── generate_qa.py     # Q&A generation script
+│   │   └── medical.json       # source knowledge base (8,807 diseases)
+│   └── medgraphrag_qa_clean/
+│       ├── train.jsonl        # 43,276 training pairs
+│       ├── valid.jsonl        #  5,409 validation pairs
+│       └── test.jsonl         #  5,410 test pairs
 ├── assets/
-│   ├── frontend.png
-│   ├── loss_curve.png
-│   ├── loss_curve_3b.png
-│   └── loss_curve_7b.png
+│   └── frontend.png
 ├── logs/
 │   └── training_*.log
 ├── model_cards/
-│   ├── MODEL_CARD_7B.md
-│   ├── MODEL_CARD_3B.md
-│   └── MODEL_CARD_3B_r16.md
+│   └── MODEL_CARD_1.5B_medrag.md
 ├── checkpoints/
 │   └── best/                  # saved LoRA adapter weights
 └── requirements.txt
@@ -148,17 +138,14 @@ pip install -r requirements.txt
 ### Download base model
 
 ```bash
-huggingface-cli download Qwen/Qwen2.5-3B-Instruct --local-dir Qwen2.5-3B-Instruct
+huggingface-cli download Qwen/Qwen2.5-1.5B-Instruct --local-dir Qwen2.5-1.5B-Instruct
 ```
 
 ### Prepare data
 
 ```bash
-# re-split into 80/10/10 train/val/test
-python src/data/resplit_data.py
-
-# convert txt → JSONL chat format
-python src/data/convert_data.py
+# generate Q&A pairs from medical.json, filter short answers, split 80/10/10
+python data/MedDataGen/generate_qa.py --min-answer 15 --split
 ```
 
 ### Train
@@ -176,7 +163,7 @@ python src/evaluate.py
 ### Plot loss curve
 
 ```bash
-python src/plot_loss.py logs/training.log assets/loss_curve.png
+python src/plot_loss.py logs/training_1.5b_mg.log assets/loss_curve.png
 ```
 
 ### Run chatbot
@@ -212,22 +199,37 @@ Open `http://localhost:7860`
 
 | Model | HuggingFace |
 |-------|-------------|
-| Qwen2.5-7B LoRA (r=8) | [mellee030/MedQwen-7B-LoRA](https://huggingface.co/mellee030/MedQwen-7B-LoRA) |
-| Qwen2.5-3B LoRA (r=8) | [mellee030/MedQwen-3B-LoRA](https://huggingface.co/mellee030/MedQwen-3B-LoRA) |
-| Qwen2.5-3B LoRA (r=16) | [mellee030/MedQwen-3B-LoRA-r16](https://huggingface.co/mellee030/MedQwen-3B-LoRA-r16) |
+| Qwen2.5-1.5B LoRA (r=16, medrag) | [mellee030/MedQwen-1.5B-LoRA-medrag](https://huggingface.co/mellee030/MedQwen-1.5B-LoRA-medrag) |
 
 ---
 
 ## Dataset
 
-~30,900 Chinese medical Q&A pairs derived from a structured Chinese medical knowledge base (`medical.json`, ~45MB), which contains disease records with fields such as name, description, symptoms, causes, and treatments — originally exported from a MongoDB collection. The raw records were converted into Q&A dialogue pairs and formatted into Qwen2.5 chat template format (system / user / assistant).
+54,095 Chinese medical Q&A pairs generated from `medical.json` — a structured knowledge base of 8,807 disease records originally from the [MedGraphRAG](https://github.com/MedicineToken/Medical-Graph-RAG) project. Each disease record contains fields such as name, description, symptoms, causes, treatments, medications, diet restrictions, and more.
 
-The dataset is split 80/10/10 into three non-overlapping subsets:
+Each disease produces up to 14 Q&A pairs from fixed templates:
+
+| Template | Example question |
+|----------|-----------------|
+| 是什么病 | 肺泡蛋白质沉积症是什么病？ |
+| 症状有哪些 | 肺泡蛋白质沉积症的症状有哪些？ |
+| 病因是什么 | 肺泡蛋白质沉积症的病因是什么？ |
+| 怎么预防 | 肺泡蛋白质沉积症怎么预防？ |
+| 治疗方法有哪些 | 肺泡蛋白质沉积症的治疗方法有哪些？ |
+| 需要做哪些检查 | 肺泡蛋白质沉积症需要做哪些检查？ |
+| 推荐药物有哪些 | 肺泡蛋白质沉积症的推荐药物有哪些？ |
+| 并发症有哪些 | 肺泡蛋白质沉积症的并发症有哪些？ |
+| 应该去哪个科室 | 肺泡蛋白质沉积症应该去哪个科室就诊？ |
+| 适合吃什么 | 肺泡蛋白质沉积症患者适合吃什么食物？ |
+| 不能吃什么 | 肺泡蛋白质沉积症患者不能吃什么？ |
+| 传播方式 | 肺泡蛋白质沉积症的传播方式是什么？ |
+| 治愈率 | 肺泡蛋白质沉积症的治愈率是多少？ |
+| 治疗周期 | 肺泡蛋白质沉积症的治疗周期大概是多久？ |
+
+Pairs with answers shorter than 15 characters are filtered out to remove low-information entries (e.g. single-word answers), leaving 54,095 pairs. Split 80/10/10 with seed=42:
 
 | Split | Samples | Purpose |
 |-------|---------|---------|
-| **Train** (80%) | ~24,700 | Model weight updates during fine-tuning |
-| **Validation** (10%) | ~3,090 | Early stopping — evaluated every 500 steps to decide when to stop training and which checkpoint to save |
-| **Test** (10%) | ~3,090 | Final evaluation only — never seen during training, provides an unbiased BERTScore and ROUGE report |
-
-The train/validation/test split is shuffled with a fixed seed (`seed=42`) before splitting to ensure reproducibility. The validation set drives training decisions (early stopping), so a separate test set is required to report honest final metrics — using the validation set for both would inflate reported performance.
+| **Train** (80%) | 43,276 | Model weight updates during fine-tuning |
+| **Validation** (10%) | 5,409 | Early stopping — evaluated every 1,000 steps |
+| **Test** (10%) | 5,410 | Final evaluation only — never seen during training |
