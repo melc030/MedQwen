@@ -28,12 +28,12 @@ LoRA fine-tuning of Qwen1.5-Instruct on 43K Chinese medical Q&A pairs, with mult
 ┌─────────────────────────────────────────────────────────────────┐
 │                           TRAINING                              │
 │                                                                 │
-│  Qwen2.5-Instruct (frozen base weights)                         │
+│  Qwen1.5-Instruct (frozen base weights)                         │
 │       +                                                         │
 │  LoRA Adapters  r=16  (trainable ~0.5% params)                  │
 │                                                                 │
-│  FP16 autocast · gradient checkpointing · cosine LR schedule   │
-│  gradient accumulation · early stopping (patience=5)           │
+│  FP16 autocast · gradient checkpointing · cosine LR schedule    │
+│  gradient accumulation · early stopping (patience=5)            │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
@@ -47,9 +47,8 @@ LoRA fine-tuning of Qwen1.5-Instruct on 43K Chinese medical Q&A pairs, with mult
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                           SERVING                               │
-│                                                                 │
-│  MLX-LM  (Apple Silicon, port 8080)                             │
-│  vLLM    (CUDA GPU, port 8000)      ──► Gradio UI (port 7860)  │
+│                                                                 │                           
+│  vLLM    (CUDA GPU, port 8000)      ──► Gradio UI (port 7860)   │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -115,27 +114,14 @@ MedQwen/
 │   └── serve/
 │       ├── mlx_serve.py       # MLX-LM OpenAI-compatible server (Mac)
 │       └── vllm_serve.py      # vLLM OpenAI-compatible server (GPU)
-├── data/                          # gitignored except data_examples.jsonl
-│   ├── MedDataGen/
-│   │   ├── generate_qa.py     # Q&A generation script
-│   │   └── medical.json       # source knowledge base (8,807 diseases)
-│   ├── medgraphrag_qa_clean/  # generated train/val/test splits
-│   └── data_examples.jsonl    # 8 representative Q&A samples
+├── data/
+│   └── data_examples.jsonl    # 8 representative Q&A samples (rest gitignored)
 ├── assets/
 │   └── demo.png
-├── logs/
-│   └── training_*.log
-├── model_cards/
-│   ├── MODEL_CARD_1.5B_medrag.md
-│   ├── MODEL_CARD_1.5B_r16.md
-│   ├── MODEL_CARD_3B.md
-│   ├── MODEL_CARD_3B_r16.md
-│   ├── MODEL_CARD_7B.md
-│   └── MODEL_CARD_7B_r16.md
-├── checkpoints/
-│   └── best/                  # saved LoRA adapter weights
 └── requirements.txt
 ```
+
+> **Gitignored (generated locally):** `data/MedDataGen/`, `data/medgraphrag_qa_clean/`, `checkpoints/`, `model_cards/`, `logs/`, `*.json`
 
 ---
 
@@ -242,7 +228,7 @@ Open `http://localhost:7860`
 
 | Model | HuggingFace |
 |-------|-------------|
-| Qwen2.5-1.5B LoRA (r=16, medrag) | [mellee030/MedQwen-1.5B-LoRA-medrag](https://huggingface.co/mellee030/MedQwen-1.5B-LoRA-medrag) |
+| Qwen2.5-1.5B LoRA (r=16, medrag) | [mellee030/MedQwen-1.5B-LoRA-medrag](https://huggingface.co/mellee030/MedQwen-1.5B-LoRA-medrag/blob/main/README.md) |
 
 ---
 

@@ -9,6 +9,10 @@ checkpoints/
 data/*
 !data/data_examples.jsonl
 
+# Model cards & logs — local reference only
+model_cards/
+logs/
+
 # Python
 .venv/
 __pycache__/
