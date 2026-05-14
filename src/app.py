@@ -73,7 +73,7 @@ with gr.Blocks(title="MedQwen — 医疗问答助手") as demo:
     gr.Markdown(
         """
         # 🏥 MedQwen 医疗问答助手
-        **Fine-tuned Qwen2.5-1.5B-Instruct on 30K Chinese medical Q&A pairs (LoRA)**
+        **Fine-tuned Qwen2.5-1.5B-Instruct on 43K Chinese medical Q&A pairs (LoRA)**
 
         > 本助手仅供参考，不能替代专业医生的诊断和建议。
         """

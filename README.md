@@ -1,12 +1,12 @@
 # MedQwen — Chinese Medical Q&A Fine-Tuning
 
-LoRA fine-tuning of Qwen2.5-Instruct on 43K Chinese medical Q&A pairs derived from the MedGraphRAG knowledge base, with multi-metric evaluation and a Gradio chatbot demo.
+LoRA fine-tuning of Qwen1.5-Instruct on 43K Chinese medical Q&A pairs, with multi-metric evaluation and a Gradio chatbot demo.
 
 ---
 
 ## Demo
 
-![MedQwen Gradio Chatbot](assets/frontend.png)
+![MedQwen Gradio Chatbot](assets/demo.png)
 
 > Gradio chatbot UI served via vLLM on GCP L4 GPU.
 
@@ -68,6 +68,15 @@ LoRA fine-tuning of Qwen2.5-Instruct on 43K Chinese medical Q&A pairs derived fr
 
 > Evaluated on 200 randomly sampled held-out test pairs (seed=42). BERTScore uses `bert-base-chinese`. ROUGE uses character-level tokenization for Chinese.
 
+### MedQwen vs MedGraphRAG (head-to-head)
+
+| System | BERTScore (F1) |
+|--------|---------------|
+| **MedQwen (fine-tuned 1.5B)** | **0.7561** |
+| MedGraphRAG (RAG pipeline) | 0.7190 |
+
+> 400 stratified test questions (35 per question type, 13 types). Both systems answer the same questions; BERTScore is computed against the same ground-truth references.
+
 > **Key findings:**
 > - BERTScore (semantic similarity) is the primary metric for open-ended Chinese generation — ROUGE is less reliable as fine-tuned models learn concise, on-format answers.
 > - Positive ROUGE deltas indicate the model matches the style and structure of the dataset answers, not just the semantics.
@@ -94,31 +103,35 @@ MedQwen/
 ├── src/
 │   ├── config.py              # centralized hyperparameters and paths
 │   ├── train.py               # LoRA fine-tuning loop
-│   ├── evaluate.py            # ROUGE + BERTScore evaluation
-│   ├── inference_test.py      # qualitative base vs fine-tuned comparison
 │   ├── plot_loss.py           # training loss curve plotting
-│   ├── LLM-as-judge.py        # GPT-4o judge evaluation
 │   ├── app.py                 # Gradio chatbot UI
+│   ├── eval/
+│   │   ├── evaluate.py        # ROUGE + BERTScore evaluation (base vs fine-tuned)
+│   │   ├── compare_eval.py    # MedQwen vs MedGraphRAG comparison (BERTScore)
+│   │   └── collect_medgraphrag_answers.py  # query MedGraphRAG for answers
 │   ├── data/
-│   │   ├── generate_qa.py     # medical.json → Q&A pairs (14 templates, --min-answer filter)
+│   │   ├── convert_data.py    # raw data format conversion
 │   │   └── resplit_data.py    # 80/10/10 train/val/test split utility
 │   └── serve/
 │       ├── mlx_serve.py       # MLX-LM OpenAI-compatible server (Mac)
 │       └── vllm_serve.py      # vLLM OpenAI-compatible server (GPU)
-├── data/
+├── data/                          # gitignored except data_examples.jsonl
 │   ├── MedDataGen/
 │   │   ├── generate_qa.py     # Q&A generation script
 │   │   └── medical.json       # source knowledge base (8,807 diseases)
-│   └── medgraphrag_qa_clean/
-│       ├── train.jsonl        # 43,276 training pairs
-│       ├── valid.jsonl        #  5,409 validation pairs
-│       └── test.jsonl         #  5,410 test pairs
+│   ├── medgraphrag_qa_clean/  # generated train/val/test splits
+│   └── data_examples.jsonl    # 8 representative Q&A samples
 ├── assets/
-│   └── frontend.png
+│   └── demo.png
 ├── logs/
 │   └── training_*.log
 ├── model_cards/
-│   └── MODEL_CARD_1.5B_medrag.md
+│   ├── MODEL_CARD_1.5B_medrag.md
+│   ├── MODEL_CARD_1.5B_r16.md
+│   ├── MODEL_CARD_3B.md
+│   ├── MODEL_CARD_3B_r16.md
+│   ├── MODEL_CARD_7B.md
+│   └── MODEL_CARD_7B_r16.md
 ├── checkpoints/
 │   └── best/                  # saved LoRA adapter weights
 └── requirements.txt
@@ -135,10 +148,30 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+### Configure
+
+All hyperparameters and paths are centralized in `src/config.py`. Key settings to review before training:
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `hf_model_id` | `Qwen/Qwen2.5-1.5B-Instruct` | Base model from HuggingFace |
+| `lora_rank` | 16 | LoRA rank (higher = more capacity, more VRAM) |
+| `lora_alpha` | 32 | LoRA scaling factor (typically 2x rank) |
+| `lora_target_modules` | 7 projection layers | Which layers to apply LoRA to |
+| `batch_size` | 1 | Per-device batch size |
+| `grad_accum_steps` | 8 | Effective batch size = batch_size x grad_accum_steps |
+| `epochs` | 3 | Maximum training epochs |
+| `learning_rate` | 2e-4 | Peak learning rate (cosine schedule) |
+| `max_seq_len` | 256 | Maximum sequence length |
+| `save_steps` | 1000 | Evaluate & checkpoint every N steps |
+| `early_stopping_patience` | 5 | Stop if eval loss doesn't improve for N evaluations |
+
+To switch to a different base model (e.g. 7B), update `hf_model_id` and `model_path` in `config.py`.
+
 ### Download base model
 
 ```bash
-huggingface-cli download Qwen/Qwen2.5-1.5B-Instruct --local-dir Qwen2.5-1.5B-Instruct
+hf download Qwen/Qwen2.5-1.5B-Instruct --local-dir Qwen2.5-1.5B-Instruct
 ```
 
 ### Prepare data
@@ -157,7 +190,7 @@ python src/train.py
 ### Evaluate
 
 ```bash
-python src/evaluate.py
+python src/eval/evaluate.py
 ```
 
 ### Plot loss curve
@@ -166,15 +199,24 @@ python src/evaluate.py
 python src/plot_loss.py logs/training_1.5b_mg.log assets/loss_curve.png
 ```
 
-### Run chatbot
+### Inference
+
+The inference pipeline has two steps: (1) start an inference server, (2) launch the Gradio chatbot UI.
+
+**Step 1 — Download the LoRA adapter from HuggingFace**
+
+```bash
+hf download mellee030/MedQwen-1.5B-LoRA-medrag --local-dir checkpoints/best
+```
+
+**Step 2 — Start the inference server**
 
 **Option A — Apple Silicon Mac (MLX-LM, port 8080)**
 ```bash
-python -m mlx_lm.fuse \
-  --model Qwen2.5-1.5B-Instruct \
-  --adapter-path checkpoints/best \
-  --save-path checkpoints/mlx-medqwen
+# Fuse LoRA adapter into MLX format (one-time)
+python -m mlx_lm fuse --model Qwen2.5-1.5B-Instruct --adapter-path checkpoints/best --save-path checkpoints/mlx-medqwen
 
+# Start server
 python src/serve/mlx_serve.py
 ```
 
@@ -184,11 +226,12 @@ pip install vllm
 python src/serve/vllm_serve.py
 ```
 
-Terminal 2 — launch Gradio UI:
+**Step 3 — Launch Gradio chatbot UI** (in a separate terminal)
+
 ```bash
-python src/app.py
-INFERENCE_URL=http://localhost:8000 python src/app.py   # point at vLLM
-INFERENCE_URL=http://<vm-ip>:8000 python src/app.py     # point at remote GPU
+python src/app.py                                        # default: connects to MLX on port 8080
+INFERENCE_URL=http://localhost:8000 python src/app.py     # point at vLLM
+INFERENCE_URL=http://<vm-ip>:8000 python src/app.py      # point at remote GPU
 ```
 
 Open `http://localhost:7860`

@@ -9,6 +9,15 @@ datasets>=2.18.0
 sentencepiece
 tiktoken
 
+# Evaluation
+rouge-score
+bert-score
+matplotlib
+
+# UI
+gradio
+openai
+
 # Utilities
 tqdm
 numpy

@@ -5,6 +5,10 @@ Qwen2.5-7B-Instruct/
 # Training checkpoints — generated during training
 checkpoints/
 
+# Data — too large for git, regenerate via generate_qa.py
+data/*
+!data/data_examples.jsonl
+
 # Python
 .venv/
 __pycache__/
@@ -14,6 +18,13 @@ __pycache__/
 
 # Logs
 training.log
+
+# Evaluation outputs
+*.json
+!data/data_examples.jsonl
+
+# Scripts
+retry_start_vm.sh
 
 # Environment variables
 .env
