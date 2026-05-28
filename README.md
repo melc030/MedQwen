@@ -1,6 +1,6 @@
 # MedQwen — Chinese Medical Q&A Fine-Tuning
 
-LoRA fine-tuning of Qwen1.5-Instruct on 43K Chinese medical Q&A pairs, with multi-metric evaluation and a Gradio chatbot demo.
+LoRA fine-tuning of Qwen2.5-1.5B-Instruct on 43K Chinese medical Q&A pairs, with multi-metric evaluation and a Gradio chatbot demo.
 
 ---
 
@@ -28,12 +28,12 @@ LoRA fine-tuning of Qwen1.5-Instruct on 43K Chinese medical Q&A pairs, with mult
 ┌─────────────────────────────────────────────────────────────────┐
 │                           TRAINING                              │
 │                                                                 │
-│  Qwen1.5-Instruct (frozen base weights)                         │
+│  Qwen2.5-1.5B-Instruct (frozen base weights)                    │
 │       +                                                         │
 │  LoRA Adapters  r=16  (trainable ~0.5% params)                  │
 │                                                                 │
 │  FP16 autocast · gradient checkpointing · cosine LR schedule    │
-│  gradient accumulation · early stopping (patience=5)            │
+│  gradient accumulation · early stopping (patience=5)             │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
@@ -72,9 +72,9 @@ LoRA fine-tuning of Qwen1.5-Instruct on 43K Chinese medical Q&A pairs, with mult
 | System | BERTScore (F1) |
 |--------|---------------|
 | **MedQwen (fine-tuned 1.5B)** | **0.7561** |
-| MedGraphRAG (RAG pipeline) | 0.7190 |
+| [MedGraphRAG](https://github.com/melc030/MedGraphRAG) (RAG pipeline) | 0.7190 |
 
-> 400 stratified test questions (35 per question type, 13 types). Both systems answer the same questions; BERTScore is computed against the same ground-truth references.
+> 400 stratified test questions (35 per question type, 13 types). Both systems answer the same questions; BERTScore is computed against the same ground-truth references. See the MedGraphRAG [graph schema](https://github.com/melc030/MedGraphRAG/blob/main/docs/graph_schema.md) for how the RAG side resolves entities.
 
 > **Key findings:**
 > - BERTScore (semantic similarity) is the primary metric for open-ended Chinese generation — ROUGE is less reliable as fine-tuned models learn concise, on-format answers.
@@ -89,7 +89,7 @@ LoRA fine-tuning of Qwen1.5-Instruct on 43K Chinese medical Q&A pairs, with mult
 - **Fine-tuning**: LoRA via PEFT (`r=16`, `alpha=32`, 7 target modules)
 - **Training**: PyTorch, gradient accumulation, FP16 autocast, early stopping
 - **Hardware**: GCP L4 24GB
-- **Serving**: MLX-LM (Apple Silicon) · vLLM (CUDA)
+- **Serving**: MLX-LM · vLLM (CUDA)
 - **UI**: Gradio
 - **Evaluation**: ROUGE (character-level), BERTScore (bert-base-chinese)
 
@@ -107,12 +107,13 @@ MedQwen/
 │   ├── eval/
 │   │   ├── evaluate.py        # ROUGE + BERTScore evaluation (base vs fine-tuned)
 │   │   ├── compare_eval.py    # MedQwen vs MedGraphRAG comparison (BERTScore)
+│   │   ├── benchmark.py       # latency (TTFT, decode tps) + GPU memory probe
 │   │   └── collect_medgraphrag_answers.py  # query MedGraphRAG for answers
 │   ├── data/
 │   │   ├── convert_data.py    # raw data format conversion
 │   │   └── resplit_data.py    # 80/10/10 train/val/test split utility
 │   └── serve/
-│       ├── mlx_serve.py       # MLX-LM OpenAI-compatible server (Mac)
+│       ├── mlx_serve.py       # MLX-LM OpenAI-compatible server
 │       └── vllm_serve.py      # vLLM OpenAI-compatible server (GPU)
 ├── data/
 │   └── data_examples.jsonl    # 8 representative Q&A samples (rest gitignored)
@@ -185,6 +186,18 @@ python src/eval/evaluate.py
 python src/plot_loss.py logs/training_1.5b_mg.log assets/loss_curve.png
 ```
 
+### Benchmark latency & memory
+
+Start the inference server (MLX or vLLM — see Inference below), then in another terminal:
+
+```bash
+python src/eval/benchmark.py                                  # MLX defaults (:8080)
+python src/eval/benchmark.py --url http://localhost:8000 --model medqwen  # vLLM
+python src/eval/benchmark.py --n 20 --max-tokens 256          # heavier run
+```
+
+Reports TTFT, decode tokens/sec, and end-to-end latency (mean/p50/p95). GPU memory is sampled via `nvidia-smi` on CUDA hosts, or `mlx.core.metal.get_peak_memory()` when run on the same Mac as the MLX server.
+
 ### Inference
 
 The inference pipeline has two steps: (1) start an inference server, (2) launch the Gradio chatbot UI.
@@ -197,7 +210,7 @@ hf download mellee030/MedQwen-1.5B-LoRA-medrag --local-dir checkpoints/best
 
 **Step 2 — Start the inference server**
 
-**Option A — Apple Silicon Mac (MLX-LM, port 8080)**
+**Option A — MLX-LM (port 8080)**
 ```bash
 # Fuse LoRA adapter into MLX format (one-time)
 python -m mlx_lm fuse --model Qwen2.5-1.5B-Instruct --adapter-path checkpoints/best --save-path checkpoints/mlx-medqwen
