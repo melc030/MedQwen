@@ -50,6 +50,43 @@ class Config:
         self.save_dir     = str(self.project_root / 'checkpoints')
         self.best_dir     = str(self.project_root / 'checkpoints' / 'best')
 
+        # ── Multimodal (Qwen2.5-VL) ───────────────────────────────
+        self.vl_model_id   = 'Qwen/Qwen2.5-VL-3B-Instruct'
+        self.vl_model_path = str(self.project_root / 'Qwen2.5-VL-3B-Instruct')
+        # VL is unstable in fp16; bf16 is supported on L4/A100 and is the default.
+        # (train_vl.py falls back to fp32 on CPU/MPS for local smoke tests.)
+        self.vl_dtype      = torch.bfloat16
+
+        # Where the 'images/' folder referenced by the jsonl lives. The jsonl
+        # stores relative paths like 'images/derm_000006.jpg'. Locally point at
+        # the export dir; on GCP, run build_vqa.py --copy-images and use default.
+        self.images_root = os.environ.get(
+            'MEDQWEN_IMAGES_ROOT',
+            str(self.project_root / 'data' / 'multimodal'),
+        )
+
+        self.mm_train_jsonl = str(self.project_root / 'data' / 'multimodal' / 'train.jsonl')
+        self.mm_valid_jsonl = str(self.project_root / 'data' / 'multimodal' / 'val.jsonl')
+        self.mm_test_jsonl  = str(self.project_root / 'data' / 'multimodal' / 'test.jsonl')
+
+        # Visual token budget — caps image tokens to bound memory. One token
+        # ≈ a 28×28 px patch (after the 2×2 merge). Lower max_pixels = fewer
+        # tokens = less memory, at some loss of fine detail.
+        self.vl_min_pixels = 256 * 28 * 28    # ~256 tokens floor
+        self.vl_max_pixels = 768 * 28 * 28    # ~768 tokens ceiling
+
+        # ── VL training ───────────────────────────────────────────
+        self.vl_batch_size       = 1
+        self.vl_grad_accum_steps = 8
+        self.vl_epochs           = 2
+        self.vl_learning_rate    = 1e-4
+        self.vl_best_dir         = str(self.project_root / 'checkpoints' / 'best-vl-3b')
+
+        # Training data carries no system prompt, so the model learned without
+        # one. Keep eval/serving faithful: None = no system message. Set a
+        # string here only if you also add it to the serving path.
+        self.vl_system_prompt    = None
+
         # ── System prompt ─────────────────────────────────────────
         self.system_prompt = '你是一个专业的医疗问答助手，请根据用户的问题给出准确、简洁的医疗建议。'
 

@@ -69,18 +69,19 @@ def chat(message, history):
 
 
 # ── UI ────────────────────────────────────────────────────────────────────────
-with gr.Blocks(title="MedQwen — 医疗问答助手") as demo:
+with gr.Blocks(title="MedQwen — Medical Q&A Assistant") as demo:
     gr.Markdown(
         """
-        # 🏥 MedQwen 医疗问答助手
+        # 🏥 MedQwen — Medical Q&A Assistant
         **Fine-tuned Qwen2.5-1.5B-Instruct on 43K Chinese medical Q&A pairs (LoRA)**
 
-        > 本助手仅供参考，不能替代专业医生的诊断和建议。
+        > For reference only — not a substitute for professional medical diagnosis.
+        > This model answers in **Chinese**; enter your question in Chinese.
         """
     )
 
     chatbot = gr.Chatbot(
-        label="对话",
+        label="Conversation",
         height=500,
         buttons=["copy", "copy_all"],
         avatar_images=(None, "https://api.dicebear.com/7.x/bottts/svg?seed=medqwen"),
@@ -88,17 +89,17 @@ with gr.Blocks(title="MedQwen — 医疗问答助手") as demo:
 
     with gr.Row():
         msg = gr.Textbox(
-            placeholder="请输入您的医疗问题，例如：糖尿病的早期症状有哪些？",
+            placeholder="Enter your medical question in Chinese, e.g. 糖尿病的早期症状有哪些？",
             label="",
             scale=9,
             autofocus=True,
         )
-        send_btn = gr.Button("发送", variant="primary", scale=1)
+        send_btn = gr.Button("Send", variant="primary", scale=1)
 
     with gr.Row():
-        clear_btn = gr.ClearButton([msg, chatbot], value="清除对话")
+        clear_btn = gr.ClearButton([msg, chatbot], value="Clear")
         gr.Markdown(
-            f"<small>连接至: `{INFERENCE_URL}` &nbsp;|&nbsp; "
+            f"<small>Connected to: `{INFERENCE_URL}` &nbsp;|&nbsp; "
             f"max_tokens={MAX_TOKENS} &nbsp;|&nbsp; temperature={TEMPERATURE}</small>"
         )
 
@@ -111,7 +112,7 @@ with gr.Blocks(title="MedQwen — 医疗问答助手") as demo:
             "我最近头疼、发烧，可能是什么病？",
         ],
         inputs=msg,
-        label="示例问题",
+        label="Example questions",
     )
 
     # wire up both Enter key and Send button

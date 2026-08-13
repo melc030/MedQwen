@@ -1,9 +1,13 @@
 # Core training stack
 torch>=2.1.0
-transformers>=4.40.0
+transformers>=4.49.0          # >=4.49 for Qwen2.5-VL support
 peft>=0.10.0
 accelerate>=0.28.0
 datasets>=2.18.0
+
+# Multimodal (Qwen2.5-VL) — image preprocessing
+pillow
+torchvision
 
 # Tokenizer
 sentencepiece
@@ -12,6 +16,7 @@ tiktoken
 # Evaluation
 rouge-score
 bert-score
+scikit-learn          # classification metrics for VL eval (accuracy / macro-F1)
 matplotlib
 
 # UI
@@ -22,8 +27,8 @@ openai
 tqdm
 numpy
 
-# Mac serving (Apple Silicon)
-mlx-lm
+# Mac serving (Apple Silicon only — no Linux wheels, install manually on Mac)
+mlx-lm; platform_system == "Darwin"
 
 # Cloud serving (CUDA only — install on cloud GPU machine)
 # vllm>=0.4.0
