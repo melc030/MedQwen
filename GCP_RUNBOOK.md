@@ -43,7 +43,7 @@ gcloud compute instances create $VM \
 
 - `g2-standard-8` = 1×L4, 8 vCPU, 32 GB RAM.
 - The Deep Learning image auto-installs the NVIDIA driver on first boot (give it ~2 min).
-- 150 GB disk: image (~50 GB) + base model (~7 GB) + images (~1 GB) + checkpoints.
+- 150 GB disk: image (~50 GB) + base model (~7 GB) + dataset (~9 GB) + checkpoints.
 
 SSH in:
 
@@ -76,11 +76,15 @@ to the VM with `scp` — no extra storage service and no per-GB bucket charges.
 # build splits AND copy the referenced images into data/multimodal/images/
 python src/data/build_vqa.py --copy-images
 
-tar czf mm.tgz -C data multimodal           # ~1 GB (jsonl + 18,751 images)
+tar czf mm.tgz -C data multimodal           # ~8.7 GB (18,751 images dominate)
 
-# copy directly to the VM over SSH (primary route — no bucket needed)
+# copy directly to the VM over SSH (fine for small data; NO resume on drop)
 gcloud compute scp mm.tgz $VM:~/MedQwen/ --zone=$ZONE
 ```
+
+> **At ~8.7 GB, prefer the bucket route below** — `gcloud storage cp` is parallel
+> and resumable, whereas `scp` restarts from 0 if the connection drops. A
+> same-region bucket also has **free egress** to the VM, so cost is negligible.
 
 **On VM:**
 ```bash
@@ -91,12 +95,14 @@ mkdir -p data && tar xzf mm.tgz -C data       # -> data/multimodal/{train,val,te
 Because images now live at `data/multimodal/images/`, the default `cfg.images_root`
 (`data/multimodal`) just works — no env var needed.
 
-> **Backup route — GCS bucket.** Only if `scp` is slow or flaky on your connection.
-> A bucket can incur small storage + egress charges, so prefer `scp` above.
+> **Bucket route — recommended for the full ~8.7 GB dataset (resumable).**
+> `gcloud storage cp` is parallel and survives dropped connections; make the
+> bucket the **same region as the VM** so download egress is free.
 > ```bash
-> gsutil mb -l us-central1 gs://<YOUR_BUCKET>     # one-time
-> gsutil cp mm.tgz gs://<YOUR_BUCKET>/            # from local
-> gsutil cp gs://<YOUR_BUCKET>/mm.tgz .           # on the VM
+> gcloud storage buckets create gs://<YOUR_BUCKET> --location=us-central1  # one-time
+> gcloud storage cp mm.tgz gs://<YOUR_BUCKET>/                             # from local
+> gcloud storage cp gs://<YOUR_BUCKET>/mm.tgz .                            # on the VM
+> gcloud storage rm gs://<YOUR_BUCKET>/mm.tgz                              # clean up after
 > ```
 
 ---
