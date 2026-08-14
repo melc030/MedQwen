@@ -4,12 +4,42 @@
 # Assumes an NVIDIA L4 + a CUDA-capable base image (Deep Learning VM or similar).
 #
 #   git clone <repo> MedQwen && cd MedQwen
-#   bash scripts/setup_vm.sh
+#   bash scripts/setup_vm.sh                  # normal (checks + fixes the driver)
+#   bash scripts/setup_vm.sh --skip-gpu-check # install deps anyway (e.g. CPU box)
 # ─────────────────────────────────────────────────────────────────────────────
 set -euo pipefail
 
+SKIP_GPU_CHECK=0
+for arg in "$@"; do
+  case "$arg" in
+    --skip-gpu-check) SKIP_GPU_CHECK=1 ;;
+    *) echo "unknown arg: $arg"; exit 2 ;;
+  esac
+done
+
 echo "== GPU check =="
-nvidia-smi || { echo "no GPU / driver — use a CUDA image"; exit 1; }
+if [ "$SKIP_GPU_CHECK" -eq 1 ]; then
+  echo "skipping GPU check (--skip-gpu-check)"
+elif nvidia-smi >/dev/null 2>&1; then
+  nvidia-smi
+else
+  echo "nvidia-smi failed — driver not loaded."
+  # Deep Learning VMs ship a driver installer; try it before giving up.
+  if [ -x /opt/deeplearning/install-driver.sh ]; then
+    echo "attempting driver (re)install via /opt/deeplearning/install-driver.sh ..."
+    sudo /opt/deeplearning/install-driver.sh || true
+  fi
+  if nvidia-smi >/dev/null 2>&1; then
+    nvidia-smi
+  else
+    echo ""
+    echo "still no GPU driver. try one of:"
+    echo "  - reboot, then re-run:          sudo reboot"
+    echo "  - confirm a GPU is attached:    lspci | grep -i nvidia"
+    echo "  - install deps without a GPU:   bash scripts/setup_vm.sh --skip-gpu-check"
+    exit 1
+  fi
+fi
 
 echo "== Python venv =="
 python3 -m venv .venv
@@ -23,7 +53,7 @@ pip install -r requirements.txt
 pip install -U "huggingface_hub[cli]"
 
 echo "== Sanity =="
-python -c "import torch; print('cuda:', torch.cuda.is_available(), torch.cuda.get_device_name(0))"
+python -c "import torch; ok=torch.cuda.is_available(); print('cuda:', ok, torch.cuda.get_device_name(0) if ok else '(no GPU visible)')"
 python -c "from transformers import Qwen2_5_VLForConditionalGeneration; print('VL class OK')"
 
 echo "done. next: download the base model + data (see GCP_RUNBOOK.md)."
