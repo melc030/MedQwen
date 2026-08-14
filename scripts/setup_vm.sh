@@ -55,10 +55,13 @@ source .venv/bin/activate
 pip install --upgrade pip
 
 echo "== Core deps (Qwen2.5-VL needs transformers>=4.49) =="
+# Big CUDA wheels drop on flaky links; --resume-retries picks up partial
+# downloads instead of restarting (needs pip >=25.1, ensured by upgrade above).
+PIP_DL="--resume-retries 20 --timeout 180"
 # torch+torchvision with CUDA wheels (cu121 works on L4 / driver 535+)
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
-pip install -r requirements.txt
-pip install -U "huggingface_hub[cli]"
+pip install $PIP_DL torch torchvision --index-url https://download.pytorch.org/whl/cu121
+pip install $PIP_DL -r requirements.txt
+pip install $PIP_DL -U "huggingface_hub[cli]"
 
 echo "== Sanity =="
 python -c "import torch; ok=torch.cuda.is_available(); print('cuda:', ok, torch.cuda.get_device_name(0) if ok else '(no GPU visible)')"
