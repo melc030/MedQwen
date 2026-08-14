@@ -41,7 +41,15 @@ else
   fi
 fi
 
+echo "== System prereqs (venv module + build basics) =="
+# Ubuntu ships python3 without ensurepip/venv; install the matching -venv pkg.
+PYVER=$(python3 -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')
+sudo apt-get update -qq
+sudo apt-get install -yq "python3.${PYVER#*.}-venv" python3-pip tmux || \
+  sudo apt-get install -yq python3-venv python3-pip tmux
+
 echo "== Python venv =="
+rm -rf .venv                      # clear any half-created venv from a prior run
 python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
